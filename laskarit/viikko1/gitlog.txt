@@ -1,0 +1,97 @@
+commit 63bf093db5fccd264459f2a1c90d246bed280718
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 22:01:05 2020 +0200
+
+    lisättiin tiedostoja
+
+ kolmas.txt       | 2 ++
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 4 files changed, 2 insertions(+)
+
+commit f8cfba0cc38bbf132f19b35e2077d617b2c808ef
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:58:28 2020 +0200
+
+    muokkauksia add -p
+
+ eka.txt      | 13 ++-----------
+ kolmas.txt   |  2 +-
+ tiedosto.txt | 13 -------------
+ 3 files changed, 3 insertions(+), 25 deletions(-)
+
+commit 43e3e1ef3abeb0e1982d2143cf46a0967252cf4e
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:57:04 2020 +0200
+
+    muutettu nimi tiedosto -> eka
+
+ eka.txt | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit 163b13598c87f17f96116c98c707db9fba61ef65
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:54:53 2020 +0200
+
+    poistettu toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit d12630687c8d6ea2877377d9d0c140f899d00a80
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:53:19 2020 +0200
+
+    liirumlaarumia muokattu
+
+ tiedosto.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit e7552fae5e40f2ccb8d7da132b39555708710bf2
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:52:45 2020 +0200
+
+    Lorem ipsum
+
+ tiedosto.txt | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit e7fbfaaa44af77839e652907df823b16482ae564
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:49:05 2020 +0200
+
+    muokattu toinen ja kolmas
+
+ kolmas.txt      | 2 ++
+ stuff/jokin.txt | 0
+ toinen.txt      | 1 +
+ 3 files changed, 3 insertions(+)
+
+commit 4ec0ef3975fd31b3a1b7f3e51f2cadafe8a5861c
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:47:13 2020 +0200
+
+    luotu kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0bc46a4a9fc36bc3360055042a0623286d4ffcf7
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:45:18 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 5ca51f4953193247f024b209a3c2e298a8d16431
+Author: shlevanto <simo.levanto@helsinki.fi>
+Date:   Sun Mar 8 21:43:48 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
