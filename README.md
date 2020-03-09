@@ -3,6 +3,6 @@ Tämä on ohjelmistotekniikan harjoitustyö.
 
 <h2>Tehtävät</h2>
   <h3>Viikko 1</h3>
-  [komentorivi.txt](https://github.com/shlevanto/menuplanner/tree/master/laskarit/viikko1/komentorivi.txt)
+  (komentorivi.txt)[https://github.com/shlevanto/menuplanner/tree/master/laskarit/viikko1/komentorivi.txt]
   [gitlog.txt](https://github.com/shlevanto/menuplanner/tree/master/laskarit/viikko1/gitlog.txt)
   
