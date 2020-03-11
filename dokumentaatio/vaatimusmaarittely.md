@@ -5,15 +5,17 @@ Menuplanner auttaa arkiviikon ruokalistojen suunnittelussa. Sovellukseen on mahd
 Jokaiselle ruoalle voidaan määritellä ominaisuuksiksi pääaraaka-aine (esim. liha, kala, kasvis) ja lisuke (esim. peruna, riisi, pasta, keitto). Sovellus generoi ruokalistat siten, että kaksi samaa pääraaka-ainetta tai lisuketta ei tule peräkkäisille päiville. Lisäksi sovellus pitää kirjaa siitä, mitä viimeisimmän viikon ruokalistalla on ollut jotta samat ruoat eivät toistu liian usein.
 
 <h2>Käyttäjät</h2>
-Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä ja poistaa ruokia sekä lisätä uusia pääraaka-aine- ja lisukevaihtoehtoja. 
+Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä ja poistaa ruokia sekä lisätä uusia pääraaka-aine- ja lisukevaihtoehtoja.
 
 <h2>Perusversion tarjoama toiminnallisuus</h2>
+
 * käyttäjä voi listata järjestelmässä olevat ruoat ja niiden tiedot
 * käyttäjä voi lisätä uusia ruokia
 * käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita
 * käyttäjä voi generoida arkiviikon ruokalistan ja tulostaa sen tiedostoon
 
 <h2>Jatkokehitysideoita</h2>
+
 * reseptitietojen liittäminen ruokiin
 * lisätunnuksen lisääminen ruokiin, esim. ruoan tyyli, valmistumisen nopeus
 * käyttäjän sisäänkirjautuminen
