@@ -12,3 +12,5 @@ Tämä on ohjelmistotekniikan harjoitustyö.
  <h3>Viikko 1</h3>
 
 [vaatimusmäärittely](https://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
+[työaikakirjanpito](https://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/tyoaika.md)
