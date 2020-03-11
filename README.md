@@ -11,4 +11,4 @@ Tämä on ohjelmistotekniikan harjoitustyö.
 <h2>Harjoitustyö</h2>
  <h3>Viikko 1</h3>
 
-[vaatimusmäärittely](https://github.com/shlevanto/menuplannner/tree/master/dokumentaatio/vaatimusmaarittely.txt)
+[vaatimusmäärittely](https://github.com/shlevanto/menuplannner/tree/master/dokumentaatio/vaatimusmaarittely.txhttps://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/vaatimusmaarittely.md)
