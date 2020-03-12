@@ -24,8 +24,6 @@ import javafx.scene.layout.BorderPane;
 public class Main {
     public static void main(String[] args) throws SQLException {
         System.out.println("Hello sunshine!");
-        GraphicUI.main(args);
-        
         
         Connection db = DriverManager.getConnection("jdbc:sqlite:testi.db");
         Statement s = db.createStatement();
@@ -40,6 +38,8 @@ public class Main {
         while (r.next()) {
             System.out.println(r.getInt("id")+" "+r.getString("nimi")+" "+r.getInt("hinta"));
         }
+        
+        GraphicUI.main(args);
     }
     
 }
