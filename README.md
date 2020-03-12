@@ -13,4 +13,4 @@ Tämä on ohjelmistotekniikan harjoitustyö.
 
 [vaatimusmäärittely](https://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[työaikakirjanpito](https://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/tyoaika.md)
+[tuntikirjanpito](https://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/tuntikirjanpito.md)
