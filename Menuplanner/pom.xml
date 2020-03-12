@@ -10,7 +10,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-    
+
     <dependencies>
     <dependency>
         <groupId>junit</groupId>
@@ -21,7 +21,13 @@
     <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
-        <version>12.0.2</version>   
+        <version>12.0.2</version>
+    </dependency>
+    <dependency>
+        <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>3.28.0</version>
     </dependency>
 </dependencies>
 <build>
@@ -66,7 +72,7 @@
             <configuration>
                 <mainClass>ohte.menuplanner.Main</mainClass>
             </configuration>
-        </plugin>  
+        </plugin>
     </plugins>
 </build>
 
