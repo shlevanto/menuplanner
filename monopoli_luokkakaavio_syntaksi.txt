@@ -1,4 +1,5 @@
-// Ohte laskarit, monopoli
+// Ohte laskarit
+monopoli
 [Noppa]
 [Pelaaja] -- *[Noppa]
 [Pelaaja] -.- [Ruutu]
@@ -13,9 +14,11 @@
 [Toiminto]1--*[Ruutu]
 [Sattuma ja yhteismaa]--[Kortti]
 [Kortti]--1[Toiminto]
-[Toiminto]^[Erilaisia toimintoja]
+[Toiminto]^[Toiminto1]
+[Toiminto]^[Toiminto2]
+[Toiminto]^[Toiminto3]
 [Normaalit kadut]1 -- *[Talo]
 [Normaalit kadut]1 -- 1[Hotelli]
-[Raha] -- *[Pelaaja]
+[Raha]* -- [Pelaaja]
 [Pelaaja]1 -- *[Normaalit kadut]
 [Pelaaja]1 -- *[Asemat ja laitokset]
