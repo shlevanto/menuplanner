@@ -20,5 +20,6 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 <h2>Jatkokehitysideoita</h2>
 
 * reseptitietojen liittäminen ruokiin
+* ostoslistan generoiminen viikon ruokalistan perusteella
 * lisätunnuksen lisääminen ruokiin, esim. ruoan tyyli, valmistumisen nopeus
 * generoidun ruokalistan muokkaaminen ennen sen tulostamista
