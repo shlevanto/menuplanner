@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohte.menuplanner;
+package ohte.UI;
 
 import javafx.application.Application;
 
