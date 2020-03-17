@@ -9,8 +9,9 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 
 <h2>Perusversion tarjoama toiminnallisuus</h2>
 
-* käyttäjän sisäänkirjautuminen ja käyttäjähallinta
+* käyttäjähallinta
   * uuden käyttäjän luominen
+  * käyttäjän sisäänkirjautuminen
 * käyttäjä voi listata järjestelmässä olevat ruoat ja niiden tiedot
 * käyttäjä voi lisätä uusia ruokia
 * käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita
