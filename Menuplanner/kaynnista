@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mvn compile exec:java -Dexec.mainClass=ohte.main.Main
