@@ -32,12 +32,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         UI ui = new UI(scanner);
         ui.login();
-        UserDao userDao = new UserDao();
-        try {
-            userDao.initialize();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
 
         // toimiiko lainkaan
         //System.out.println("Hello sunshine!");
