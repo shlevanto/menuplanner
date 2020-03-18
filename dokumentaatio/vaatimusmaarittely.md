@@ -13,6 +13,7 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
   * uuden käyttäjän luominen
   * käyttäjän sisäänkirjautuminen
 * käyttäjä voi listata järjestelmässä olevat ruoat ja niiden tiedot
+* käyttäjä voi muokata ruokalajin nimeä
 * käyttäjä voi lisätä uusia ruokia
 * käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita
 * käyttäjä voi generoida arkiviikon ruokalistan ja tulostaa sen tiedostoon
