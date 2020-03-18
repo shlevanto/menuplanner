@@ -41,20 +41,20 @@ public class UserDao implements Dao<User, Integer> {
             System.out.println(r.getInt("id")+" "+r.getString("nimi")+" "+r.getInt("hinta"));
         }*/
     }
-        public User read(int key) throws SQLException {
-            return new User("");
-        }
-        @Override
-        public User update(User u) throws SQLException {
-            return new User("");
-        }
-        @Override
-        public List<User> list() throws SQLException {
-            return new ArrayList<>();
-        }
-        public void del(int o) throws SQLException {
-            System.out.println("");
-        }
+    public User read(Integer key) throws SQLException {
+        return new User("");
+    }
+    @Override
+    public User update(User u) throws SQLException {
+        return new User("");
+    }
+    @Override
+    public List<User> list() throws SQLException {
+        return new ArrayList<>();
+    }
+    public void delete(Integer key) throws SQLException {
+        System.out.println("");
+    }
         
 }
 
