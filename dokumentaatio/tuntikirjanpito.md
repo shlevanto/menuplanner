@@ -8,4 +8,5 @@ pv | aika | kuvaus
 17.3. | 1 | dao alulle
 18.3. | 1,5 | dao konfiguraatio kohdilleen, käyttäjätoiminnallisuuksien aloittaminen
 18.3. | 1,5 | käyttäjän sisäänkirjautuminstoiminnallisuus ja uuden käyttäjän lisääminen
-**yht.** | **13** |
+18.3. | 0,5 | käyttöliittymän viilaamista
+**yht.** | **13,5** |
