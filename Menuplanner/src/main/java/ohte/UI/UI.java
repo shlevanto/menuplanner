@@ -18,7 +18,11 @@ public class UI {
     
     public UI (Scanner scanner) {
         this.scanner = scanner;
-        this.us = new UserService();
+        try {
+            this.us = new UserService();
+        } catch (Exception e) {
+            
+        }
     }
     
     public void login() {
