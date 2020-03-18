@@ -20,7 +20,7 @@ public class UserDao implements Dao<User, String> {
     private PreparedStatement p;
     private ResultSet r;
     
-    public void initialize() throws SQLException {
+    public UserDao() throws SQLException {
         db = DriverManager.getConnection("jdbc:sqlite:users.db");
         s = db.createStatement();
         

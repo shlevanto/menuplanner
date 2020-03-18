@@ -72,7 +72,7 @@ public class UI {
                 System.out.println("[4] poista resepti");
                 System.out.println("[5] muodosta ruokalista");
                 System.out.println("[x] lopeta");
-                System.out.println("> ");
+                System.out.print("> ");
 
                 String prompt = scanner.nextLine();
 

@@ -8,6 +8,8 @@ package ohte.domain;
 import ohte.domain.*;
 import ohte.dao.*;
 
+import java.sql.*;
+
 /**
  *
  * @author levantsi
@@ -16,8 +18,12 @@ public class UserService {
     private UserDao ud;
     private User loggedIn;
     
-    public UserService() {
-        this.ud = new UserDao();
+    public UserService() throws SQLException {
+        try {
+            this.ud = new UserDao();
+        } catch (Exception e) {
+            
+        }
     }
     
     public boolean login(User u) {
