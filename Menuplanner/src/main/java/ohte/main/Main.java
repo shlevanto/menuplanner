@@ -3,13 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohte.UI;
+package ohte.main;
 
 /**
  *
  * @author levantsi
  */
+import ohte.dao.*;
+import ohte.UI.UI;
+
 import java.sql.*;
+import java.util.Scanner;
+
 import javafx.application.Application;
 
 import javafx.stage.Stage;
@@ -17,14 +22,28 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+
 /**
  *
  * @author levantsi
  */
 public class Main {
     public static void main(String[] args) throws SQLException {
-        System.out.println("Hello sunshine!");
+        Scanner scanner = new Scanner(System.in);
+        UI ui = new UI(scanner);
+        ui.login();
+        UserDao userDao = new UserDao();
+        try {
+            userDao.initialize();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        // toimiiko lainkaan
+        //System.out.println("Hello sunshine!");
         
+        // toimiiko tietokanta
+        /*
         Connection db = DriverManager.getConnection("jdbc:sqlite:testi.db");
         Statement s = db.createStatement();
         s.execute("CREATE TABLE Tuotteet (id INTEGER PRIMARY KEY, nimi TEXT, hinta INTEGER)");
@@ -38,8 +57,9 @@ public class Main {
         while (r.next()) {
             System.out.println(r.getInt("id")+" "+r.getString("nimi")+" "+r.getInt("hinta"));
         }
-        
-        GraphicUI.main(args);
+        */
+        // käynnistyykö graafinen käyttöliittymä
+        //GraphicUI.main(args);
     }
     
 }

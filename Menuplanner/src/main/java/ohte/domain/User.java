@@ -16,7 +16,20 @@ public class User {
         this.uid = uid;
     }
     
+    public boolean create () {
+        return false;
+    }
+    
+    public boolean check(String uid) {
+        return false;
+    }
+    
     public String getUid() {
+        return this.uid;
+    }
+    
+    @Override
+    public String toString() {
         return this.uid;
     }
     

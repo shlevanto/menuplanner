@@ -14,45 +14,69 @@ import ohte.domain.User;
  *
  * @author levantsi
  */
-public class UserDao implements Dao<User, Integer> {
+public class UserDao implements Dao<User, String> {
     private Connection db;
     private Statement s;
+    private PreparedStatement p;
     private ResultSet r;
     
+    public void initialize() throws SQLException {
+        db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        s = db.createStatement();
+        
+        try {
+            s.execute("CREATE TABLE Users (id INTEGER PRIMARY KEY, uid TEXT)");
+        } catch (Exception E) {}
+     
+        s.close();
+        db.close();
+        
+    }
   
-    
+    @Override
     public void create(User user) throws SQLException{
         
         Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
-    
-        Statement s = db.createStatement();
+        p = db.prepareStatement("INSERT INTO Users(uid) VALUES (?)");
+        p.setString(1, user.getUid());
         
         try {
-            s.execute("CREATE TABLE Users (id INTEGER PRIMARY KEY, uid TEXT");
-        } catch (Exception E) {}
-        /*s.execute("INSERT INTO Tuotteet (nimi,hinta) VALUES ('retiisi',7)");
-        s.execute("INSERT INTO Tuotteet (nimi,hinta) VALUES ('porkkana',5)");
-        s.execute("INSERT INTO Tuotteet (nimi,hinta) VALUES ('nauris',4)");
-        s.execute("INSERT INTO Tuotteet (nimi,hinta) VALUES ('lanttu',8)");
-        s.execute("INSERT INTO Tuotteet (nimi,hinta) VALUES ('selleri',4)");
-
-        ResultSet r = s.executeQuery("SELECT * FROM Tuotteet");
-        while (r.next()) {
-            System.out.println(r.getInt("id")+" "+r.getString("nimi")+" "+r.getInt("hinta"));
-        }*/
+           p.executeUpdate();
+        } catch (Exception e) {}
+                
+        p.close();
+        db.close();
     }
-    public User read(Integer key) throws SQLException {
-        return new User("");
+    
+    @Override
+    public User read(String key) throws SQLException {
+        Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        p = db.prepareStatement("SELECT uid FROM Users WHERE uid = (?)");
+        p.setString(1, key);
+        
+        try {
+            r = p.executeQuery();
+        } catch (Exception e) {}
+        
+        if (r.next()) {
+            return new User(key);
+        }
+        
+        return null;
+        
     }
+    
     @Override
     public User update(User u) throws SQLException {
         return new User("");
     }
+    
     @Override
     public List<User> list() throws SQLException {
         return new ArrayList<>();
     }
-    public void delete(Integer key) throws SQLException {
+    @Override
+    public void delete(String key) throws SQLException {
         System.out.println("");
     }
         
