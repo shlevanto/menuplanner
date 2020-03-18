@@ -7,4 +7,5 @@ pv | aika | kuvaus
 13.3. | 1 | tietokantayhteyden konfigurointi ja testaaminen Maven
 17.3. | 1 | dao alulle
 18.3. | 1,5 | dao konfiguraatio kohdilleen, käyttäjätoiminnallisuuksien aloittaminen
-**yht.** | **11** |
+18.3. | 1,5 | käyttäjän sisäänkirjautuminstoiminnallisuus ja uuden käyttäjän lisääminen
+**yht.** | **13** |
