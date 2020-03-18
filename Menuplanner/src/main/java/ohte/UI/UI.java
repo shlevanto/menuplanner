@@ -22,6 +22,7 @@ public class UI {
             this.us = new UserService();
         } catch (Exception e) {
             
+            
         }
     }
     
@@ -33,8 +34,17 @@ public class UI {
         
             String prompt = scanner.nextLine();
         
-            if (scanner.equals("")) {
-                break;
+            if (prompt.equals("")) {
+                System.out.println("Syötä x poistuaksesi järjestelmästä");
+                System.out.print("> ");
+                
+                prompt = scanner.nextLine();
+                
+                if (prompt.equals("x")) {
+                    break;
+                }
+                
+                continue;
             }
             
             User u = new User(prompt);
