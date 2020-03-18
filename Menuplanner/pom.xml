@@ -5,6 +5,7 @@
     <artifactId>Menuplanner</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -45,6 +46,15 @@
                 </execution>
             </executions>
         </plugin>
+        
+        <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+            <version>2.5</version>
+        </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-shade-plugin</artifactId>
@@ -58,7 +68,7 @@
                     <configuration>
                         <transformers>
                             <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <mainClass>ohte.menuplanner.Main</mainClass>
+                                <mainClass>ohte.main.Main</mainClass>
                             </transformer>
                         </transformers>
                     </configuration>
@@ -70,7 +80,7 @@
             <artifactId>javafx-maven-plugin</artifactId>
             <version>0.0.3</version>
             <configuration>
-                <mainClass>ohte.menuplanner.Main</mainClass>
+                <mainClass>ohte.main.Main</mainClass>
             </configuration>
         </plugin>
     </plugins>

@@ -10,7 +10,7 @@ package ohte.main;
  * @author levantsi
  */
 import ohte.dao.*;
-import ohte.UI.UI;
+import ohte.UI.*;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -29,6 +29,9 @@ import javafx.scene.layout.BorderPane;
  */
 public class Main {
     public static void main(String[] args) throws SQLException {
+         // käynnistyykö graafinen käyttöliittymä
+        //GraphicUI.main(args);
+        
         Scanner scanner = new Scanner(System.in);
         UI ui = new UI(scanner);
         ui.login();
@@ -52,8 +55,7 @@ public class Main {
             System.out.println(r.getInt("id")+" "+r.getString("nimi")+" "+r.getInt("hinta"));
         }
         */
-        // käynnistyykö graafinen käyttöliittymä
-        //GraphicUI.main(args);
+       
     }
     
 }
