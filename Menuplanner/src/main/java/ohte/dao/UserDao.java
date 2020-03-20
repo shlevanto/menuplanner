@@ -84,7 +84,7 @@ public class UserDao implements Dao<User, String> {
     }
     
     @Override
-    public List<User> list() throws SQLException {
+    public ArrayList<User> list() throws SQLException {
         ArrayList<User> userList = new ArrayList<>();
         
         Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
@@ -96,7 +96,6 @@ public class UserDao implements Dao<User, String> {
         
         while (r.next()) {
             userList.add(new User(r.getString("uid")));
-            System.out.println(r.getString("uid"));
         }
         
         p.close();
@@ -104,11 +103,12 @@ public class UserDao implements Dao<User, String> {
         db.close();
         
         
-        return new ArrayList<>();
+        return userList;
     }
     
     @Override
     public void delete(String key) throws SQLException {
+    
         Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
         p = db.prepareStatement("DELETE FROM Users WHERE Uid = (?)");
         p.setString(1, key);
