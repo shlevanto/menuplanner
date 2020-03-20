@@ -9,6 +9,7 @@ import ohte.domain.*;
 import ohte.dao.*;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -50,6 +51,15 @@ public class UserService {
             login(u);
         } catch (Exception e) {
             System.out.println("Ei voitu lisätä käyttäjää." + e);
+        }
+    }
+    
+// ei toimi
+    public void listUsers() throws SQLException{
+        ArrayList<User> userList = (ArrayList) ud.list();
+        
+        for (User u : userList) {
+            System.out.println(u.getUid());
         }
     }
     

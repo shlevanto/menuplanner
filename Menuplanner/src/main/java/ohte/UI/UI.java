@@ -28,43 +28,51 @@ public class UI {
     
     public void login() {
         while (true) {
-            System.out.println("Syötä käyttäjätunnus: ");
+            System.out.println("[1] Listaa käyttäjät");
+            System.out.println("[2] Kirjaudu");
+            System.out.println("[x] Poistu sovelluksesta");
         
             System.out.print("> ");
         
             String prompt = scanner.nextLine();
         
-            if (prompt.equals("")) {
-                System.out.println("Syötä x poistuaksesi järjestelmästä");
-                System.out.print("> ");
-                
-                prompt = scanner.nextLine();
-                
-                if (prompt.equals("x")) {
-                    break;
-                }
-                
+            if (prompt.equals("x")) {
+                break;
+            }
+            
+            if (prompt.equals("1")) {
+                try {
+                    us.listUsers();
+                } catch (Exception e) {
+                    System.out.println(e);}
                 continue;
             }
             
-            User u = new User(prompt);
-                
-            if (!us.check(u)) {
-                System.out.println("Käyttäjää ei löydy tietokannasta, luodaanko uusi käyttäjä? (k/e)");
+            if (prompt.equals("2")) {
+                System.out.println("Syötä käyttäjätunnus: ");
                 System.out.print("> ");
                 
                 prompt = scanner.nextLine();
                 
-                if (prompt.equals("k")) {
-                    us.create(u);
-                    System.out.println("Luotu uusi käyttäjä " + u.getUid());
+                User u = new User(prompt);
+
+                if (!us.check(u)) {
+                    System.out.println("Käyttäjää ei löydy tietokannasta, luodaanko uusi käyttäjä? (k/e)");
+                    System.out.print("> ");
+
+                    prompt = scanner.nextLine();
+
+                    if (prompt.equals("k")) {
+                        us.create(u);
+                        System.out.println("Luotu uusi käyttäjä " + u.getUid());
+                    } else {
+                        continue;
+                    }
+
+
                 } else {
-                    continue;
+                    us.login(u);
                 }
-                  
-                
-            } else {
-                us.login(u);
             }
             
             start();
@@ -74,9 +82,7 @@ public class UI {
     }
     
         public void start() {
-            
-            User u = new User("Paavo");
-            us.login(u);
+           
             while (true) {
                 System.out.print("Kirjautuneena " + us.getLoggedIn().getUid() + "\n");
                 System.out.println("------------");
