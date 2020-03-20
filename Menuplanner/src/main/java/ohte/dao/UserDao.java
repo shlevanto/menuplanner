@@ -92,19 +92,21 @@ public class UserDao implements Dao<User, String> {
         
         try {
            r = p.executeQuery();
-        } catch (Exception e) {}
-                
-        p.close();
-        db.close();
+        } catch (Exception e) {}      
         
         while (r.next()) {
             userList.add(new User(r.getString("uid")));
+            System.out.println(r.getString("uid"));
         }
         
+        p.close();
         r.close();
+        db.close();
         
-                return new ArrayList<>();
+        
+        return new ArrayList<>();
     }
+    
     @Override
     public void delete(String key) throws SQLException {
         Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
