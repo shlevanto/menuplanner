@@ -59,8 +59,17 @@ public class UserDao implements Dao<User, String> {
         } catch (Exception e) {}
         
         if (r.next()) {
+            
+            r.close();
+            p.close();
+            db.close();
+            
             return new User(key);
         }
+        
+        r.close();
+        p.close();
+        db.close();
         
         return null;
         
@@ -77,7 +86,16 @@ public class UserDao implements Dao<User, String> {
     }
     @Override
     public void delete(String key) throws SQLException {
-        System.out.println("");
+        Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        p = db.prepareStatement("DELETE FROM Users WHERE Uid = (?)");
+        p.setString(1, key);
+        
+        try {
+           p.executeUpdate();
+        } catch (Exception e) {}
+                
+        p.close();
+        db.close();
     }
         
 }

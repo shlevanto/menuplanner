@@ -34,17 +34,14 @@ public class UserService {
     public boolean check(User u) {
         try {
             this.loggedIn = ud.read(u.getUid());  
-            
         } catch (Exception e) {
-            
-        }
+            }
         
         if (this.loggedIn == null) {
             return false;
         }
         
         return true;
-        
     }
     
     public void create(User u) {

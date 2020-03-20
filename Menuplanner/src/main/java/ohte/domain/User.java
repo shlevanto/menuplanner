@@ -20,5 +20,5 @@ public class User {
         return this.uid;
     }
     
-    
+    // pitää kirjoittaa compareTo -metodi?
 }

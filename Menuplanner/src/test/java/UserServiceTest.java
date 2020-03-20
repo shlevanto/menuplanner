@@ -26,6 +26,7 @@ public class UserServiceTest {
     
     public UserServiceTest() throws SQLException {
         this.us = new UserService();
+        this.ud = new UserDao();
     }
         
     @Before
@@ -34,14 +35,37 @@ public class UserServiceTest {
     }
     
     @After
-    public void tearDown() {
+    public void tearDown() throws SQLException {
+        ud.delete("Paavo");
     }
     
     
     @Test
-    public void loginTest() {
+    public void login() {
+        // checks if login updates the loggedIn variable
         us.login(u);
-        assertEquals("Paavo", us.getLoggedIn().getUid());
+        assertEquals(u, us.getLoggedIn());
+    }
+    
+    @Test
+    public void create() {
+        //checks that created user ends up in database
+        us.create(u);
+        assertEquals(true, us.check(u));
+    }
+    
+    @Test
+    public void createAndLogin() {
+        // checks that the created user is logged in
+        us.create(u);
+         assertEquals(u, us.getLoggedIn());    
+    }
+    
+    @Test
+    public void loggedInDB () {
+        // can't check null user
+        u = new User("Perttixzxzxzxzx");
+        assertEquals(false, us.check(u));
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
