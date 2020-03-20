@@ -21,12 +21,17 @@ public class UserService {
     public UserService() throws SQLException {
         try {
             this.ud = new UserDao();
-        } catch (Exception e) {
-            
+        } catch (Exception e) {  
         }
+        
+        this.loggedIn = null;
     }
     
-    public boolean login(User u) {
+    public void login(User u) {
+        this.loggedIn = u;
+    }
+    
+    public boolean check(User u) {
         try {
             this.loggedIn = ud.read(u.getUid());  
             
@@ -45,13 +50,14 @@ public class UserService {
     public void create(User u) {
         try {
             ud.create(u);
+            login(u);
         } catch (Exception e) {
             System.out.println("Ei voitu lisätä käyttäjää." + e);
         }
     }
     
-    public String getLoggedInUid() {
-        return this.loggedIn.getUid();
+    public User getLoggedIn() {
+        return this.loggedIn;
     }
             
 }

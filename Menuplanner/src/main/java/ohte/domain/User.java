@@ -20,9 +20,5 @@ public class User {
         return this.uid;
     }
     
-    @Override
-    public String toString() {
-        return this.uid;
-    }
     
 }

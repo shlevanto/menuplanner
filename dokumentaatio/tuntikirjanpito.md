@@ -9,4 +9,5 @@ pv | aika | kuvaus
 18.3. | 1,5 | dao konfiguraatio kohdilleen, käyttäjätoiminnallisuuksien aloittaminen
 18.3. | 1,5 | käyttäjän sisäänkirjautuminstoiminnallisuus ja uuden käyttäjän lisääminen
 18.3. | 0,5 | käyttöliittymän viilaamista
-**yht.** | **13,5** |
+20.3. | 1 | junit -testien aloittaminen
+**yht.** | **14,5** |

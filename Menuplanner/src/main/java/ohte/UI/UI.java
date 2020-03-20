@@ -49,7 +49,7 @@ public class UI {
             
             User u = new User(prompt);
                 
-            if (!us.login(u)) {
+            if (!us.check(u)) {
                 System.out.println("Käyttäjää ei löydy tietokannasta, luodaanko uusi käyttäjä? (k/e)");
                 System.out.print("> ");
                 
@@ -57,7 +57,6 @@ public class UI {
                 
                 if (prompt.equals("k")) {
                     us.create(u);
-                    us.login(u);
                     System.out.println("Luotu uusi käyttäjä " + u.getUid());
                 } else {
                     continue;
@@ -76,8 +75,10 @@ public class UI {
     
         public void start() {
             
+            User u = new User("Paavo");
+            us.login(u);
             while (true) {
-                System.out.print("Kirjautuneena " + us.getLoggedInUid() + "\n");
+                System.out.print("Kirjautuneena " + us.getLoggedIn().getUid() + "\n");
                 System.out.println("------------");
                 System.out.println("Valitse tominnallisuus: ");
                 System.out.println("[1] listaa reseptit");

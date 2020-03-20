@@ -20,13 +20,15 @@ public class UserTest {
     User user;
     
     public UserTest() {
-    }
-        
-
+        user = new User("Paavo");
+    }       
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void hello() {}
+     public void getUid() {
+        assertEquals("Paavo", user.getUid());
+     }
+     
 }
