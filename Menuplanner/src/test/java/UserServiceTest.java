@@ -63,7 +63,7 @@ public class UserServiceTest {
     
     @Test
     public void loggedInDB () {
-        // can't check null user
+        // check returns false if user is not in database
         u = new User("Perttixzxzxzxzx");
         assertEquals(false, us.check(u));
     }
