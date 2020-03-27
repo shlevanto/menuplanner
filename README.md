@@ -4,13 +4,13 @@ Tämä on ohjelmistotekniikan harjoitustyö.
 <h2>Tehtävät</h2>
   <h3>Viikko 1</h3>
 
-[komentorivi.txt](https://github.com/shlevanto/menuplanner/tree/master/laskarit/viikko1/komentorivi.txt)
+[komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
 
-[gitlog.txt](https://github.com/shlevanto/menuplanner/tree/master/laskarit/viikko1/komentorivi.txt)
+[gitlog.txt](/laskarit/viikko1/gitlog.txt)
 
 <h2>Harjoitustyö</h2>
  <h3>Viikko 1</h3>
 
-[vaatimusmäärittely](https://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 
-[tuntikirjanpito](https://github.com/shlevanto/menuplanner/blob/master/dokumentaatio/tuntikirjanpito.md)
+[tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
