@@ -32,6 +32,14 @@ Testikattavuusraportti luodaan komennolla
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 
+<h3>Sovelluksen käynnistäminen komentoriviltä</h3>
+
+Komento
+
+``` mvn compile exec:java -Dexec.mainClass=ohte.main.Main ```
+
+rakentaa ja suorittaa sovelluksen komentoriviltä.
+
 <h3>Suoritettavan tiedoston generoiminen</h3>
 
 Suoritettavan jarin generointi tapahtuu komennolla
