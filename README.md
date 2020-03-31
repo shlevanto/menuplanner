@@ -1,5 +1,4 @@
 <h1>Ohjelmistotekniikka harjoitustyö - Menuplanner</h1>
-Tämä on Ohjelmistotekniikka -kurssin harjoitustyö.
 
 Menuplanner auttaa arkiviikon ruokalistojen suunnittelussa. Sovellukseen on mahdollista tallettaa ruokien nimiä ja se generoi viikottaisen ruokalistan ruokien ominaisuuksien perusteella.
 
@@ -7,42 +6,40 @@ Jokaiselle ruoalle voidaan määritellä ominaisuuksiksi pääaraaka-aine (esim.
 
 Sovelluksessa on käyttäjähallinta, siihen on mahdollista kirjautua eri käyttäjätunnuksilla joista jokaisella on oma reseptitietokantansa.
 
-<h1>Dokumentaatio</h1>
+<h2>Dokumentaatio</h2>
 
 Käyttöohje
 
-[vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 
 Arkkitehtuurikuvaus
 
 Testausdokumentti
 
-[tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
+[Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
 
-Komentorivitoiminnot
-Testaus
+<h2>Komentorivitoiminnot</h2>
+
+<h3>Testaus</h3>
+
 Testit suoritetaan komennolla
 
-''' mvn test
+``` mvn test ```
+
 Testikattavuusraportti luodaan komennolla
 
-''' mvn jacoco:report
+``` mvn jacoco:report ```
+
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 
-Suoritettavan jarin generointi
-Komento
+<h3>Suoritettavan tiedoston generoiminen</h3>
 
-''' mvn package
-generoi hakemistoon target suoritettavan jar-tiedoston Menuplanner-1.0-SNAPSHOT.jar
+Suoritettavan jarin generointi tapahtuu komennolla
 
-[//]: # JavaDoc
-[//]: # JavaDocJavaDoc generoidaan komennolla
+```mvn package```
 
-[//]: # JavaDoc''' mvn javadoc:javadoc
-[//]: # JavaDocJavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
+Komento generoi hakemistoon target suoritettavan jar-tiedoston Menuplanner-1.0-SNAPSHOT.jar
 
-[//]: # JavaDocCheckstyle
-[//]: # JavaDocTiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
-
-[//]: # JavaDoc ''' mvn jxr:jxr checkstyle:checkstyle
-[//]: # JavaDoc Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
+<!---
+kommentti
+--->
