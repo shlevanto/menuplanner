@@ -29,6 +29,7 @@ public class UserTest {
      @Test
      public void getUid() {
         assertEquals("Paavo", user.getUid());
+        
      }
      
 }
