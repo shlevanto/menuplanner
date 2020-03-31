@@ -11,4 +11,5 @@ pv | aika | kuvaus
 18.3. | 0,5 | käyttöliittymän viilaamista
 20.3. | 1,5 | junit -testien aloittaminen, käyttöliittymä jätetään pois testikattavuudesta
 20.3. | 0,5 | Käyttäjähallinan parantamista
-**yht.** | **15,5** |
+31.3. | 0,5 | Readme ajantasalle palautusta varten
+**yht.** | **16** |
