@@ -9,14 +9,24 @@ package ohte.domain;
  *
  * @author levantsi
  */
-public class Recipe {
+public class Recipe implements Comparable<Recipe> {
     private String name;
     private String protein;
     private String side;
-    private int a;
+    private int priority;
     
-    public Recipe(String name) {
+    public Recipe(String name, String protein, String side) {
         this.name = name;
+        this.protein = protein;
+        this.side = side;
+        this.priority = 0; 
+    }
+    
+    public Recipe(String name, String protein, String side, int priority) {
+        this.name = name;
+        this.protein = protein;
+        this.side = side;
+        this.priority = priority; 
     }
     
     public void setName(String name) {
@@ -41,6 +51,24 @@ public class Recipe {
     
     public String getSide() {
         return this.side;
+    }
+    
+    public int getPriority() {
+        return this.priority;
+    }
+    
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+    
+    @Override 
+    public int compareTo(Recipe other) {
+        if (this.priority > other.getPriority()) {
+            return 1;
+        } else if (this.priority == other.getPriority()) {
+            return 0;
+        }
+        return -1;
     }
     
 }

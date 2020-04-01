@@ -54,7 +54,6 @@ public class UserService {
         }
     }
     
-// ei toimi
     public void listUsers() throws SQLException {
         ArrayList<User> userList = (ArrayList) ud.list();
         

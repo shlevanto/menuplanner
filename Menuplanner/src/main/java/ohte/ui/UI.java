@@ -15,6 +15,7 @@ import ohte.domain.*;
 public class UI {
     private Scanner scanner;
     private UserService us;
+    private RecipeService rs;
     
     public UI(Scanner scanner) {
         this.scanner = scanner;
@@ -75,7 +76,9 @@ public class UI {
                     us.login(u);
                 }
             }
-            
+        
+            this.rs = new RecipeService(us.getLoggedIn());
+        
             start();
             break;
            
@@ -84,7 +87,7 @@ public class UI {
     
     
     public void start() {
-
+        
         while (true) {
             System.out.print("Kirjautuneena " + us.getLoggedIn().getUid() + "\n");
             System.out.println("------------");
@@ -101,6 +104,51 @@ public class UI {
 
             if (prompt.equals("x")) {
                 break;
+            }
+            
+            if (prompt.equals(("1"))) {
+                try {
+                    rs.list();
+                    System.out.println("");
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+            
+            if (prompt.equals("2")) {
+                System.out.println("Anna reseptin nimi:");
+                System.out.print(">");
+                
+                String name = scanner.nextLine();
+                
+                String protein;
+                
+                while (true) {
+                    System.out.println("Mikä on reseptin pääraaka-aine? (kasvis, kala, kana, liha):");
+                    System.out.print("> ");
+               
+                    protein = scanner.nextLine();
+                   
+                    if (protein.equals("kasvis") || protein.equals("kala") || protein.equals("kana") || protein.equals("liha")) {
+                        break;
+                    }
+                }
+                
+                
+                String side;
+                
+                while (true) {
+                    System.out.println("Mikä on reseptin lisuke? (pasta, riisi, peruna, keitto, muu):");
+                    System.out.print("> ");
+                
+                    side = scanner.nextLine();
+                   
+                    if (side.equals("pasta") || side.equals("riisi") || side.equals("peruna") || side.equals("keitto") || side.equals("muu")) {
+                        break;
+                    }
+                }
+                
+                rs.add(name, protein, side);
             }
 
         }

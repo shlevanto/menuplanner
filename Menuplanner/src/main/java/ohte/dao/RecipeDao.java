@@ -24,9 +24,12 @@ public class RecipeDao implements Dao<Recipe, Integer> {
     private Statement s;
     private PreparedStatement p;
     private ResultSet r;
+    private String databaseId;
     
-    public void initialize(String user) throws SQLException {
-        db = DriverManager.getConnection("jdbc:sqlite:" + user + ".db");
+    public RecipeDao(String user) throws SQLException {
+        this.databaseId = user;
+        
+        db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
         s = db.createStatement();
         
         try {
@@ -43,34 +46,55 @@ public class RecipeDao implements Dao<Recipe, Integer> {
     @Override
     public void create(Recipe recipe) throws SQLException {
         
-        Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
-        Statement s = db.createStatement();
+        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        p = db.prepareStatement("INSERT INTO Recipes(name, protein, side, priority) VALUES (?,?,?,?)");
+        p.setString(1, recipe.getName());
+        p.setString(2, recipe.getProtein());
+        p.setString(3, recipe.getSide());
+        p.setInt(4, recipe.getPriority());
         
         try {
-            s.execute("CREATE TABLE Users (id INTEGER PRIMARY KEY, uid TEXT");
+            p.executeUpdate();
         } catch (Exception e) {
+            throw new SQLException("Resepti " + recipe.getName() + " on jo tietokannassa.");
         }
-        
-
-        ResultSet r = s.executeQuery("SELECT * FROM Tuotteet");
-        while (r.next()) {
-            System.out.println(r.getInt("id") + " " + r.getString("nimi") + " " + r.getInt("hinta"));
-        }
+                
+        p.close();
+        db.close();
     }
     
     @Override
     public Recipe read(Integer key) throws SQLException {
-        return new Recipe("");
+        return new Recipe("","","");
     }
     
     @Override
     public Recipe update(Recipe u) throws SQLException {
-        return new Recipe("");
+        return new Recipe("","","");
     }
     
     @Override
     public List<Recipe> list() throws SQLException {
-        return new ArrayList<>();
+        ArrayList<Recipe> recipeList = new ArrayList<>();
+        
+        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        p = db.prepareStatement("SELECT * FROM Recipes");
+        
+        try {
+            r = p.executeQuery();
+        } catch (Exception e) {
+        }      
+        
+        while (r.next()) {
+            recipeList.add(new Recipe(r.getString("name"), r.getString("protein"), r.getString("side"), r.getInt("priority")));
+        }
+        
+        p.close();
+        r.close();
+        db.close();
+        
+        
+        return recipeList;
     }
     
     @Override
