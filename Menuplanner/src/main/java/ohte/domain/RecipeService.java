@@ -38,4 +38,13 @@ public class RecipeService {
             System.out.println(r.getName() + " (" + r.getProtein() + ", " + r.getSide() + ")");
         }
     }
+    
+    public void remove(String name) {
+        try {
+            rd.delete(name);
+        } catch (Exception e) {
+            System.out.println("Ei voitu poistaa reseptiä " + name);
+        }
+        
+    }
 }

@@ -19,7 +19,7 @@ import ohte.domain.Recipe;
  *
  * @author levantsi
  */
-public class RecipeDao implements Dao<Recipe, Integer> {
+public class RecipeDao implements Dao<Recipe, String> {
     private Connection db;
     private Statement s;
     private PreparedStatement p;
@@ -64,7 +64,7 @@ public class RecipeDao implements Dao<Recipe, Integer> {
     }
     
     @Override
-    public Recipe read(Integer key) throws SQLException {
+    public Recipe read(String key) throws SQLException {
         return new Recipe("","","");
     }
     
@@ -98,8 +98,35 @@ public class RecipeDao implements Dao<Recipe, Integer> {
     }
     
     @Override
-    public void delete(Integer key) throws SQLException {
-        System.out.println("");
+    public void delete(String key) throws SQLException {
+        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        p = db.prepareStatement("SELECT (id) FROM Recipes WHERE name = (?)");
+        p.setString(1, key);
+        
+        try {
+            r = p.executeQuery();
+        } catch (Exception e) {
+        }      
+        
+        if (!r.next()) {
+            throw new SQLException ("Reseptiä " + key + "ei löydy tietokannasta.");
+        } else {
+            p = db.prepareStatement("DELETE FROM Recipes WHERE id = (?)");
+            p.setInt(1, r.getInt("id"));
+        }
+        
+        try {
+            p.executeUpdate();
+        } catch (Exception e) {
+            
+        }
+        
+        p.close();
+        r.close();
+        db.close();
+        
+        
+        
     }
         
 }

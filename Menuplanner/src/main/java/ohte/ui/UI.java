@@ -33,8 +33,7 @@ public class UI {
             System.out.println("[2] Kirjaudu");
             System.out.println("[x] Poistu sovelluksesta");
         
-            System.out.print("> ");
-        
+            
             String prompt = scanner.nextLine();
         
             if (prompt.equals("x")) {
@@ -52,7 +51,6 @@ public class UI {
             
             if (prompt.equals("2")) {
                 System.out.println("Syötä käyttäjätunnus: ");
-                System.out.print("> ");
                 
                 prompt = scanner.nextLine();
                 
@@ -60,8 +58,7 @@ public class UI {
 
                 if (!us.check(u)) {
                     System.out.println("Käyttäjää ei löydy tietokannasta, luodaanko uusi käyttäjä? (k/e)");
-                    System.out.print("> ");
-
+            
                     prompt = scanner.nextLine();
 
                     if (prompt.equals("k")) {
@@ -117,7 +114,7 @@ public class UI {
             
             if (prompt.equals("2")) {
                 System.out.println("Anna reseptin nimi:");
-                System.out.print(">");
+                
                 
                 String name = scanner.nextLine();
                 
@@ -125,7 +122,7 @@ public class UI {
                 
                 while (true) {
                     System.out.println("Mikä on reseptin pääraaka-aine? (kasvis, kala, kana, liha):");
-                    System.out.print("> ");
+                    
                
                     protein = scanner.nextLine();
                    
@@ -139,7 +136,7 @@ public class UI {
                 
                 while (true) {
                     System.out.println("Mikä on reseptin lisuke? (pasta, riisi, peruna, keitto, muu):");
-                    System.out.print("> ");
+                   
                 
                     side = scanner.nextLine();
                    
@@ -149,6 +146,20 @@ public class UI {
                 }
                 
                 rs.add(name, protein, side);
+            }
+            
+            if (prompt.equals("4")) {
+                System.out.println("Minkä reseptin haluat poistaa?");
+                try {
+                    rs.list();
+                    System.out.println("");
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                
+                String removal = scanner.nextLine();
+                
+                rs.remove(removal);
             }
 
         }
