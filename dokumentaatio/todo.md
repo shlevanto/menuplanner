@@ -6,9 +6,9 @@ Merkitse lisäksi tarkastusta varten määrittelydokumenttiin valmiit toiminnall
 
 2. Testaus on edennyt (0.5p)
 
-~~Sovellukselle tulee pystyä generoimaan testikattavuusraportti komennolla mvn test jacoco:report ~~
+~~Sovellukselle tulee pystyä generoimaan testikattavuusraportti komennolla mvn test jacoco:report~~
 
-~~ Käyttöliittymän rakentava koodi jätetään pois testikattavuusraportista ~~
+~~Käyttöliittymän rakentava koodi jätetään pois testikattavuusraportista~~
 
 Sovelluksen testien rivikattavuuden tulee olla vähintään 20%
 
@@ -16,13 +16,13 @@ Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kanna
 
 3. Koodin laatu (1p)
 
-~~Sovelluslogiikka on riittävissä määrin eriytetty käyttöliittymästä ~~
+~~Sovelluslogiikka on riittävissä määrin eriytetty käyttöliittymästä~~
 
-~~Ohjelman pakkausrakenne heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä ~~
+~~Ohjelman pakkausrakenne heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä~~
 
-~~Checkstyle on otettu käyttöön [ohje](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/checkstyle.md) ~~
+~~Checkstyle on otettu käyttöön [ohje](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/checkstyle.md)~~
 
-~~Täydet pisteet Checkstylestä ainoastaan jos ohjelmassa on alle 10 Checkstyle-virhettä. Käyttöliittymän rakentavan koodin ei tarvitse olla Checkstyle-tarkastelun alla ~~
+~~Täydet pisteet Checkstylestä ainoastaan jos ohjelmassa on alle 10 Checkstyle-virhettä. Käyttöliittymän rakentavan koodin ei tarvitse olla Checkstyle-tarkastelun alla~~
 
 4. Ohjelman alustava rakenne luokka/pakkauskaaviona (0.75p) vastaavalla mekanismilla
 
