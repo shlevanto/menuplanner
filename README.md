@@ -12,7 +12,7 @@ Käyttöohje
 
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 
-Arkkitehtuurikuvaus
+[Arkkitehtuurikuvaus](dokumentaatio/arkkitehuuri.md)
 
 Testausdokumentti
 

@@ -5,7 +5,7 @@
     <artifactId>Menuplanner</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -58,7 +58,7 @@
                     </goals>
                 </execution>
             </executions>
-        </plugin> 
+        </plugin>
         <plugin>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-maven-plugin</artifactId>
@@ -67,7 +67,19 @@
                 <mainClass>ohte.main.Main</mainClass>
             </configuration>
         </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>2.17</version>
+            <configuration>
+                <configLocation>checkstyle.xml</configLocation>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jxr-plugin</artifactId>
+            <version>2.5</version>
+          </plugin>
     </plugins>
 </build>
-
 </project>

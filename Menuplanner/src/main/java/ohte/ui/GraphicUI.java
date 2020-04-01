@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohte.UI;
+package ohte.ui;
 
 import javafx.application.Application;
 
@@ -17,7 +17,7 @@ import javafx.scene.layout.BorderPane;
  *
  * @author levantsi
  */
-public class GraphicUI extends Application{
+public class GraphicUI extends Application {
     public static void main(String[] args) {
         launch(GraphicUI.class);
     }

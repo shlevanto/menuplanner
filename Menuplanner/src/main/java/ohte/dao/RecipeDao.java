@@ -26,12 +26,14 @@ public class RecipeDao implements Dao<Recipe, Integer> {
     private ResultSet r;
     
     public void initialize(String user) throws SQLException {
-        db = DriverManager.getConnection("jdbc:sqlite:"+user+".db");
+        db = DriverManager.getConnection("jdbc:sqlite:" + user + ".db");
         s = db.createStatement();
         
         try {
             s.execute("CREATE TABLE Recipes (id INTEGER PRIMARY KEY, name TEXT, protein TEXT, side TEXT, priority INT)");
-        } catch (Exception E) {}
+        } catch (Exception e) {
+        
+        }
      
         s.close();
         db.close();
@@ -39,19 +41,20 @@ public class RecipeDao implements Dao<Recipe, Integer> {
     }
   
     @Override
-    public void create(Recipe recipe) throws SQLException{
+    public void create(Recipe recipe) throws SQLException {
         
         Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
         Statement s = db.createStatement();
         
         try {
             s.execute("CREATE TABLE Users (id INTEGER PRIMARY KEY, uid TEXT");
-        } catch (Exception E) {}
+        } catch (Exception e) {
+        }
         
 
         ResultSet r = s.executeQuery("SELECT * FROM Tuotteet");
         while (r.next()) {
-            System.out.println(r.getInt("id")+" "+r.getString("nimi")+" "+r.getInt("hinta"));
+            System.out.println(r.getInt("id") + " " + r.getString("nimi") + " " + r.getInt("hinta"));
         }
     }
     

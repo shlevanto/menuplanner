@@ -9,8 +9,8 @@ package ohte.main;
  *
  * @author levantsi
  */
+import ohte.ui.UI;
 import ohte.dao.*;
-import ohte.UI.*;
 
 import java.sql.*;
 import java.util.Scanner;

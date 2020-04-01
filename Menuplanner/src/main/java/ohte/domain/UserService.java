@@ -36,7 +36,7 @@ public class UserService {
         try {
             this.loggedIn = ud.read(u.getUid());  
         } catch (Exception e) {
-            }
+        }
         
         if (this.loggedIn == null) {
             return false;
@@ -55,7 +55,7 @@ public class UserService {
     }
     
 // ei toimi
-    public void listUsers() throws SQLException{
+    public void listUsers() throws SQLException {
         ArrayList<User> userList = (ArrayList) ud.list();
         
         for (User u : userList) {

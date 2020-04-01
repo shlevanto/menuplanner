@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohte.UI;
+package ohte.ui;
 
 import java.util.Scanner;
 import ohte.domain.*;
@@ -16,7 +16,7 @@ public class UI {
     private Scanner scanner;
     private UserService us;
     
-    public UI (Scanner scanner) {
+    public UI(Scanner scanner) {
         this.scanner = scanner;
         try {
             this.us = new UserService();
@@ -44,7 +44,8 @@ public class UI {
                 try {
                     us.listUsers();
                 } catch (Exception e) {
-                    System.out.println(e);}
+                    System.out.println(e);
+                }
                 continue;
             }
             
@@ -81,26 +82,27 @@ public class UI {
         }
     }
     
-        public void start() {
-           
-            while (true) {
-                System.out.print("Kirjautuneena " + us.getLoggedIn().getUid() + "\n");
-                System.out.println("------------");
-                System.out.println("Valitse tominnallisuus: ");
-                System.out.println("[1] listaa reseptit");
-                System.out.println("[2] lisää resepti");
-                System.out.println("[3] muokkaa reseptiä");
-                System.out.println("[4] poista resepti");
-                System.out.println("[5] muodosta ruokalista");
-                System.out.println("[x] lopeta");
-                System.out.print("> ");
+    
+    public void start() {
 
-                String prompt = scanner.nextLine();
+        while (true) {
+            System.out.print("Kirjautuneena " + us.getLoggedIn().getUid() + "\n");
+            System.out.println("------------");
+            System.out.println("Valitse tominnallisuus: ");
+            System.out.println("[1] listaa reseptit");
+            System.out.println("[2] lisää resepti");
+            System.out.println("[3] muokkaa reseptiä");
+            System.out.println("[4] poista resepti");
+            System.out.println("[5] muodosta ruokalista");
+            System.out.println("[x] lopeta");
+            System.out.print("> ");
 
-                if (prompt.equals("x")) {
-                    break;
-                }
-                
+            String prompt = scanner.nextLine();
+
+            if (prompt.equals("x")) {
+                break;
             }
+
         }
+    }
 }
