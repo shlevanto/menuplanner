@@ -1,6 +1,6 @@
 1. Ohjelma on kasvanut edellisestä viikosta (0.75p)
 
-Suoritettava oleva versio on kasvanut edellisestä viikosta ja toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuuksista eli ohjelmaan on lisätty jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta.
+~~Suoritettava oleva versio on kasvanut edellisestä viikosta ja toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuuksista eli ohjelmaan on lisätty jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta.~~
 
 Merkitse lisäksi tarkastusta varten määrittelydokumenttiin valmiit toiminnallisuudet "tehty" merkinnällä.
 
