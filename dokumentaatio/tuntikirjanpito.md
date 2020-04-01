@@ -12,5 +12,5 @@ pv | aika | kuvaus
 20.3. | 1,5 | junit -testien aloittaminen, käyttöliittymä jätetään pois testikattavuudesta
 20.3. | 0,5 | Käyttäjähallinan parantamista
 31.3. | 0,5 | Readme ajantasalle palautusta varten
-1.4. | 0,5 | Checkstylen käyttöönotto ja ensimmäinen raportti korjauksineen
-**yht.** | **16,5** |
+1.4. | 1 | Checkstylen käyttöönotto ja ensimmäinen raportti korjauksineen
+**yht.** | **17** |
