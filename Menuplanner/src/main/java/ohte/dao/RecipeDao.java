@@ -64,12 +64,12 @@ public class RecipeDao implements Dao<Recipe, String> {
     
     @Override
     public Recipe read(String key) throws SQLException {
-        return new Recipe("","","");
+        return new Recipe("", "", "");
     }
     
     @Override
     public Recipe update(Recipe u) throws SQLException {
-        return new Recipe("","","");
+        return new Recipe("", "", "");
     }
     
     @Override
@@ -99,33 +99,19 @@ public class RecipeDao implements Dao<Recipe, String> {
     @Override
     public void delete(String key) throws SQLException {
         Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
-        p = db.prepareStatement("SELECT (id) FROM Recipes WHERE name = (?)");
+        p = db.prepareStatement("DELETE FROM Recipes WHERE name = (?)");
         p.setString(1, key);
-        
-        try {
-            r = p.executeQuery();
-        } catch (Exception e) {
-        }      
-        
-        if (!r.next()) {
-            throw new SQLException ("Reseptiä " + key + "ei löydy tietokannasta.");
-        } else {
-            p = db.prepareStatement("DELETE FROM Recipes WHERE id = (?)");
-            p.setInt(1, r.getInt("id"));
-        }
+
         
         try {
             p.executeUpdate();
         } catch (Exception e) {
-            
+            System.out.println("Reseptiä ei voitu poistaa tietokannasta.");
         }
         
         p.close();
         r.close();
         db.close();
-        
-        
-        
     }
         
 }

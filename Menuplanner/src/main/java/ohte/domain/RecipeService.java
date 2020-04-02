@@ -43,7 +43,6 @@ public class RecipeService {
         try {
             rd.delete(name);
         } catch (Exception e) {
-            System.out.println("Ei voitu poistaa reseptiä " + name);
         }
         
     }
