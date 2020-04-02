@@ -14,4 +14,5 @@ pv | aika | kuvaus
 31.3. | 0,5 | Readme ajantasalle palautusta varten
 1.4. | 1 | Checkstylen käyttöönotto ja ensimmäinen raportti korjauksineen
 1.4. | 2 | Käyttäjäkohtaisen reseptitietokannan luominen, reseptien lisääminen, poistaminen ja listaaminen
-**yht.** | **19** |
+2.4. | 1 | Tietokantakonffausta
+**yht.** | **20** |

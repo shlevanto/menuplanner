@@ -33,7 +33,7 @@ public class RecipeDao implements Dao<Recipe, String> {
         s = db.createStatement();
         
         try {
-            s.execute("CREATE TABLE Recipes (id INTEGER PRIMARY KEY, name TEXT, protein TEXT, side TEXT, priority INT)");
+            s.execute("CREATE TABLE Recipes (id INTEGER PRIMARY KEY, name TEXT UNIQUE, protein TEXT, side TEXT, date TEXT)");
         } catch (Exception e) {
         
         }
@@ -47,11 +47,10 @@ public class RecipeDao implements Dao<Recipe, String> {
     public void create(Recipe recipe) throws SQLException {
         
         Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
-        p = db.prepareStatement("INSERT INTO Recipes(name, protein, side, priority) VALUES (?,?,?,?)");
+        p = db.prepareStatement("INSERT INTO Recipes(name, protein, side, date) VALUES (?,?,?,datetime('now','localtime'))");
         p.setString(1, recipe.getName());
         p.setString(2, recipe.getProtein());
         p.setString(3, recipe.getSide());
-        p.setInt(4, recipe.getPriority());
         
         try {
             p.executeUpdate();
@@ -86,7 +85,7 @@ public class RecipeDao implements Dao<Recipe, String> {
         }      
         
         while (r.next()) {
-            recipeList.add(new Recipe(r.getString("name"), r.getString("protein"), r.getString("side"), r.getInt("priority")));
+            recipeList.add(new Recipe(r.getString("name"), r.getString("protein"), r.getString("side"), r.getString("date")));
         }
         
         p.close();

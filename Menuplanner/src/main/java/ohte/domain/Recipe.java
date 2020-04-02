@@ -3,31 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package ohte.domain;
 
 /**
  *
  * @author levantsi
  */
-public class Recipe implements Comparable<Recipe> {
+
+public class Recipe {
     private String name;
     private String protein;
     private String side;
-    private int priority;
-    
+    private String date;
+        
     public Recipe(String name, String protein, String side) {
         this.name = name;
         this.protein = protein;
-        this.side = side;
-        this.priority = 0; 
+        this.side = side;   
+        this.date = ""; 
     }
     
-    public Recipe(String name, String protein, String side, int priority) {
+    public Recipe(String name, String protein, String side, String date) {
         this.name = name;
         this.protein = protein;
         this.side = side;
-        this.priority = priority; 
+        this.date = date; 
     }
+    
+    
     
     public void setName(String name) {
         this.name = name;
@@ -53,22 +57,16 @@ public class Recipe implements Comparable<Recipe> {
         return this.side;
     }
     
-    public int getPriority() {
-        return this.priority;
+    public String getDate() {
+        return this.date;
     }
     
-    public void setPriority(int priority) {
-        this.priority = priority;
+    public void setDate(String date) {
+        this.date = date;
     }
     
-    @Override 
-    public int compareTo(Recipe other) {
-        if (this.priority > other.getPriority()) {
-            return 1;
-        } else if (this.priority == other.getPriority()) {
-            return 0;
-        }
-        return -1;
-    }
+
+    
+
     
 }
