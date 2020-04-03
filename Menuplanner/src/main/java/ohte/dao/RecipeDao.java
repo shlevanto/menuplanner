@@ -34,6 +34,7 @@ public class RecipeDao implements Dao<Recipe, String> {
         
         try {
             s.execute("CREATE TABLE Recipes (id INTEGER PRIMARY KEY, name TEXT UNIQUE, protein TEXT, side TEXT, date TEXT)");
+            s.execute("CREATE INDEX idx_name ON Recipes (name)");
         } catch (Exception e) {
         
         }
@@ -64,12 +65,49 @@ public class RecipeDao implements Dao<Recipe, String> {
     
     @Override
     public Recipe read(String key) throws SQLException {
-        return new Recipe("", "", "");
+        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        p = db.prepareStatement("SELECT * FROM Recipes WHERE name = (?)");
+        p.setString(1, key);
+        
+        try {
+            r = p.executeQuery();
+        } catch (Exception e) {
+            throw new SQLException("Reseptiä " + key + " ei löydy tietokannasta.");
+        }
+        
+        if (r.next()) {
+            Recipe recipe =  new Recipe(r.getString("name"), r.getString("protein"), r.getString("side"), r.getString("date"));
+            db.close();
+            p.close();
+            r.close();
+            
+            return recipe;
+        }
+        
+        db.close();
+        p.close();
+        r.close();
+        
+        return null;
     }
     
     @Override
     public Recipe update(Recipe u) throws SQLException {
-        return new Recipe("", "", "");
+        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        p = db.prepareStatement("UPDATE Recipes SET date = (?) WHERE name = (?)");
+        p.setString(1, u.getDate());
+        p.setString(2, u.getName());
+        
+        try {
+            p.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Päivitys epäonnistui. " + e);
+        }
+        
+        db.close();
+        p.close();
+                
+        return read(u.getName());
     }
     
     @Override

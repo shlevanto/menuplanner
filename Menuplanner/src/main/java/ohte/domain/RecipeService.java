@@ -6,6 +6,8 @@
 package ohte.domain;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import ohte.dao.*;
 
 /**
@@ -31,6 +33,18 @@ public class RecipeService {
         }   
     }
     
+    public Recipe read(String name) {
+        Recipe recipe = null;
+        
+        try {
+            recipe = rd.read(name);
+        } catch (Exception e) {
+            System.out.println("Ei voitu hakea reseptiä " + name);
+        }
+        
+        return recipe;
+    }
+    
     public void list() throws SQLException {
         ArrayList<Recipe> recipeList = (ArrayList) rd.list();
         
@@ -45,5 +59,24 @@ public class RecipeService {
         } catch (Exception e) {
         }
         
+    }
+    
+    public void updateDate(Recipe recipe) {
+        Recipe returnedRecipe = null;
+        
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String updatedDate = now.format(format);
+        recipe.setDate(updatedDate);
+        
+        // testaus
+        //recipe.setDate("1900-01-01 23:59:59");
+        
+        try {
+            returnedRecipe = rd.update(recipe);
+        } catch (Exception e) {
+            System.out.println("Ei voitu päivittää päivämäärää reseptille " + recipe.getName());
+            System.out.println(e);
+        }
     }
 }

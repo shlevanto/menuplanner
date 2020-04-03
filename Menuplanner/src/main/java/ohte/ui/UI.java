@@ -161,6 +161,15 @@ public class UI {
                 
                 rs.remove(removal);
             }
+            
+            if (prompt.equals("5")) {
+                System.out.println("Mikä resepti päivitetään?");
+                String name = scanner.nextLine();
+                
+                Recipe paivitettava = rs.read(name);
+                
+                rs.updateDate(paivitettava);
+            }
 
         }
     }
