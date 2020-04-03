@@ -29,7 +29,8 @@ public class RecipeDao implements Dao<Recipe, String> {
     public RecipeDao(String user) throws SQLException {
         this.databaseId = user;
         
-        db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        connect();
+        
         s = db.createStatement();
         
         try {
@@ -41,13 +42,12 @@ public class RecipeDao implements Dao<Recipe, String> {
      
         s.close();
         db.close();
-        
     }
   
     @Override
     public void create(Recipe recipe) throws SQLException {
+        connect();
         
-        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
         p = db.prepareStatement("INSERT INTO Recipes(name, protein, side, date) VALUES (?,?,?,datetime('now','localtime'))");
         p.setString(1, recipe.getName());
         p.setString(2, recipe.getProtein());
@@ -60,12 +60,15 @@ public class RecipeDao implements Dao<Recipe, String> {
         }
                 
         p.close();
-        db.close();
+        db.close();        
     }
     
     @Override
     public Recipe read(String key) throws SQLException {
-        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        connect();
+        
+        Recipe recipe = null;
+        
         p = db.prepareStatement("SELECT * FROM Recipes WHERE name = (?)");
         p.setString(1, key);
         
@@ -76,27 +79,26 @@ public class RecipeDao implements Dao<Recipe, String> {
         }
         
         if (r.next()) {
-            Recipe recipe =  new Recipe(r.getString("name"), r.getString("protein"), r.getString("side"), r.getString("date"));
-            db.close();
-            p.close();
-            r.close();
-            
-            return recipe;
+            recipe =  new Recipe(r.getString("name"), r.getString("protein"), r.getString("side"), r.getString("date"));
         }
         
-        db.close();
         p.close();
-        r.close();
+        db.close();
         
-        return null;
+        
+        return recipe;
     }
     
     @Override
     public Recipe update(Recipe u) throws SQLException {
-        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
-        p = db.prepareStatement("UPDATE Recipes SET date = (?) WHERE name = (?)");
+        connect();
+        
+        p = db.prepareStatement("UPDATE Recipes SET name = (?), protein = (?), side = (?), date = (?) WHERE name = (?)");
         p.setString(1, u.getDate());
         p.setString(2, u.getName());
+        p.setString(3, u.getProtein());
+        p.setString(4, u.getDate());
+        p.setString(5, u.getName());
         
         try {
             p.executeUpdate();
@@ -104,18 +106,18 @@ public class RecipeDao implements Dao<Recipe, String> {
             System.out.println("Päivitys epäonnistui. " + e);
         }
         
-        db.close();
         p.close();
-                
+        db.close();
+        
         return read(u.getName());
     }
     
     @Override
     public List<Recipe> list() throws SQLException {
-        ArrayList<Recipe> recipeList = new ArrayList<>();
-        
-        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        connect();
         p = db.prepareStatement("SELECT * FROM Recipes");
+        
+        ArrayList<Recipe> recipeList = new ArrayList<>();
         
         try {
             r = p.executeQuery();
@@ -130,13 +132,12 @@ public class RecipeDao implements Dao<Recipe, String> {
         r.close();
         db.close();
         
-        
         return recipeList;
     }
     
     @Override
     public void delete(String key) throws SQLException {
-        Connection db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        connect();
         p = db.prepareStatement("DELETE FROM Recipes WHERE name = (?)");
         p.setString(1, key);
 
@@ -148,11 +149,18 @@ public class RecipeDao implements Dao<Recipe, String> {
         }
         
         p.close();
-        r.close();
         db.close();
     }
+    
+    @Override
+    public void connect() throws SQLException {
+        try {
+            db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    
         
 }
-
-    
-

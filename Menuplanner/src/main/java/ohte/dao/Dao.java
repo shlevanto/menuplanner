@@ -22,4 +22,7 @@ public interface Dao<T, K> {
     void delete(K key) throws SQLException;
     
     List<T> list() throws SQLException;
+    
+    void connect() throws SQLException;
+   
 }

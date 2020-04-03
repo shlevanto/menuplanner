@@ -21,23 +21,21 @@ public class UserDao implements Dao<User, String> {
     private ResultSet r;
     
     public UserDao() throws SQLException {
-        db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        connect();
         s = db.createStatement();
         
         try {
             s.execute("CREATE TABLE Users (id INTEGER PRIMARY KEY, uid TEXT UNIQUE)");
         } catch (Exception e) {
         }
-     
+        
         s.close();
         db.close();
-        
     }
   
     @Override
     public void create(User user) throws SQLException {
-        
-        Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        connect();
         p = db.prepareStatement("INSERT INTO Users(uid) VALUES (?)");
         p.setString(1, user.getUid());
         
@@ -46,16 +44,19 @@ public class UserDao implements Dao<User, String> {
         } catch (Exception e) {
             throw new SQLException("Käyttäjä " + user.getUid() + " on jo tietokannassa.");
         }
-                
+          
         p.close();
         db.close();
+        
     }
     
     @Override
     public User read(String key) throws SQLException {
-        Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        connect();
         p = db.prepareStatement("SELECT uid FROM Users WHERE uid = (?)");
         p.setString(1, key);
+        
+        User user = null;
         
         try {
             r = p.executeQuery();
@@ -64,19 +65,14 @@ public class UserDao implements Dao<User, String> {
         }
         
         if (r.next()) {
-            
-            r.close();
-            p.close();
-            db.close();
-            
-            return new User(key);
+           
+            user =  new User(key);
         }
         
-        r.close();
         p.close();
         db.close();
         
-        return null;
+        return user;
         
     }
     
@@ -89,8 +85,7 @@ public class UserDao implements Dao<User, String> {
     @Override
     public ArrayList<User> list() throws SQLException {
         ArrayList<User> userList = new ArrayList<>();
-        
-        Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        connect();
         p = db.prepareStatement("SELECT * FROM Users");
         
         try {
@@ -102,18 +97,16 @@ public class UserDao implements Dao<User, String> {
             userList.add(new User(r.getString("uid")));
         }
         
-        p.close();
+        p.close();    
         r.close();
         db.close();
-        
-        
+                
         return userList;
     }
     
     @Override
     public void delete(String key) throws SQLException {
-    
-        Connection db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        connect();
         p = db.prepareStatement("DELETE FROM Users WHERE Uid = (?)");
         p.setString(1, key);
         
@@ -121,10 +114,21 @@ public class UserDao implements Dao<User, String> {
             p.executeUpdate();
         } catch (Exception e) {
         }
-                
+
         p.close();
         db.close();
     }
+    
+    @Override
+    public void connect() throws SQLException {
+        try {
+            db = DriverManager.getConnection("jdbc:sqlite:users.db");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    
         
 }
 

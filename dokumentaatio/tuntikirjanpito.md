@@ -15,5 +15,6 @@ pv | aika | kuvaus
 1.4. | 1 | Checkstylen käyttöönotto ja ensimmäinen raportti korjauksineen
 1.4. | 2 | Käyttäjäkohtaisen reseptitietokannan luominen, reseptien lisääminen, poistaminen ja listaaminen
 2.4. | 1 | Tietokantakonffausta
-3.4. | 1,5 | Tietokantakonffausta, päivämääräkentän päivitystoiminto.
-**yht.** | **21,5** |
+3.4. | 1,5 | Tietokantakonffausta, päivämääräkentän päivitystoiminto
+3.4. | 0,5 | Dao -luokkien siivoamista
+**yht.** | **22** |

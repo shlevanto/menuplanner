@@ -49,6 +49,7 @@ public class UserService {
         try {
             ud.create(u);
             login(u);
+            System.out.println("logattu");
         } catch (Exception e) {
             System.out.println("Ei voitu lisätä käyttäjää." + e);
         }
