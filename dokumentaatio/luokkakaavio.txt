@@ -1,0 +1,17 @@
+[Dao|]^-[UserDao]
+[Dao]^-[RecipeDao]
+[users.db {bg:green}]<-[UserDao]
+[user recipes db {bg:green}]*<-[RecipeDao]
+
+[UI]--[note: 1. release tekstikäyttöliittymällä
+java fx GUI rakennetaan kun muut toiminnallisuudet kunnossa {bg:wheat}]
+[UI]->*[User]
+[UI]->1[UserService]
+[UI]->1[RecipeService]
+[UI]->1[Menu]
+[User]*<-[UserService]
+[Recipe]*<-[RecipeService]
+[UserService]->1[Dao]
+[RecipeService]->1[Dao]
+[Menu]1->*[Recipe]
+[GUI]
