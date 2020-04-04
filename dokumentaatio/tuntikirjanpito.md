@@ -17,4 +17,5 @@ pv | aika | kuvaus
 2.4. | 1 | Tietokantakonffausta
 3.4. | 1,5 | Tietokantakonffausta, päivämääräkentän päivitystoiminto
 3.4. | 0,5 | Dao -luokkien siivoamista
-**yht.** | **22** |
+4.4 | 1 | luokka- ja pakkauskaaviot
+**yht.** | **23** |

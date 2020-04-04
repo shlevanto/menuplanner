@@ -26,10 +26,10 @@ Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kanna
 
 4. Ohjelman alustava rakenne luokka/pakkauskaaviona (0.75p) vastaavalla mekanismilla
 
-Kaavion ei tarvitse merkitä kuin sovelluslogiikan kannalta oleelliset luokat.
+~~Kaavion ei tarvitse merkitä kuin sovelluslogiikan kannalta oleelliset luokat.~~
 
-Voit tarvittaessa tehdä kaavion, josta ilmenee myös sovelluksen pakkausrakenne, mallia voi ottaa referenssisovelluksesta.
+~~Voit tarvittaessa tehdä kaavion, josta ilmenee myös sovelluksen pakkausrakenne, mallia voi ottaa referenssisovelluksesta.~~
 
-Tee repositorioosi hakemisto dokumentaatio ja sen sisälle tiedosto arkkitehtuuri.md ja upota kuva tiedostoon, tiedoston sisältö voi olla muilta osin tyhjä
+~~Tee repositorioosi hakemisto dokumentaatio ja sen sisälle tiedosto arkkitehtuuri.md ja upota kuva tiedostoon, tiedoston sisältö voi olla muilta osin tyhjä~~
 
-Tiedostoon arkkitehtuuri.md tulee olla linkki repositorion README:stä referenssisovelluksen tavoin
+~~Tiedostoon arkkitehtuuri.md tulee olla linkki repositorion README:stä referenssisovelluksen tavoin~~
