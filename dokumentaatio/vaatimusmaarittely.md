@@ -16,7 +16,8 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 * käyttäjä voi muokata ruokalajin nimeä
 * käyttäjä voi lisätä uusia reseptejä **tehty**
 * käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita
-* käyttäjä voi generoida arkiviikon ruokalistan ja tulostaa sen tiedostoon
+* käyttäjä voi generoida arkiviikon ruokalistan 
+* ruokalista voidaan tulostaa erilliseen tiedostoon
 * graafinen käyttöliittymä
 
 <h2>Jatkokehitysideoita</h2>
