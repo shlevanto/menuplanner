@@ -1,6 +1,6 @@
 1. Ohjelma on kasvanut edellisestä viikosta (0.75p)
 
-~~Suoritettava oleva versio on kasvanut edellisestä viikosta ja toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuuksista eli ohjelmaan on lisätty jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta.~~
+~~Suoritettava oleva versio on kasvanut edellisestä viikosta ja toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuuksista eli ohjelmaan on lisätty jotain käyttäjälle näkyvää hyödyllistä^toiminnallisuutta.~~
 
 Merkitse lisäksi tarkastusta varten määrittelydokumenttiin valmiit toiminnallisuudet "tehty" merkinnällä.
 
@@ -26,10 +26,16 @@ Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kanna
 
 4. Ohjelman alustava rakenne luokka/pakkauskaaviona (0.75p) vastaavalla mekanismilla
 
-Kaavion ei tarvitse merkitä kuin sovelluslogiikan kannalta oleelliset luokat.
+~~Kaavion ei tarvitse merkitä kuin sovelluslogiikan kannalta oleelliset luokat.~~
 
-Voit tarvittaessa tehdä kaavion, josta ilmenee myös sovelluksen pakkausrakenne, mallia voi ottaa referenssisovelluksesta.
+~~Voit tarvittaessa tehdä kaavion, josta ilmenee myös sovelluksen pakkausrakenne, mallia voi ottaa referenssisovelluksesta.~~
 
-Tee repositorioosi hakemisto dokumentaatio ja sen sisälle tiedosto arkkitehtuuri.md ja upota kuva tiedostoon, tiedoston sisältö voi olla muilta osin tyhjä
+~~Tee repositorioosi hakemisto dokumentaatio ja sen sisälle tiedosto arkkitehtuuri.md ja upota kuva tiedostoon, tiedoston sisältö voi olla muilta osin tyhjä~~
 
-Tiedostoon arkkitehtuuri.md tulee olla linkki repositorion README:stä referenssisovelluksen tavoin
+~~Tiedostoon arkkitehtuuri.md tulee olla linkki repositorion README:stä referenssisovelluksen tavoin~~
+
+Lisäksi:
+
+käyttäjätietokannan nimi config -tiedostosta
+
+mahdollisuus määritellä proteiinit ja lisukkeet config -tiedostossa
