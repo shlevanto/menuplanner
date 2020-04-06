@@ -2,7 +2,7 @@
 
 ~~Suoritettava oleva versio on kasvanut edellisestä viikosta ja toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuuksista eli ohjelmaan on lisätty jotain käyttäjälle näkyvää hyödyllistä^toiminnallisuutta.~~
 
-Merkitse lisäksi tarkastusta varten määrittelydokumenttiin valmiit toiminnallisuudet "tehty" merkinnällä.
+~~Merkitse lisäksi tarkastusta varten määrittelydokumenttiin valmiit toiminnallisuudet "tehty" merkinnällä.~~
 
 2. Testaus on edennyt (0.5p)
 
@@ -39,3 +39,5 @@ Lisäksi:
 käyttäjätietokannan nimi config -tiedostosta
 
 mahdollisuus määritellä proteiinit ja lisukkeet config -tiedostossa
+
+testejä varten testitietokanta
