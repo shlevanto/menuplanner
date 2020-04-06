@@ -37,6 +37,7 @@ public class UserService {
         try {
             this.loggedIn = ud.read(u.getUid());  
         } catch (Exception e) {
+            System.out.println(e);
         }
         
         if (this.loggedIn == null) {
@@ -46,12 +47,12 @@ public class UserService {
         return true;
     }
     
-    public void create(User u) {
+    public void create(User u) throws SQLException {
         try {
             ud.create(u);
             login(u);
         } catch (Exception e) {
-            System.out.println("Ei voitu lisätä käyttäjää." + e);
+            throw new SQLException("Ei voitu lisätä käyttäjää. " + e);
         }
     }
     

@@ -125,7 +125,7 @@ public class UserDao implements Dao<User, String> {
     @Override
     public void connect() throws SQLException {
         try {
-            db = DriverManager.getConnection("jdbc:sqlite:"+databaseId+".db");
+            db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
         } catch (Exception e) {
             System.out.println(e);
         }

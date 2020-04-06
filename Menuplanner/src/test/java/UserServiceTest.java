@@ -111,8 +111,12 @@ public class UserServiceTest {
         }
         
         assertEquals(a,0);
-        
-        
+    }
+    
+    @Test(expected = SQLException.class)
+    public void userAlreadyInDB() {
+        us.create(new User("u"));
+        us.create(new User("u"));
         
     }
     // TODO add test methods here.
