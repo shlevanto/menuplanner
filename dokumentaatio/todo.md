@@ -2,7 +2,7 @@
 
 ~~Suoritettava oleva versio on kasvanut edellisestä viikosta ja toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuuksista eli ohjelmaan on lisätty jotain käyttäjälle näkyvää hyödyllistä^toiminnallisuutta.~~
 
-Merkitse lisäksi tarkastusta varten määrittelydokumenttiin valmiit toiminnallisuudet "tehty" merkinnällä.
+~~Merkitse lisäksi tarkastusta varten määrittelydokumenttiin valmiit toiminnallisuudet "tehty" merkinnällä.~~
 
 2. Testaus on edennyt (0.5p)
 
@@ -33,12 +33,14 @@ Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kanna
 ~~Tee repositorioosi hakemisto dokumentaatio ja sen sisälle tiedosto arkkitehtuuri.md ja upota kuva tiedostoon, tiedoston sisältö voi olla muilta osin tyhjä~~
 
 ~~Tiedostoon arkkitehtuuri.md tulee olla linkki repositorion README:stä referenssisovelluksen tavoin~~
-<<<<<<< HEAD
-=======
 
 Lisäksi:
 
 käyttäjätietokannan nimi config -tiedostosta
 
 mahdollisuus määritellä proteiinit ja lisukkeet config -tiedostossa
->>>>>>> f097dcbe54341758179eb8dc106a3038da18d826
+<<<<<<< HEAD
+=======
+
+testejä varten testitietokanta
+>>>>>>> 7a3f3f875411c98b3cb1c7b875796d75bfe77aca
