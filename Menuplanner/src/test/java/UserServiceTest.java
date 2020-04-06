@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.io.File;
+import java.util.*;
 
 import ohte.domain.*;
 import ohte.dao.*;
@@ -91,6 +91,29 @@ public class UserServiceTest {
         // check returns false if user is not in database
         u = new User("Perttixzxzxzxzx");
         assertEquals(false, us.check(u));
+    }
+    
+    @Test
+    public void check() {
+        // checks if logged in user is in the database
+        us.check(new User("armama"));
+        assertEquals(false, us.check(u));
+    }
+    
+    @Test
+    public void listUsersEmpty() {
+        int a = 0;
+        
+        try {
+            ArrayList<User> users = us.listUsers();
+            a = users.size();
+        } catch (Exception e) {            
+        }
+        
+        assertEquals(a,0);
+        
+        
+        
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

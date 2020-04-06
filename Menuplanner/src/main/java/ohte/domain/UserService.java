@@ -55,12 +55,10 @@ public class UserService {
         }
     }
     
-    public void listUsers() throws SQLException {
+    public ArrayList<User> listUsers() throws SQLException {
         ArrayList<User> userList = (ArrayList) ud.list();
-        
-        for (User u : userList) {
-            System.out.println(u.getUid());
-        }
+       
+        return userList;
     }
     
     public User getLoggedIn() {

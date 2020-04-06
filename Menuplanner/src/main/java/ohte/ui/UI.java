@@ -6,6 +6,7 @@
 package ohte.ui;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 import ohte.domain.*;
 
 /**
@@ -41,10 +42,16 @@ public class UI {
             }
             
             if (prompt.equals("1")) {
+                ArrayList<User> users = new ArrayList<>();
+                
                 try {
-                    us.listUsers();
+                    users = us.listUsers();
                 } catch (Exception e) {
                     System.out.println(e);
+                }
+                
+                for (User user : users) {
+                    System.out.println(user.getUid());
                 }
                 continue;
             }
