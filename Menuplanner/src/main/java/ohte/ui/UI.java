@@ -20,7 +20,7 @@ public class UI {
     public UI(Scanner scanner) {
         this.scanner = scanner;
         try {
-            this.us = new UserService();
+            this.us = new UserService("users");
         } catch (Exception e) {
             
             

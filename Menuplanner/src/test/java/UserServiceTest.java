@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.io.File;
 
 import ohte.domain.*;
 import ohte.dao.*;
@@ -23,20 +24,42 @@ public class UserServiceTest {
     UserService us;
     UserDao ud;
     User u;
+    Connection db;
+    Statement s;
+    
     
     public UserServiceTest() throws SQLException {
-        this.us = new UserService();
-        this.ud = new UserDao();
+        this.us = new UserService("test");
+        this.ud = us.getDao();
     }
         
     @Before
-    public void setUp() {  
+    public void setUp() throws SQLException{  
+        try {
+            db = DriverManager.getConnection("jdbc:sqlite:test.db");
+            s = db.createStatement();
+            s.execute("DELETE * FROM Users");
+        } catch (Exception e) {
+        
+        s.close();
+        db.close();
+        }
+        
         u = new User("Paavo");
+        
     }
     
     @After
     public void tearDown() throws SQLException {
-        ud.delete("Paavo");
+        try {
+            db = DriverManager.getConnection("jdbc:sqlite:test.db");
+            s = db.createStatement();
+            s.execute("DELETE FROM Users");
+        } catch (Exception e) {
+        
+        s.close();
+        db.close();
+        }
     }
     
     
@@ -57,8 +80,10 @@ public class UserServiceTest {
     @Test
     public void createAndLogin() {
         // checks that the created user is logged in
-        us.create(u);
-         assertEquals(u, us.getLoggedIn());    
+        User v = new User("Pertti");
+        us.create(v);
+        us.login(v);
+        assertEquals(v, us.getLoggedIn());    
     }
     
     @Test

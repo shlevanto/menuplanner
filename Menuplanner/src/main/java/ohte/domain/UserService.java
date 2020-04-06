@@ -19,10 +19,11 @@ public class UserService {
     private UserDao ud;
     private User loggedIn;
     
-    public UserService() throws SQLException {
+    public UserService(String dbId) throws SQLException {
         try {
-            this.ud = new UserDao();
-        } catch (Exception e) {  
+            this.ud = new UserDao(dbId);
+        } catch (Exception e) {
+            System.out.println(e);
         }
         
         this.loggedIn = null;
@@ -49,7 +50,6 @@ public class UserService {
         try {
             ud.create(u);
             login(u);
-            System.out.println("logattu");
         } catch (Exception e) {
             System.out.println("Ei voitu lisätä käyttäjää." + e);
         }
@@ -66,5 +66,9 @@ public class UserService {
     public User getLoggedIn() {
         return this.loggedIn;
     }
+    
+    public UserDao getDao() {
+        return this.ud;
+    } 
             
 }

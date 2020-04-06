@@ -9,14 +9,15 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 
 <h2>Perusversion tarjoama toiminnallisuus</h2>
 
-* käyttäjähallinta *tehty*
-  * uuden käyttäjän luominen *tehty*
-  * käyttäjän sisäänkirjautuminen *tehty*
-* käyttäjä voi listata järjestelmässä olevat reseptit ja niiden tiedot *tehty*
+* käyttäjähallinta **tehty**
+  * uuden käyttäjän luominen **tehty**
+  * käyttäjän sisäänkirjautuminen **tehty**
+* käyttäjä voi listata järjestelmässä olevat reseptit ja niiden tiedot **tehty**
 * käyttäjä voi muokata ruokalajin nimeä
-* käyttäjä voi lisätä uusia reseptejä *tehty*
+* käyttäjä voi lisätä uusia reseptejä **tehty**
 * käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita
-* käyttäjä voi generoida arkiviikon ruokalistan ja tulostaa sen tiedostoon
+* käyttäjä voi generoida arkiviikon ruokalistan 
+* ruokalista voidaan tulostaa erilliseen tiedostoon
 * graafinen käyttöliittymä
 
 <h2>Jatkokehitysideoita</h2>

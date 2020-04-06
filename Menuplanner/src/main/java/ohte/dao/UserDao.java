@@ -19,8 +19,11 @@ public class UserDao implements Dao<User, String> {
     private Statement s;
     private PreparedStatement p;
     private ResultSet r;
+    private String databaseId;
     
-    public UserDao() throws SQLException {
+    public UserDao(String dbId) throws SQLException {
+        databaseId = dbId;
+        
         connect();
         s = db.createStatement();
         
@@ -122,7 +125,7 @@ public class UserDao implements Dao<User, String> {
     @Override
     public void connect() throws SQLException {
         try {
-            db = DriverManager.getConnection("jdbc:sqlite:users.db");
+            db = DriverManager.getConnection("jdbc:sqlite:"+databaseId+".db");
         } catch (Exception e) {
             System.out.println(e);
         }
