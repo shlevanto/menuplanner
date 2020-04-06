@@ -22,5 +22,6 @@ pv | aika | kuvaus
 **yht.** | **23** |
 =======
 5.4. | 0,5 | Vaatimusmäärittelyn päivittäminen, konfigurointitiedostojen suunnittelu
-**yht.** | **22,5** |
+6.4. | 1 | Testitietokanta testaamista varten
+**yht.** | **23,5** |
 >>>>>>> f097dcbe54341758179eb8dc106a3038da18d826
