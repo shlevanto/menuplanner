@@ -81,7 +81,11 @@ public class UserServiceTest {
     @Test
     public void create() {
         //checks that created user ends up in database
-        us.create(u);
+        try {
+            us.create(u);
+        } catch (Exception e) {
+            
+        }
         assertEquals(true, us.check(u));
     }
     
@@ -89,7 +93,13 @@ public class UserServiceTest {
     public void createAndLogin() {
         // checks that the created user is logged in
         User v = new User("Pertti");
-        us.create(v);
+        
+        try { 
+            us.create(v);
+        } catch (Exception e) {
+            
+        }
+        
         us.login(v);
         assertEquals(v, us.getLoggedIn());    
     }
@@ -122,9 +132,13 @@ public class UserServiceTest {
     }
     
     @Test(expected = SQLException.class)
-    public void userAlreadyInDB() {
-        us.create(new User("u"));
-        us.create(new User("u"));
+    public void userAlreadyInDB() throws SQLException {
+        try {
+            us.create(new User("u"));
+            us.create(new User("u"));
+        } catch (Exception e) {
+            throw new SQLException("");
+        }
         
     }
     // TODO add test methods here.
