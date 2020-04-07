@@ -39,8 +39,9 @@ Lisäksi:
 käyttäjätietokannan nimi config -tiedostosta
 
 mahdollisuus määritellä proteiinit ja lisukkeet config -tiedostossa
-<<<<<<< HEAD
-=======
 
-testejä varten testitietokanta
->>>>>>> 7a3f3f875411c98b3cb1c7b875796d75bfe77aca
+testejä varten testitietokanta, User on tehty pitää viellä tehdä recipes
+
+<h2>Toiminnallisuuksista</h2>
+
+Resepteille pitää lisätä priority ruokalistan arpomista varten.
