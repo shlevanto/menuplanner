@@ -12,6 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.*;
+import java.io.File;
 
 import ohte.domain.*;
 import ohte.dao.*;
@@ -61,6 +62,13 @@ public class UserServiceTest {
         db.close();
         }
     }
+    
+    @AfterClass
+    public static void removeFiles() {
+        File f = new File("test.db");
+        f.delete();
+    }
+    
     
     
     @Test
