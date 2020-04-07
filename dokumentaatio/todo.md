@@ -44,4 +44,4 @@ testejä varten testitietokanta, User on tehty pitää viellä tehdä recipes
 
 <h2>Toiminnallisuuksista</h2>
 
-Resepteille pitää lisätä priority ruokalistan arpomista varten.
+~~Resepteille pitää lisätä priority ruokalistan arpomista varten.~~

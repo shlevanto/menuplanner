@@ -69,7 +69,11 @@ public class UI {
                     prompt = scanner.nextLine();
 
                     if (prompt.equals("k")) {
-                        us.create(u);
+                        try {
+                            us.create(u);
+                        } catch (Exception e) {
+                            
+                        }
                         System.out.println("Luotu uusi käyttäjä " + u.getUid());
                     } else {
                         continue;
@@ -98,9 +102,9 @@ public class UI {
             System.out.println("Valitse tominnallisuus: ");
             System.out.println("[1] listaa reseptit");
             System.out.println("[2] lisää resepti");
-            System.out.println("[3] muokkaa reseptiä");
+            //System.out.println("[3] muokkaa reseptiä");
             System.out.println("[4] poista resepti");
-            System.out.println("[5] muodosta ruokalista");
+            //System.out.println("[5] muodosta ruokalista");
             System.out.println("[x] lopeta");
             System.out.print("> ");
 

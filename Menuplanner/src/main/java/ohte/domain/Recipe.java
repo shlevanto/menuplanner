@@ -16,12 +16,14 @@ public class Recipe {
     private String protein;
     private String side;
     private String date;
+    public int priority;
         
     public Recipe(String name, String protein, String side) {
         this.name = name;
         this.protein = protein;
         this.side = side;   
         this.date = ""; 
+        this.priority = -1;
     }
     
     public Recipe(String name, String protein, String side, String date) {
@@ -29,6 +31,15 @@ public class Recipe {
         this.protein = protein;
         this.side = side;
         this.date = date; 
+        this.priority = -1;
+    }
+    
+    public Recipe(String name, String protein, String side, String date, int priority) {
+        this.name = name;
+        this.protein = protein;
+        this.side = side;
+        this.date = date; 
+        this.priority = priority;
     }
     
     
