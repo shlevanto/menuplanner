@@ -24,5 +24,6 @@ public interface Dao<T, K> {
     List<T> list() throws SQLException;
     
     void connect() throws SQLException;
+    
    
 }

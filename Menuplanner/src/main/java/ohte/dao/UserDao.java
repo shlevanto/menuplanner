@@ -5,9 +5,10 @@
  */
 package ohte.dao;
 
+import java.io.FileInputStream;
 import java.sql.*;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Properties;
 import ohte.domain.User;
 
 /**
@@ -21,7 +22,9 @@ public class UserDao implements Dao<User, String> {
     private ResultSet r;
     private String databaseId;
     
+    
     public UserDao(String dbId) throws SQLException {
+        
         databaseId = dbId;
         
         connect();
