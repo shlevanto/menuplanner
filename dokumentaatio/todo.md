@@ -40,13 +40,13 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 - Tuntikirjanpito on ajantasalla
   - **Tuntien summan tulee olla merkittynä**
   - Tuntikirjanpitoon ei merkitä laskareihin käytettyä aikaa
-- Palautusrepositorioosi voi tehdä GitHub-issuieta, ks [ohje](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/tehtavat/harjoitustyo_viikko5.md#issueiden-salliminen)
+~~- Palautusrepositorioosi voi tehdä GitHub-issuieta, ks [ohje](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/tehtavat/harjoitustyo_viikko5.md#issueiden-salliminen)~~
 - Repositorion README.md kunnossa
   - tiedosto on kurssin tämän vaiheen osalta relevantin sisällön suhteen samankaltainen kuin [referenssisovelluksen](https://github.com/mluukkai/OtmTodoApp) README.md, eli siellä on ainakin seuraavat
-    - harjoitustyön aiheen lyhyt kuvas
-    - linkit vaatimusmäärittelyyn, arkkitehtuuridokumenttiin ja tuntikirjanpitoon
+    ~~- harjoitustyön aiheen lyhyt kuvaus~~
+    ~~- linkit vaatimusmäärittelyyn, arkkitehtuuridokumenttiin ja tuntikirjanpitoon~~
     - linkki releaseen
-    - ohjeet komentoriviltä suoritettaviin toimenpiteisiin (testaus, testiraportin suoritus, suoritettavan jarin generointi, checkstyletarkastuksen suorittaminen)
+    ~~- ohjeet komentoriviltä suoritettaviin toimenpiteisiin (testaus, testiraportin suoritus, suoritettavan jarin generointi, checkstyletarkastuksen suorittaminen)~~
 
 <h2>Lisäksi</h2>
 

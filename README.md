@@ -33,11 +33,11 @@ Testausdokumentti
 
 Testit suoritetaan komennolla
 
-``` mvn test ```
+<code>mvn test </code>
 
 Testikattavuusraportti luodaan komennolla
 
-``` mvn jacoco:report ```
+<code>mvn jacoco:report</code>
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 
@@ -45,7 +45,7 @@ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jac
 
 Komento
 
-``` mvn compile exec:java -Dexec.mainClass=ohte.main.Main ```
+<code>mvn compile exec:java -Dexec.mainClass=ohte.main.Main</code>
 
 rakentaa ja suorittaa sovelluksen komentoriviltä.
 
@@ -53,7 +53,7 @@ rakentaa ja suorittaa sovelluksen komentoriviltä.
 
 Suoritettavan jarin generointi tapahtuu komennolla
 
-```mvn package```
+<code>mvn package</code>
 
 Komento generoi hakemistoon target suoritettavan jar-tiedoston Menuplanner-1.0-SNAPSHOT.jar
 
@@ -61,7 +61,7 @@ Komento generoi hakemistoon target suoritettavan jar-tiedoston Menuplanner-1.0-S
 
 Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
 
-```mvn jxr:jxr checkstyle:checkstyle```
+<code>mvn jxr:jxr checkstyle:checkstyle</code>
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
 
