@@ -90,15 +90,15 @@ public class RecipeDao implements Dao<Recipe, String> {
     }
     
     @Override
-    public Recipe update(Recipe u) throws SQLException {
+    public Recipe update(Recipe r) throws SQLException {
         connect();
         
         p = db.prepareStatement("UPDATE Recipes SET name = (?), protein = (?), side = (?), date = (?) WHERE name = (?)");
-        p.setString(1, u.getDate());
-        p.setString(2, u.getName());
-        p.setString(3, u.getProtein());
-        p.setString(4, u.getDate());
-        p.setString(5, u.getName());
+        p.setString(1, r.getName());
+        p.setString(2, r.getProtein());
+        p.setString(3, r.getSide());
+        p.setString(4, r.getDate());
+        p.setString(5, r.getName());
         
         try {
             p.executeUpdate();
@@ -109,13 +109,13 @@ public class RecipeDao implements Dao<Recipe, String> {
         p.close();
         db.close();
         
-        return read(u.getName());
+        return read(r.getName());
     }
     
     @Override
     public List<Recipe> list() throws SQLException {
         connect();
-        p = db.prepareStatement("SELECT * FROM Recipes");
+        p = db.prepareStatement("SELECT * FROM Recipes ORDER BY date DESC");
         
         ArrayList<Recipe> recipeList = new ArrayList<>();
         
