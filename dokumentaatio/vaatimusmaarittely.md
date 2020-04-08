@@ -15,8 +15,8 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 * käyttäjä voi listata järjestelmässä olevat reseptit ja niiden tiedot **tehty**
 * käyttäjä voi muokata ruokalajin nimeä
 * käyttäjä voi lisätä uusia reseptejä **tehty**
-* käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita
-* käyttäjä voi generoida arkiviikon ruokalistan 
+* käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita **config.properties**
+* käyttäjä voi generoida arkiviikon ruokalistan **tehty**
 * ruokalista voidaan tulostaa erilliseen tiedostoon
 * graafinen käyttöliittymä
 
@@ -26,3 +26,4 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 * ostoslistan generoiminen viikon ruokalistan perusteella
 * lisätunnuksen lisääminen ruokiin, esim. ruoan tyyli (aasialainen, italialainen, kevyt), valmistumisen nopeus
 * generoidun ruokalistan muokkaaminen ennen sen tulostamista
+* mahdollisuus valita tietyt ruokalajit listalle valmiiksi ja antaa sovelluksen arpoa loput
