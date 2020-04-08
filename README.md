@@ -3,11 +3,15 @@
 <h2>Työsuunnitelma</h2>
 
 <h3>Viikko 5</h3>
+
 - config -tiedosto
 - ruokalistan muodostamistoiminto
 - reseptien muokkaamistoiminto
 
-<h3>Viikko 6</h3>
+<h3>Viikot 6-7</h3>
+
+- graafinen käyttöliittymä
+- dokumentointi
 
 Menuplanner auttaa arkiviikon ruokalistojen suunnittelussa. Sovellukseen on mahdollista tallettaa ruokien nimiä ja se generoi viikottaisen ruokalistan ruokien ominaisuuksien perusteella.
 
