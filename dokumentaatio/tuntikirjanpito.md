@@ -17,11 +17,8 @@ pv | aika | kuvaus
 2.4. | 1 | Tietokantakonffausta
 3.4. | 1,5 | Tietokantakonffausta, päivämääräkentän päivitystoiminto
 3.4. | 0,5 | Dao -luokkien siivoamista
-<<<<<<< HEAD
 4.4 | 1 | luokka- ja pakkauskaaviot
-**yht.** | **23** |
-=======
 5.4. | 0,5 | Vaatimusmäärittelyn päivittäminen, konfigurointitiedostojen suunnittelu
 6.4. | 1,5 | Testitietokanta testaamista varten, testejä
-**yht.** | **24** |
->>>>>>> f097dcbe54341758179eb8dc106a3038da18d826
+8.4. | 2,5 | Konfigurointitiedosto käyttöön, testien kirjoittamista
+**yht.** | **25** |
