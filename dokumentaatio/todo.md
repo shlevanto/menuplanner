@@ -50,8 +50,8 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 
 <h2>Lisäksi</h2>
 
-- käyttäjätietokannan nimi config -tiedostosta
+~~- käyttäjätietokannan nimi config -tiedostosta~~
 
-- mahdollisuus määritellä proteiinit ja lisukkeet config -tiedostossa
+~~- mahdollisuus määritellä proteiinit ja lisukkeet config -tiedostossa~~
 
-- testejä varten testitietokanta, User on tehty pitää viellä tehdä recipes
+- testejä varten testitietokanta, User on tehty pitää vielä tehdä recipes
