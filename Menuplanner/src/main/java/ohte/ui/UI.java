@@ -132,7 +132,7 @@ public class UI {
                     ArrayList<Recipe> list = rs.list();
                     
                     for (Recipe r : list) {
-                        System.out.println(r.getName() + " (" + r.getProtein() + ", " + r.getSide() + ")");
+                        System.out.println(r.toString());
                     }
                     System.out.println("");
                 } catch (Exception e) {
@@ -191,11 +191,20 @@ public class UI {
             }
             
             if (prompt.equals("5")) {
+                Recipe[] tuloste = new Recipe[5];
+                
                 try {
                     Menu m = new Menu(rs, proteins, sides);
+                    tuloste = m.generate();
                 } catch (Exception e) {
                     
                 }
+                
+                for (int i = 0; i < 5; i++) {
+                    System.out.println(tuloste[i].toString());
+                }
+                
+                
             }
 
         }

@@ -68,8 +68,6 @@ public class RecipeService {
         String updatedDate = now.format(format);
         recipe.setDate(updatedDate);
         
-        // testaus
-        //recipe.setDate("1900-01-01 23:59:59");
         
         try {
             returnedRecipe = rd.update(recipe);

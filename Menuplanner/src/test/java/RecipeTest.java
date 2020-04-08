@@ -37,40 +37,18 @@ public class RecipeTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void RecipeNoDateNoPriority1() {
+    public void RecipeNoDate() {
        r = new Recipe("a", proteins.last(), sides.last());
        assertEquals("", r.getDate());
     }
  
+        
     @Test
-    public void RecipeNoDateNoPriority2() {
-       r = new Recipe("a", proteins.last(), sides.last());
-       assertEquals(-1, r.getPriority());
-    }
-    
-    @Test
-    public void RecipeWithDateNoPriority1() {
+    public void RecipeWithDate() {
         r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12");
         assertNotEquals("", r.getDate());
     }
-    
-    @Test
-    public void RecipeWithDateNoPriority2() {
-        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12");
-        assertEquals(-1, r.getPriority());
-    }
-    
-    @Test
-    public void RecipeWithDateAndPriority1() {
-        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12", 1);
-        assertNotEquals("", r.getDate());
-    }
-    
-    @Test 
-    public void RecipeWithDateAndPriority2() {
-        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12", 1);
-        assertEquals(1, r.getPriority());
-    }
+
     
     @Test
     public void gettersAndSetters() {
@@ -83,10 +61,7 @@ public class RecipeTest {
         r.setSide(sides.last());
         assertNotEquals("", r.getSide());
         r.setDate("2020-01-01 12:30:12");
-        assertNotEquals("", r.getDate());
-        r.setPriority(1);
-        assertNotEquals(-1, r.getPriority());
-        
+        assertNotEquals("", r.getDate()); 
         
     }
      
