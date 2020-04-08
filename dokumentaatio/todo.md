@@ -56,3 +56,5 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 
 - testejä varten testitietokanta, User on tehty pitää vielä tehdä recipes
 - voisiko tietokannassa olla aina valmiina tietty perussetti, ehkä niin että config tiedosto ajaisi ne valmiiksi tms.
+- uuden reseptin päiväärän pitää olla wanha, jotta uudet reseptit tulevat päällimmäisenä käyttöön, pieni satunnaiselementti esim. mm:ss
+- weeklymenuun vähän enemmän satunnaisutta
