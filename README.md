@@ -3,11 +3,13 @@
 <h2>Työsuunnitelma</h2>
 
 <h3>Viikko 5</h3>
+
 - config -tiedosto
 - ruokalistan muodostamistoiminto
 - reseptien muokkaamistoiminto
 
 <h3>Viikot 6-7</h3>
+
 - graafinen käyttöliittymä
 - dokumentointi
 
