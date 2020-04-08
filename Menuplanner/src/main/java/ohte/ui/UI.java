@@ -17,13 +17,24 @@ public class UI {
     private Scanner scanner;
     private UserService us;
     private RecipeService rs;
+    private Setup setup;
+    private ArrayList<String> proteins;
+    private ArrayList<String> sides;
     
-    public UI(Scanner scanner) {
+    public UI(Scanner scanner, Setup setup) {
+        
+        this.setup = setup;
         this.scanner = scanner;
+        
         try {
-            this.us = new UserService("users");
+            this.us = new UserService(this.setup.initUsersDb());
+        } catch (Exception e) {           
+        }
+        
+        try {
+            this.proteins = this.setup.initProteins();
+            this.sides = this.setup.initSides();
         } catch (Exception e) {
-            
             
         }
     }
@@ -132,26 +143,26 @@ public class UI {
                 String protein;
                 
                 while (true) {
-                    System.out.println("Mikä on reseptin pääraaka-aine? (kasvis, kala, kana, liha):");
+                    System.out.println("Mikä on reseptin pääraaka-aine? " + this.proteins);
                     
                
                     protein = scanner.nextLine();
                    
-                    if (protein.equals("kasvis") || protein.equals("kala") || protein.equals("kana") || protein.equals("liha")) {
+                    if (this.proteins.contains(protein)) {
                         break;
                     }
                 }
-                
+             
                 
                 String side;
                 
                 while (true) {
-                    System.out.println("Mikä on reseptin lisuke? (pasta, riisi, peruna, keitto, muu):");
+                    System.out.println("Mikä on reseptin lisuke? " + this.sides);
                    
                 
                     side = scanner.nextLine();
                    
-                    if (side.equals("pasta") || side.equals("riisi") || side.equals("peruna") || side.equals("keitto") || side.equals("muu")) {
+                    if (this.sides.contains(side)) {
                         break;
                     }
                 }

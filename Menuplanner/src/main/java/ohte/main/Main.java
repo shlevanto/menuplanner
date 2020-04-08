@@ -10,6 +10,7 @@ package ohte.main;
  * @author levantsi
  */
 import ohte.ui.UI;
+import ohte.domain.Setup;
 import ohte.dao.*;
 
 import java.sql.*;
@@ -33,8 +34,14 @@ public class Main {
         //GraphicUI.main(args);
         
         Scanner scanner = new Scanner(System.in);
-        UI ui = new UI(scanner);
-        ui.login();
+        try {
+            Setup setup = new Setup();
+            UI ui = new UI(scanner, setup);
+            ui.login();
+        } catch (Exception e) {
+            System.out.println("Problems with config file.");
+        }
+        
         
        
     }
