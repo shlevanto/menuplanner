@@ -49,7 +49,6 @@ public class RecipeTest {
         assertNotEquals("", r.getDate());
     }
 
-    
     @Test
     public void gettersAndSetters() {
         r = new Recipe("","","");
@@ -64,5 +63,6 @@ public class RecipeTest {
         assertNotEquals("", r.getDate()); 
         
     }
+    
      
 }

@@ -41,6 +41,20 @@ public class RecipeDao implements Dao<Recipe, String> {
         }
      
         s.close();
+        
+        // oletusreseptit tietokantaan
+        create(new Recipe("makaronilaatikko", "liha", "pasta"));
+        create(new Recipe("soijalasagne", "kasvis", "pasta"));
+        create(new Recipe("kalakeitto", "kala", "keitto"));
+        create(new Recipe("nakkikeitto", "liha", "keitto"));
+        create(new Recipe("tonnikala-pastavuoka", "kala", "pasta"));
+        create(new Recipe("jansoninkiusaus", "kala", "peruna"));
+        create(new Recipe("lihapullat ja muusi", "liha", "peruna"));
+        create(new Recipe("nyhtökauracurry", "kasvis", "riisi"));
+        create(new Recipe("kanankoivet riisipedillä", "kana", "riisi"));
+        create(new Recipe("kasvissosekeitto", "kasvis", "keitto"));
+        create(new Recipe("valkopapupasta", "kasvis", "pasta"));
+        create(new Recipe("pyttipannu", "liha", "peruna"));
         db.close();
     }
   
@@ -115,7 +129,7 @@ public class RecipeDao implements Dao<Recipe, String> {
     @Override
     public List<Recipe> list() throws SQLException {
         connect();
-        p = db.prepareStatement("SELECT * FROM Recipes ORDER BY date DESC");
+        p = db.prepareStatement("SELECT * FROM Recipes ORDER BY date");
         
         ArrayList<Recipe> recipeList = new ArrayList<>();
         

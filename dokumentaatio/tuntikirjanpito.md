@@ -21,5 +21,5 @@ pv | aika | kuvaus
 5.4. | 0,5 | Vaatimusmäärittelyn päivittäminen, konfigurointitiedostojen suunnittelu
 6.4. | 1,5 | Testitietokanta testaamista varten, testejä
 8.4. | 3,5 | Konfigurointitiedosto käyttöön, testien kirjoittamista, riippuvuuksien injektointi (pääraaka-aineet ja lisukkeet)
-8.4. | 2 | Menun arpomisen ensimmäinen toimiva versio tehty
-**yht.** | **28** |
+8.4. | 3 | Menun arpomisen ensimmäinen toimiva versio tehty
+**yht.** | **29** |

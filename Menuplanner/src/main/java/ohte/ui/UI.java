@@ -112,6 +112,7 @@ public class UI {
         while (true) {
             System.out.print("Kirjautuneena " + us.getLoggedIn().getUid() + "\n");
             System.out.println("------------");
+                    
             System.out.println("Valitse tominnallisuus: ");
             System.out.println("[1] listaa reseptit");
             System.out.println("[2] lisää resepti");
@@ -196,12 +197,16 @@ public class UI {
                 try {
                     Menu m = new Menu(rs, proteins, sides);
                     tuloste = m.generate();
+                    m.updateUsedRecipes();
                 } catch (Exception e) {
                     
                 }
                 
+                String[] viikko = {"ma", "ti", "ke", "to", "pe"};
+                
                 for (int i = 0; i < 5; i++) {
-                    System.out.println(tuloste[i].toString());
+                    System.out.print(viikko[i] + ": " + tuloste[i].toString());
+                    System.out.println("");
                 }
                 
                 

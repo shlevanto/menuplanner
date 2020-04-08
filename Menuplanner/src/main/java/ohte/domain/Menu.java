@@ -78,23 +78,20 @@ public class Menu {
             }
             
             if (!recipePool.get(sidesArray[j]).isEmpty()) {
-                if (j > sidesArray.length) j = 0;
                 this.weeklyMenu[i] = recipePool.get(sidesArray[j]).poll();
             } else {
                 while (true) {
                     j++;
-                    if (j > 5) j = 0;
-                    
+                    if (j > 5) {
+                        j = 0;
+                    }
                     if (!recipePool.get(sidesArray[j]).isEmpty()) {
                         this.weeklyMenu[i] = recipePool.get(sidesArray[j]).poll();
                         break;
                     }
                 }
-            }
-            
+            } 
         }
-        
-        updateUsedRecipes();
         
         return weeklyMenu;
     }
