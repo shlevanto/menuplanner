@@ -45,12 +45,11 @@ public class RecipeService {
         return recipe;
     }
     
-    public void list() throws SQLException {
+    public ArrayList<Recipe> list() throws SQLException {
         ArrayList<Recipe> recipeList = (ArrayList) rd.list();
         
-        for (Recipe r : recipeList) {
-            System.out.println(r.getName() + " (" + r.getProtein() + ", " + r.getSide() + ")");
-        }
+        
+        return recipeList;
     }
     
     public void remove(String name) {

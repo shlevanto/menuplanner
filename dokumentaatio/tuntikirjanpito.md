@@ -20,5 +20,5 @@ pv | aika | kuvaus
 4.4 | 1 | luokka- ja pakkauskaaviot
 5.4. | 0,5 | Vaatimusmäärittelyn päivittäminen, konfigurointitiedostojen suunnittelu
 6.4. | 1,5 | Testitietokanta testaamista varten, testejä
-8.4. | 2,5 | Konfigurointitiedosto käyttöön, testien kirjoittamista
-**yht.** | **25** |
+8.4. | 3,5 | Konfigurointitiedosto käyttöön, testien kirjoittamista, riippuvuuksien injektointi (pääraaka-aineet ja lisukkeet)
+**yht.** | **26** |

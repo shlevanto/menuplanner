@@ -5,8 +5,10 @@
  */
 package ohte.ui;
 
+import ohte.setup.Setup;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import ohte.domain.*;
 
 /**
@@ -18,8 +20,8 @@ public class UI {
     private UserService us;
     private RecipeService rs;
     private Setup setup;
-    private ArrayList<String> proteins;
-    private ArrayList<String> sides;
+    private TreeSet<String> proteins;
+    private TreeSet<String> sides;
     
     public UI(Scanner scanner, Setup setup) {
         
@@ -115,7 +117,7 @@ public class UI {
             System.out.println("[2] lisää resepti");
             //System.out.println("[3] muokkaa reseptiä");
             System.out.println("[4] poista resepti");
-            //System.out.println("[5] muodosta ruokalista");
+            System.out.println("[5] muodosta ruokalista");
             System.out.println("[x] lopeta");
             System.out.print("> ");
 
@@ -127,7 +129,11 @@ public class UI {
             
             if (prompt.equals(("1"))) {
                 try {
-                    rs.list();
+                    ArrayList<Recipe> list = rs.list();
+                    
+                    for (Recipe r : list) {
+                        System.out.println(r.getName() + " (" + r.getProtein() + ", " + r.getSide() + ")");
+                    }
                     System.out.println("");
                 } catch (Exception e) {
                     System.out.println(e);
@@ -185,12 +191,11 @@ public class UI {
             }
             
             if (prompt.equals("5")) {
-                System.out.println("Mikä resepti päivitetään?");
-                String name = scanner.nextLine();
-                
-                Recipe paivitettava = rs.read(name);
-                
-                rs.updateDate(paivitettava);
+                try {
+                    Menu m = new Menu(rs, proteins, sides);
+                } catch (Exception e) {
+                    
+                }
             }
 
         }

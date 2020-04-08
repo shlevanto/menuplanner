@@ -10,7 +10,7 @@ package ohte.main;
  * @author levantsi
  */
 import ohte.ui.UI;
-import ohte.domain.Setup;
+import ohte.setup.Setup;
 import ohte.dao.*;
 
 import java.sql.*;

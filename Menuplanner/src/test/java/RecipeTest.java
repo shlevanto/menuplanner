@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 
-import java.util.ArrayList;
+import ohte.setup.Setup;
+import java.util.TreeSet;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import ohte.domain.*;
@@ -16,12 +17,12 @@ import ohte.domain.*;
 public class RecipeTest {
     Setup s;
     Recipe r;
-    ArrayList<String> proteins;
-    ArrayList<String> sides;
+    TreeSet<String> proteins;
+    TreeSet<String> sides;
     
     public RecipeTest() {
-        proteins = new ArrayList<>();
-        sides = new ArrayList<>();
+        proteins = new TreeSet<>();
+        sides = new TreeSet<>();
         
         try {
             Setup s = new Setup();
@@ -37,37 +38,37 @@ public class RecipeTest {
     //
     @Test
     public void RecipeNoDateNoPriority1() {
-       r = new Recipe("a", proteins.get(1), sides.get(1));
+       r = new Recipe("a", proteins.last(), sides.last());
        assertEquals("", r.getDate());
     }
  
     @Test
     public void RecipeNoDateNoPriority2() {
-       r = new Recipe("a", proteins.get(1), sides.get(1));
+       r = new Recipe("a", proteins.last(), sides.last());
        assertEquals(-1, r.getPriority());
     }
     
     @Test
     public void RecipeWithDateNoPriority1() {
-        r = new Recipe("a", proteins.get(1), sides.get(1), "2020-01-01 12:30:12");
+        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12");
         assertNotEquals("", r.getDate());
     }
     
     @Test
     public void RecipeWithDateNoPriority2() {
-        r = new Recipe("a", proteins.get(1), sides.get(1), "2020-01-01 12:30:12");
+        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12");
         assertEquals(-1, r.getPriority());
     }
     
     @Test
     public void RecipeWithDateAndPriority1() {
-        r = new Recipe("a", proteins.get(1), sides.get(1), "2020-01-01 12:30:12", 1);
+        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12", 1);
         assertNotEquals("", r.getDate());
     }
     
     @Test 
     public void RecipeWithDateAndPriority2() {
-        r = new Recipe("a", proteins.get(1), sides.get(1), "2020-01-01 12:30:12", 1);
+        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12", 1);
         assertEquals(1, r.getPriority());
     }
     
@@ -77,9 +78,9 @@ public class RecipeTest {
         
         r.setName("a");
         assertNotEquals("", r.getName());
-        r.setProtein(proteins.get(0));
+        r.setProtein(proteins.last());
         assertNotEquals("", r.getProtein());
-        r.setSide(sides.get(0));
+        r.setSide(sides.last());
         assertNotEquals("", r.getSide());
         r.setDate("2020-01-01 12:30:12");
         assertNotEquals("", r.getDate());

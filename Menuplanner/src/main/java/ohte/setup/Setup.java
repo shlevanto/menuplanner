@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohte.domain;
+package ohte.setup;
 
 import java.io.FileInputStream;
 import java.util.Properties;
-import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.Arrays;
 
 /**
@@ -17,21 +17,21 @@ import java.util.Arrays;
 public class Setup {
     private Properties properties;
     private String dbId;
-    private ArrayList<String> proteins;
-    private ArrayList<String> sides;
+    private TreeSet<String> proteins;
+    private TreeSet<String> sides;
     
     public Setup() throws Exception {
         this.properties = new Properties();
         this.properties.load(new FileInputStream("config.properties"));
-        this.proteins = new ArrayList<>();
-        this.sides = new ArrayList<>();
+        this.proteins = new TreeSet<>();
+        this.sides = new TreeSet<>();
     }
     
     public String initUsersDb() throws Exception {
         return this.properties.getProperty("usersDataBase");
     }
     
-    public ArrayList<String> initProteins() {
+    public TreeSet<String> initProteins() {
         String[] p = this.properties.getProperty("proteins").split(",");
         
    
@@ -42,7 +42,7 @@ public class Setup {
         return this.proteins;
     }
     
-    public ArrayList<String> initSides() {
+    public TreeSet<String> initSides() {
         String[] s = this.properties.getProperty("sides").split(",");
         
    
