@@ -39,7 +39,7 @@ public class RecipeTest {
     @Test
     public void RecipeNoDate() {
        r = new Recipe("a", proteins.last(), sides.last());
-       assertEquals("", r.getDate());
+       assertNotEquals("", r.getDate());
     }
  
         
