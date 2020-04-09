@@ -26,7 +26,7 @@ public class RecipeDao implements Dao<Recipe, String> {
     private ResultSet r;
     private String databaseId;
     
-    public RecipeDao(String user) throws SQLException {
+    public RecipeDao(String user, ArrayList<Recipe> recipes) throws SQLException {
         this.databaseId = user;
         
         connect();
@@ -37,24 +37,18 @@ public class RecipeDao implements Dao<Recipe, String> {
             s.execute("CREATE TABLE Recipes (id INTEGER PRIMARY KEY, name TEXT UNIQUE, protein TEXT, side TEXT, date TEXT)");
             s.execute("CREATE INDEX idx_name ON Recipes (name)");
         } catch (Exception e) {
-        
+            s.close();
+            db.close();
+            return;
         }
      
         s.close();
         
         // oletusreseptit tietokantaan
-        create(new Recipe("makaronilaatikko", "liha", "pasta"));
-        create(new Recipe("soijalasagne", "kasvis", "pasta"));
-        create(new Recipe("kalakeitto", "kala", "keitto"));
-        create(new Recipe("nakkikeitto", "liha", "keitto"));
-        create(new Recipe("tonnikala-pastavuoka", "kala", "pasta"));
-        create(new Recipe("jansoninkiusaus", "kala", "peruna"));
-        create(new Recipe("lihapullat ja muusi", "liha", "peruna"));
-        create(new Recipe("nyhtökauracurry", "kasvis", "riisi"));
-        create(new Recipe("kanankoivet riisipedillä", "kana", "riisi"));
-        create(new Recipe("kasvissosekeitto", "kasvis", "keitto"));
-        create(new Recipe("valkopapupasta", "kasvis", "pasta"));
-        create(new Recipe("pyttipannu", "liha", "peruna"));
+        for (Recipe r : recipes) {
+            create(r);
+        }
+        
         db.close();
     }
   
@@ -62,10 +56,11 @@ public class RecipeDao implements Dao<Recipe, String> {
     public void create(Recipe recipe) throws SQLException {
         connect();
         
-        p = db.prepareStatement("INSERT INTO Recipes(name, protein, side, date) VALUES (?,?,?,datetime('now','localtime'))");
+        p = db.prepareStatement("INSERT INTO Recipes(name, protein, side, date) VALUES (?,?,?,datetime(?))");
         p.setString(1, recipe.getName());
         p.setString(2, recipe.getProtein());
         p.setString(3, recipe.getSide());
+        p.setString(4, recipe.getDate());
         
         try {
             p.executeUpdate();

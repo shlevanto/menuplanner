@@ -5,10 +5,13 @@
  */
 package ohte.setup;
 
+import ohte.domain.Recipe;
 import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.Properties;
 import java.util.TreeSet;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,12 +22,15 @@ public class Setup {
     private String dbId;
     private TreeSet<String> proteins;
     private TreeSet<String> sides;
+    private ArrayList<Recipe> recipes;
     
     public Setup() throws Exception {
         this.properties = new Properties();
-        this.properties.load(new FileInputStream("config.properties"));
+        FileInputStream f = new FileInputStream("config.properties");
+        this.properties.load(new InputStreamReader(f,Charset.forName("UTF-8")));
         this.proteins = new TreeSet<>();
         this.sides = new TreeSet<>();
+        this.recipes = new ArrayList<>();
     }
     
     public String initUsersDb() throws Exception {
@@ -52,6 +58,16 @@ public class Setup {
         
         return this.sides;
         
+    }
+    
+    public ArrayList<Recipe> initRecipes() {
+        String[] r = this.properties.getProperty("recipes").split(",");
+        
+        for (int i = 0; i < r.length-3; i += 3) {
+            recipes.add(new Recipe(r[i],r[i+1],r[1+2]));
+        }
+        
+        return this.recipes;
     }
     
 }

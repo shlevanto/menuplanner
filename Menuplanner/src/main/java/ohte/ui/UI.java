@@ -98,7 +98,7 @@ public class UI {
                 }
             }
         
-            this.rs = new RecipeService(us.getLoggedIn());
+            this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
         
             start();
             break;

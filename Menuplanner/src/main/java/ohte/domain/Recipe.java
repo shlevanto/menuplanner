@@ -6,6 +6,8 @@
 
 package ohte.domain;
 
+import java.util.Random;
+
 /**
  *
  * @author levantsi
@@ -16,13 +18,16 @@ public class Recipe {
     private String protein;
     private String side;
     private String date;
+    private Random r;
     
         
     public Recipe(String name, String protein, String side) {
+        this.r = new Random();
+        int a = r.nextInt(50) + 10;
         this.name = name;
         this.protein = protein;
         this.side = side;   
-        this.date = ""; 
+        this.date = "1900-01-01 00:00:" + a; 
     }
     
     public Recipe(String name, String protein, String side, String date) {

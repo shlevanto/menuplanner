@@ -17,9 +17,9 @@ import ohte.dao.*;
 public class RecipeService {
     private RecipeDao rd;
     
-    public RecipeService(User u) {
+    public RecipeService(User u, ArrayList<Recipe> recipes) {
         try {
-            this.rd = new RecipeDao(u.getUid());
+            this.rd = new RecipeDao(u.getUid(), recipes);
         } catch (Exception e) {
             
         }
