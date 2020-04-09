@@ -164,6 +164,12 @@ public class RecipeDao implements Dao<Recipe, String> {
     @Override
     public void connect() throws SQLException {
         try {
+            Class.forName("org.sqlite.JDBC");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        try {
             db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
         } catch (Exception e) {
             System.out.println(e);
