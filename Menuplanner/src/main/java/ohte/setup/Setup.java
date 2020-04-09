@@ -27,7 +27,7 @@ public class Setup {
     public Setup() throws Exception {
         this.properties = new Properties();
         FileInputStream f = new FileInputStream("config.properties");
-        this.properties.load(new InputStreamReader(f,Charset.forName("UTF-8")));
+        this.properties.load(new InputStreamReader(f, Charset.forName("UTF-8")));
         this.proteins = new TreeSet<>();
         this.sides = new TreeSet<>();
         this.recipes = new ArrayList<>();
@@ -63,8 +63,8 @@ public class Setup {
     public ArrayList<Recipe> initRecipes() {
         String[] r = this.properties.getProperty("recipes").split(",");
         
-        for (int i = 0; i < r.length-3; i += 3) {
-            recipes.add(new Recipe(r[i],r[i+1],r[i+2]));
+        for (int i = 0; i < r.length - 3; i += 3) {
+            recipes.add(new Recipe(r[i], r[i + 1], r[i + 2]));
         }
         
         return this.recipes;
