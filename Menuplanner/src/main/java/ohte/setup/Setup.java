@@ -64,7 +64,7 @@ public class Setup {
         String[] r = this.properties.getProperty("recipes").split(",");
         
         for (int i = 0; i < r.length-3; i += 3) {
-            recipes.add(new Recipe(r[i],r[i+1],r[1+2]));
+            recipes.add(new Recipe(r[i],r[i+1],r[i+2]));
         }
         
         return this.recipes;
