@@ -116,9 +116,8 @@ public class UI {
             System.out.println("Valitse tominnallisuus: ");
             System.out.println("[1] listaa reseptit");
             System.out.println("[2] lisää resepti");
-            //System.out.println("[3] muokkaa reseptiä");
-            System.out.println("[4] poista resepti");
-            System.out.println("[5] muodosta ruokalista");
+            System.out.println("[3] poista resepti");
+            System.out.println("[4] muodosta ruokalista");
             System.out.println("[x] lopeta");
             System.out.print("> ");
 
@@ -174,10 +173,14 @@ public class UI {
                     }
                 }
                 
-                rs.add(name, protein, side);
+                try {
+                    rs.add(name, protein, side);
+                } catch (Exception e) {
+                    
+                }
             }
             
-            if (prompt.equals("4")) {
+            if (prompt.equals("3")) {
                 System.out.println("Minkä reseptin haluat poistaa?");
                 try {
                     rs.list();
@@ -191,7 +194,7 @@ public class UI {
                 rs.remove(removal);
             }
             
-            if (prompt.equals("5")) {
+            if (prompt.equals("4")) {
                 Recipe[] tuloste = new Recipe[5];
                 
                 try {

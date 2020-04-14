@@ -62,8 +62,6 @@ public class Menu {
             i++;
         }
         
-        //System.out.println(Arrays.toString(sidesArray));
-        
     }
     
     public Recipe[] generate() {
@@ -97,8 +95,12 @@ public class Menu {
     }
     
     public void updateUsedRecipes() {
-        for (int i = 0; i < 5; i++) {
-            rs.updateDate(weeklyMenu[i]);
+        try {
+            for (int i = 0; i < 5; i++) {
+                rs.updateDate(weeklyMenu[i]);
+            }
+        } catch (Exception e) {
+            
         }
     }
 }

@@ -29,17 +29,17 @@ public class RecipeService {
         try {
             rd.create(new Recipe(name, protein, side));
         } catch (Exception e) {
-            throw new SQLException ("Ei voitu lisätä reseptiä.");
+            throw new SQLException("Ei voitu lisätä reseptiä.");
         }   
     }
     
-    public Recipe read(String name) throws SQLException{
+    public Recipe read(String name) throws SQLException {
         Recipe recipe = null;
         
         try {
             recipe = rd.read(name);
         } catch (Exception e) {
-            throw new SQLException ("Ei voitu hakea reseptiä " + name);
+            throw new SQLException("Ei voitu hakea reseptiä " + name);
         }
         
         return recipe;
@@ -72,7 +72,7 @@ public class RecipeService {
         try {
             returnedRecipe = rd.update(recipe);
         } catch (Exception e) {
-            throw new SQLException ("Ei voitu päivittää päivämäärää reseptille " + recipe.getName());
+            throw new SQLException("Ei voitu päivittää päivämäärää reseptille " + recipe.getName());
             
         }
     }
