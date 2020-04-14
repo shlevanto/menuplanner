@@ -25,4 +25,5 @@ pv | aika | kuvaus
 9.4. | 1 | Uuteen tietokantaan alustetaan config -tiedostosta oletusreseptit
 9.4. | 1 | mvn package toiminnallisuudet kuntoon
 14.4 | 1,5 | testien kirjoittamista
-**yht.** | **31,5** |
+14.4 | 0,5 | Sekvenssikaavioita
+**yht.** | **32** |
