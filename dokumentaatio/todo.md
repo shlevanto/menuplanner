@@ -12,19 +12,18 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
   - [Ohje](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/release.md) releasen tekemiseen
   - Releaseen on linkki projektin README:stä
 ~~- Ohjelma on kasvanut edellisestä viikosta (0.75p)
-  - Ohjelman suoritettavissa oleva versio on kasvanut edellisestä viikosta _ja_ toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuudesta eli jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta.
-    Merkitse lisäksi tarkastusta varten määrittelydokumenttiin tällä viikolla tekemäsi toiminnallisuudet "tehty" merkinnällä.~~
+~~  - Ohjelman suoritettavissa oleva versio on kasvanut edellisestä viikosta _ja_ toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuudesta eli jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta. ~~
+    ~~ Merkitse lisäksi tarkastusta varten määrittelydokumenttiin tällä viikolla tekemäsi toiminnallisuudet "tehty" merkinnällä.~~
 - Testaus on edennyt (0.5p)
-  - Sovellukselle tulee pystyä generoimaan testikattavuusraportti komennolla <code>mvn test jacoco:report</code>
+  ~~- Sovellukselle tulee pystyä generoimaan testikattavuusraportti komennolla <code>mvn test jacoco:report</code>
   ~~- Käyttöliittymän rakentava koodi [jätetään pois](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/maven.md#koodin-huomiotta-jättäminen-kattavuusraportissa) testikattavuusraportista~~
-  - Sovelluksen testien rivikattavuuden tulee olla vähintään 40%
+  ~~- Sovelluksen testien rivikattavuuden tulee olla vähintään 40% ~~
   ~~- Testien tulee olla mielekkäitä, eli niiden on testattava jotain ohjelman kannalta merkityksellistä asiaa~~
 - Koodin laatu (0.5p)
-  - Sovelluslogiikka on eriytetty käyttöliittymästä
-    - Vihjeitä [täällä](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/java.md) ja [referenssisovelluksessa](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md)
-  - Ohjelman [pakkausrakenne](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/koodin_laatuvaatimukset.md#5-pakkaukset) heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä
+  ~~- Sovelluslogiikka on eriytetty käyttöliittymästä
+    ~~- Ohjelman [pakkausrakenne](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/koodin_laatuvaatimukset.md#5-pakkaukset) heijastaa ohjelman loogista rakennetta ja on nimennältään järkevä~~
   ~~- Checkstyle on käytössä~~
-    - Täydet pisteet Checkstylestä ainoastaan jos ohjelmassa on alle 5 Checkstyle-virhettä
+    ~~- Täydet pisteet Checkstylestä ainoastaan jos ohjelmassa on alle 5 Checkstyle-virhettä~~
     ~~- Käyttöliittymän rakentavan koodin ei tarvitse olla Checkstyle-tarkastelun alla~~
   - Ohjelma ei sisällä suurta määrää toisteista koodia
 - Ohjelman dokumentaatiossa on ainakin yksi sen jotain oleellista toiminnallisuutta kuvaava sekvenssikaavio (0.5p)
@@ -53,7 +52,7 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 ~~- käyttäjätietokannan nimi config -tiedostosta~~
 
 ~~- mahdollisuus määritellä proteiinit ja lisukkeet config -tiedostossa~~
-- Recipes testejä varten testitietokanta
+~~- Recipes testejä varten testitietokanta~~
 ~~- voisiko tietokannassa olla aina valmiina tietty perussetti, ehkä niin että config tiedosto ajaisi ne valmiiksi tms.~~
 ~~- uuden reseptin päiväärän pitää olla wanha, jotta uudet reseptit tulevat päällimmäisenä käyttöön, pieni satunnaiselementti esim. mm:ss~~
 - weeklymenuun vähän enemmän satunnaisutta
