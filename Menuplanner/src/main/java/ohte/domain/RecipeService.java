@@ -25,21 +25,21 @@ public class RecipeService {
         }
     }
     
-    public void add(String name, String protein, String side) {
+    public void add(String name, String protein, String side) throws SQLException {
         try {
             rd.create(new Recipe(name, protein, side));
         } catch (Exception e) {
-            System.out.println("Ei voitu lisätä reseptiä.");
+            throw new SQLException ("Ei voitu lisätä reseptiä.");
         }   
     }
     
-    public Recipe read(String name) {
+    public Recipe read(String name) throws SQLException{
         Recipe recipe = null;
         
         try {
             recipe = rd.read(name);
         } catch (Exception e) {
-            System.out.println("Ei voitu hakea reseptiä " + name);
+            throw new SQLException ("Ei voitu hakea reseptiä " + name);
         }
         
         return recipe;
@@ -60,7 +60,7 @@ public class RecipeService {
         
     }
     
-    public void updateDate(Recipe recipe) {
+    public void updateDate(Recipe recipe) throws SQLException {
         Recipe returnedRecipe = null;
         
         LocalDateTime now = LocalDateTime.now();
@@ -72,8 +72,12 @@ public class RecipeService {
         try {
             returnedRecipe = rd.update(recipe);
         } catch (Exception e) {
-            System.out.println("Ei voitu päivittää päivämäärää reseptille " + recipe.getName());
-            System.out.println(e);
+            throw new SQLException ("Ei voitu päivittää päivämäärää reseptille " + recipe.getName());
+            
         }
+    }
+    
+    public RecipeDao getDao() {
+        return this.rd;
     }
 }

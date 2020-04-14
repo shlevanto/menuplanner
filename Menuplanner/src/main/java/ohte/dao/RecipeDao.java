@@ -84,11 +84,13 @@ public class RecipeDao implements Dao<Recipe, String> {
         try {
             r = p.executeQuery();
         } catch (Exception e) {
-            throw new SQLException("Reseptiä " + key + " ei löydy tietokannasta.");
+            
         }
         
         if (r.next()) {
             recipe =  new Recipe(r.getString("name"), r.getString("protein"), r.getString("side"), r.getString("date"));
+        } else {
+            throw new SQLException("Reseptiä " + key + " ei löydy tietokannasta.");
         }
         
         p.close();

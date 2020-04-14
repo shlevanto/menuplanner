@@ -24,4 +24,5 @@ pv | aika | kuvaus
 8.4. | 3 | Menun arpomisen ensimmäinen toimiva versio tehty
 9.4. | 1 | Uuteen tietokantaan alustetaan config -tiedostosta oletusreseptit
 9.4. | 1 | mvn package toiminnallisuudet kuntoon
-**yht.** | **30** |
+14.4 | 1,5 | testien kirjoittamista
+**yht.** | **31,5** |

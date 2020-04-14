@@ -21,16 +21,6 @@ public class RecipeTest {
     TreeSet<String> sides;
     
     public RecipeTest() {
-        proteins = new TreeSet<>();
-        sides = new TreeSet<>();
-        
-        try {
-            Setup s = new Setup();
-            proteins = s.initProteins();
-            sides = s.initSides();
-        } catch (Exception e) {
-            System.out.println("Could not initialize from config.properties. Check config file.");
-        }
     }       
 
     // TODO add test methods here.
@@ -38,31 +28,15 @@ public class RecipeTest {
     //
     @Test
     public void RecipeNoDate() {
-       r = new Recipe("a", proteins.last(), sides.last());
+       r = new Recipe("a", "liha", "pasta");
        assertNotEquals("", r.getDate());
     }
  
         
     @Test
     public void RecipeWithDate() {
-        r = new Recipe("a", proteins.last(), sides.last(), "2020-01-01 12:30:12");
+        r = new Recipe("a", "liha", "pasta", "2020-01-01 12:30:12");
         assertNotEquals("", r.getDate());
     }
-
-    @Test
-    public void gettersAndSetters() {
-        r = new Recipe("","","");
-        
-        r.setName("a");
-        assertNotEquals("", r.getName());
-        r.setProtein(proteins.last());
-        assertNotEquals("", r.getProtein());
-        r.setSide(sides.last());
-        assertNotEquals("", r.getSide());
-        r.setDate("2020-01-01 12:30:12");
-        assertNotEquals("", r.getDate()); 
-        
-    }
     
-     
 }

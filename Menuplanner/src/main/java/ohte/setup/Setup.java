@@ -12,6 +12,7 @@ import java.nio.charset.Charset;
 import java.util.Properties;
 import java.util.TreeSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -24,9 +25,9 @@ public class Setup {
     private TreeSet<String> sides;
     private ArrayList<Recipe> recipes;
     
-    public Setup() throws Exception {
+    public Setup(String c) throws Exception {
         this.properties = new Properties();
-        FileInputStream f = new FileInputStream("config.properties");
+        FileInputStream f = new FileInputStream(c + ".properties");
         this.properties.load(new InputStreamReader(f, Charset.forName("UTF-8")));
         this.proteins = new TreeSet<>();
         this.sides = new TreeSet<>();
@@ -62,11 +63,11 @@ public class Setup {
     
     public ArrayList<Recipe> initRecipes() {
         String[] r = this.properties.getProperty("recipes").split(",");
-        
-        for (int i = 0; i < r.length - 3; i += 3) {
+
+        for (int i = 0; i < r.length; i += 3) {
             recipes.add(new Recipe(r[i], r[i + 1], r[i + 2]));
         }
-        
+
         return this.recipes;
     }
     

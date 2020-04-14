@@ -35,7 +35,7 @@ public class Main {
         
         Scanner scanner = new Scanner(System.in);
         try {
-            Setup setup = new Setup();
+            Setup setup = new Setup("config");
             UI ui = new UI(scanner, setup);
             ui.login();
         } catch (Exception e) {
