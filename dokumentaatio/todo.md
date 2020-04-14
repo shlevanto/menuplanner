@@ -26,10 +26,10 @@ Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
     ~~- Täydet pisteet Checkstylestä ainoastaan jos ohjelmassa on alle 5 Checkstyle-virhettä~~
     ~~- Käyttöliittymän rakentavan koodin ei tarvitse olla Checkstyle-tarkastelun alla~~
   - Ohjelma ei sisällä suurta määrää toisteista koodia
-- Ohjelman dokumentaatiossa on ainakin yksi sen jotain oleellista toiminnallisuutta kuvaava sekvenssikaavio (0.5p)
+~~- Ohjelman dokumentaatiossa on ainakin yksi sen jotain oleellista toiminnallisuutta kuvaava sekvenssikaavio (0.5p)
   - Mallia voi ottaa [referenssisovelluksesta](https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md#sovelluslogiikka)
   - Lisää kaavio [edellisellä viikolla](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/tehtavat/harjoitustyo_viikko4.md) tehtyyn dokumenttiin _arkkitehtuuri.md_
-  - Tiedostoon _arkkitehtuuri.md_ tulee olla linkki repositorion README:stä [referenssisovelluksen](https://github.com/mluukkai/OtmTodoApp) tavoin
+  - Tiedostoon _arkkitehtuuri.md_ tulee olla linkki repositorion README:stä [referenssisovelluksen](https://github.com/mluukkai/OtmTodoApp) tavoin~~
 
 **Seuraavien kohtien puutteet vähentävät pisteitä**
 
