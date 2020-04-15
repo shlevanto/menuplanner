@@ -6,13 +6,17 @@ Jokaiselle ruoalle voidaan määritellä ominaisuuksiksi pääaraaka-aine (esim.
 
 Sovelluksessa on käyttäjähallinta, siihen on mahdollista kirjautua eri käyttäjätunnuksilla joista jokaisella on oma reseptitietokantansa.
 
+<h2>Release</h2>
+
+[Ensimmäinen versio, tekstikäyttöliittymällä](https://github.com/shlevanto/menuplanner/releases)
+
 <h2>Dokumentaatio</h2>
 
 Käyttöohje
 
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 
-[Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 
 Testausdokumentti
 
