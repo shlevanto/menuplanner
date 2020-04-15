@@ -1,18 +1,5 @@
 <h1>Ohjelmistotekniikka harjoitustyö - Menuplanner</h1>
 
-<h2>Työsuunnitelma</h2>
-
-<h3>Viikko 5</h3>
-
-- config -tiedosto
-- ruokalistan muodostamistoiminto
-- reseptien muokkaamistoiminto
-
-<h3>Viikot 6-7</h3>
-
-- graafinen käyttöliittymä
-- dokumentointi
-
 Menuplanner auttaa arkiviikon ruokalistojen suunnittelussa. Sovellukseen on mahdollista tallettaa ruokien nimiä ja se generoi viikottaisen ruokalistan ruokien ominaisuuksien perusteella.
 
 Jokaiselle ruoalle voidaan määritellä ominaisuuksiksi pääaraaka-aine (esim. liha, kala, kasvis) ja lisuke (esim. peruna, riisi, pasta, keitto). Sovellus generoi ruokalistat siten, että kaksi samaa pääraaka-ainetta tai lisuketta ei tule peräkkäisille päiville. Lisäksi sovellus pitää kirjaa siitä, mitä viimeisimmän viikon ruokalistalla on ollut jotta samat ruoat eivät toistu liian usein.
@@ -75,3 +62,11 @@ JavaDoc generoidaan komennolla
 mvn javadoc:javadoc
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
 --->
+
+<h2>Työsuunnitelma</h2>
+
+<h3>Viikot 6-7</h3>
+
+- graafinen käyttöliittymä
+- dokumentointi
+
