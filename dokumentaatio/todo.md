@@ -6,12 +6,12 @@ DL 21.4.2020!!
 
 Arvostelussa kiinnitetään huomiota seuraaviin seikkoihin
 
-- Ohjelmasta pystyy tekemään suorituskelpoisen [jar](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/maven.md#jarin-generointi)-tiedoston komennolla _mvn package_ (0.5p)
-~~- Projektista on tehty _github release_ (0.25p)
-  - Release sisältää ohjelman uusimman version suorituskelpoisen jar-tiedoston
-  - [Ohje](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/release.md) releasen tekemiseen
+~~- Ohjelmasta pystyy tekemään suorituskelpoisen [jar](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/maven.md#jarin-generointi)-tiedoston komennolla _mvn package_ (0.5p)~~
+~~- Projektista on tehty _github release_ (0.25p)~~
+~~- Release sisältää ohjelman uusimman version suorituskelpoisen jar-tiedoston~~
+  ~~- [Ohje](https://github.com/mluukkai/ohjelmistotekniikka-kevat-2020/blob/master/web/release.md) releasen tekemiseen
   - Releaseen on linkki projektin README:stä~~
-~~- Ohjelma on kasvanut edellisestä viikosta (0.75p)
+~~- Ohjelma on kasvanut edellisestä viikosta (0.75p)~~
 ~~  - Ohjelman suoritettavissa oleva versio on kasvanut edellisestä viikosta _ja_ toteuttaa edellisen viikon versiota suuremman osan määrittelydokumentin toiminnallisuudesta eli jotain käyttäjälle näkyvää hyödyllistä toiminnallisuutta. ~~
     ~~ Merkitse lisäksi tarkastusta varten määrittelydokumenttiin tällä viikolla tekemäsi toiminnallisuudet "tehty" merkinnällä.~~
 - Testaus on edennyt (0.5p)
