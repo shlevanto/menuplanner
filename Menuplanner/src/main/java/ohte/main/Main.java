@@ -9,7 +9,7 @@ package ohte.main;
  *
  * @author levantsi
  */
-import ohte.ui.UI;
+import ohte.ui.*;
 import ohte.setup.Setup;
 import ohte.dao.*;
 
@@ -34,6 +34,7 @@ public class Main {
         //GraphicUI.main(args);
         
         Scanner scanner = new Scanner(System.in);
+        
         try {
             Setup setup = new Setup("config");
             UI ui = new UI(scanner, setup);
