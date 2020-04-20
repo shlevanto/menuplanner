@@ -66,11 +66,3 @@ JavaDoc generoidaan komennolla
 mvn javadoc:javadoc
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
 --->
-
-<h2>Työsuunnitelma</h2>
-
-<h3>Viikot 6-7</h3>
-
-- graafinen käyttöliittymä
-- dokumentointi
-
