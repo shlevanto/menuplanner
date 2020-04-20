@@ -27,4 +27,5 @@ pv | aika | kuvaus
 14.4 | 1,5 | testien kirjoittamista
 14.4 | 0,5 | Sekvenssikaavioita
 15.4. | 1 | 1. release
-**yht.** | **33** 
+20.4. | 3 | aloitettu graafista käyttöliittymää
+**yht.** | **37** 
