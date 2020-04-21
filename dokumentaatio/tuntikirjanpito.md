@@ -28,4 +28,5 @@ pv | aika | kuvaus
 14.4 | 0,5 | Sekvenssikaavioita
 15.4. | 1 | 1. release
 20.4. | 3 | aloitettu graafista käyttöliittymää
-**yht.** | **37** 
+21.4. | 1 | releasen viimeistely
+**yht.** | **38** 

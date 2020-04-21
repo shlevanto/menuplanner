@@ -25,7 +25,7 @@ public class UserDao implements Dao<User, String> {
     
     public UserDao(String dbId) throws SQLException {
             
-        databaseId = dbId;
+        this.databaseId = dbId;
         
         connect();
         s = db.createStatement();
@@ -136,7 +136,7 @@ public class UserDao implements Dao<User, String> {
         try {
             db = DriverManager.getConnection("jdbc:sqlite:" + databaseId + ".db");
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("CONNECT FAIL" + e);
         }
     }
     

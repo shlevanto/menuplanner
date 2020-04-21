@@ -30,9 +30,11 @@ import javafx.scene.layout.BorderPane;
  */
 public class Main {
     public static void main(String[] args) throws SQLException {
-         // käynnistyykö graafinen käyttöliittymä
+        //graafinen käyttöliittymä
         //GraphicUI.main(args);
         
+        
+        //tekstikäyttöliittymä
         Scanner scanner = new Scanner(System.in);
         
         try {
