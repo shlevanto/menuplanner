@@ -174,7 +174,7 @@ public class UI {
                 }
                 
                 try {
-                    rs.add(name, protein, side);
+                    rs.add(name, protein, side, 0);
                 } catch (Exception e) {
                     
                 }

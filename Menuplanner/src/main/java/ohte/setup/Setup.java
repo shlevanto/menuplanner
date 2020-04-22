@@ -90,7 +90,7 @@ public class Setup {
         String[] r = this.properties.getProperty("recipes").split(",");
 
         for (int i = 0; i < r.length; i += 3) {
-            recipes.add(new Recipe(r[i], r[i + 1], r[i + 2]));
+            recipes.add(new Recipe(r[i], r[i + 1], r[i + 2], 1));
         }
 
         return this.recipes;

@@ -25,9 +25,9 @@ public class RecipeService {
         }
     }
     
-    public void add(String name, String protein, String side) throws SQLException {
+    public void add(String name, String protein, String side, int k) throws SQLException {
         try {
-            rd.create(new Recipe(name, protein, side));
+            rd.create(new Recipe(name, protein, side, k));
         } catch (Exception e) {
             throw new SQLException("Ei voitu lisätä reseptiä.");
         }   

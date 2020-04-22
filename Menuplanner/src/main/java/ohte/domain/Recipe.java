@@ -30,13 +30,18 @@ public class Recipe {
      * Date is created automatically to be old. This ensures new recipes 
      * are used first when making a menu.
      */    
-    public Recipe(String name, String protein, String side) {
+    public Recipe(String name, String protein, String side, int k) {
         this.r = new Random();
         int a = r.nextInt(50) + 10;
         this.name = name;
         this.protein = protein;
         this.side = side;   
-        this.date = "1900-01-01 00:00:" + a; 
+        
+        if (k == 0) {
+            this.date = "1900-01-01 00:00:00";
+        } else {
+            this.date = "1900-01-01 00:00:" + a; 
+        }
     }
     
     /**

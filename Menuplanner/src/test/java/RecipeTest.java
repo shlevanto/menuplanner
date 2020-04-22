@@ -28,7 +28,7 @@ public class RecipeTest {
     //
     @Test
     public void RecipeNoDate() {
-       r = new Recipe("a", "liha", "pasta");
+       r = new Recipe("a", "liha", "pasta",0);
        assertNotEquals("", r.getDate());
     }
  

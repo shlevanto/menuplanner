@@ -30,7 +30,7 @@ public class RecipeServiceTest {
     
     public RecipeServiceTest() throws SQLException {
         ArrayList<Recipe> recipes = new ArrayList<>();
-        recipes.add(new Recipe("a", "liha", "pasta"));
+        recipes.add(new Recipe("a", "liha", "pasta",1));
         
         this.rs = new RecipeService(new User("testiTepponen"), recipes);
         this.rd = rs.getDao();
@@ -67,7 +67,7 @@ public class RecipeServiceTest {
         Recipe r = null;
         
         try {
-            rs.add("b", "kala", "keitto");
+            rs.add("b", "kala", "keitto",1);
         } catch (Exception e) {
             
         }
@@ -112,8 +112,8 @@ public class RecipeServiceTest {
     @Test (expected = SQLException.class)
     public void recipeAlreadyInDB() throws SQLException {
         try {
-            rs.add("u", "kana", "keitto");
-            rs.add("u", "kana", "keitto");
+            rs.add("u", "kana", "keitto",1);
+            rs.add("u", "kana", "keitto",1);
         } catch (Exception e) {
             throw new SQLException("");
         }
