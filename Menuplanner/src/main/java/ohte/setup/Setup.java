@@ -28,7 +28,7 @@ public class Setup {
     /**
      * 
      * @param c name of config file
-     * @throws Exception if file is not found or v
+     * @throws Exception if file is not found or can't be read
      */
     public Setup(String c) throws Exception {
         this.properties = new Properties();

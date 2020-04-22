@@ -9,10 +9,11 @@ package ohte.domain;
 import java.util.Random;
 
 /**
+ * Handles Recipes. Each recipe has a name, protein and side which are displayed for
+ * the user and a date which is used for database purposes.
  *
  * @author levantsi
  */
-
 public class Recipe {
     private String name;
     private String protein;
@@ -20,7 +21,15 @@ public class Recipe {
     private String date;
     private Random r;
     
-        
+    /**
+     * 
+     * @param name The name of the recipe
+     * @param protein The main protein of the recipe
+     * @param side The side / garnish
+     * 
+     * Date is created automatically to be old. This ensures new recipes 
+     * are used first when making a menu.
+     */    
     public Recipe(String name, String protein, String side) {
         this.r = new Random();
         int a = r.nextInt(50) + 10;
@@ -30,6 +39,13 @@ public class Recipe {
         this.date = "1900-01-01 00:00:" + a; 
     }
     
+    /**
+     * 
+     * @param name The name of the recipe
+     * @param protein The main protein of the recipe
+     * @param side The side / garnish
+     * @param date LocalDate variable, used when updating recipes that are on the menu
+     */
     public Recipe(String name, String protein, String side, String date) {
         this.name = name;
         this.protein = protein;
