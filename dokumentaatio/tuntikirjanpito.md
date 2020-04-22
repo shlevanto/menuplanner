@@ -29,4 +29,5 @@ pv | aika | kuvaus
 15.4. | 1 | 1. release
 20.4. | 3 | aloitettu graafista käyttöliittymää
 21.4. | 1 | releasen viimeistely
-**yht.** | **38** 
+22.4. | 1 | javadoc aloitettu
+**yht.** | **39**
