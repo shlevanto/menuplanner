@@ -60,9 +60,10 @@ Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
 
-<!---
-JavaDoc
+<h3>JavaDoc</h3>
+
 JavaDoc generoidaan komennolla
-mvn javadoc:javadoc
+
+<code>mvn javadoc:javadoc</code>
+
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
---->

@@ -25,6 +25,11 @@ public class Setup {
     private TreeSet<String> sides;
     private ArrayList<Recipe> recipes;
     
+    /**
+     * 
+     * @param c name of config file
+     * @throws Exception if file is not found or v
+     */
     public Setup(String c) throws Exception {
         this.properties = new Properties();
         FileInputStream f = new FileInputStream(c + ".properties");
@@ -34,10 +39,21 @@ public class Setup {
         this.recipes = new ArrayList<>();
     }
     
+    /**
+     * Returns the name of the user database from the config file
+     * 
+     * @return name of the user database
+     * @throws Exception if property is not found
+     */
     public String initUsersDb() throws Exception {
         return this.properties.getProperty("usersDataBase");
     }
     
+    /**
+     * Reads the proteins from the config file and sets them in a TreeSet
+     *
+     * @return Treeset with default proteins from config file
+     */
     public TreeSet<String> initProteins() {
         String[] p = this.properties.getProperty("proteins").split(",");
         
@@ -48,7 +64,11 @@ public class Setup {
         
         return this.proteins;
     }
-    
+    /**
+     * Reads the side options from the config file and sets them in a TreeSet
+     *
+     * @return TreeSet with default sides from config file
+     */
     public TreeSet<String> initSides() {
         String[] s = this.properties.getProperty("sides").split(",");
         
@@ -60,6 +80,11 @@ public class Setup {
         return this.sides;
         
     }
+    /**
+     * Reads the default recipes from the config file
+     *
+     * @return ArrayList with recipes
+     */
     
     public ArrayList<Recipe> initRecipes() {
         String[] r = this.properties.getProperty("recipes").split(",");
