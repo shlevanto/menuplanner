@@ -32,4 +32,5 @@ pv | aika | kuvaus
 22.4. | 1 | javadoc aloitettu
 23.4. | 0,5 | testikattavuutta korotetteu, Menu -luokan testejä kirjoitettu
 23.4. | 1,5 | käyttöliittymän rakentamista
-**yht.** | **41**
+23.4. | 1 | lisää resepti toiminnallisuus käyttöliittymään
+**yht.** | **42**
