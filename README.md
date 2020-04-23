@@ -66,4 +66,8 @@ JavaDoc generoidaan komennolla
 
 <code>mvn javadoc:javadoc</code>
 
+Mikäli ylläoleva komento ei toimi, vaatii javadocin generoiminen komennon
+
+<code>JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/ mvn clean javadoc:javadoc</code>
+
 JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
