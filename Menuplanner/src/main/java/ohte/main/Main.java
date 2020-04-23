@@ -34,9 +34,9 @@ public class Main {
         GraphicUI.main(args);
         
         
-        /*
+        
         //tekstikäyttöliittymä
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         
         try {
             Setup setup = new Setup("config");
@@ -46,6 +46,7 @@ public class Main {
             System.out.println("Problems with config file.");
         }
         */
+        
         
        
     }

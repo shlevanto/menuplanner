@@ -31,5 +31,5 @@ pv | aika | kuvaus
 21.4. | 1 | releasen viimeistely
 22.4. | 1 | javadoc aloitettu
 23.4. | 0,5 | testikattavuutta korotetteu, Menu -luokan testejä kirjoitettu
-23.4. | 1 | käyttöliittymän rakentamista
-**yht.** | **40,5**
+23.4. | 1,5 | käyttöliittymän rakentamista
+**yht.** | **41**
