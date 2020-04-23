@@ -6,12 +6,16 @@
 package ohte.domain;
 
 /**
- *
+ * Class generates user for logging in and creating user specific recipe database.
  * @author levantsi
  */
 public class User {
     private String uid;
     
+    /**
+     * 
+     * @param uid String given as input by user.
+     */
     public User(String uid) {
         this.uid = uid;
     }
