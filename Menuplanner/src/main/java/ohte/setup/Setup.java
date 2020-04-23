@@ -52,7 +52,7 @@ public class Setup {
     /**
      * Reads the proteins from the config file and sets them in a TreeSet
      *
-     * @return Treeset with default proteins from config file
+     * @return TreeSet with default proteins from config file
      */
     public TreeSet<String> initProteins() {
         String[] p = this.properties.getProperty("proteins").split(",");
