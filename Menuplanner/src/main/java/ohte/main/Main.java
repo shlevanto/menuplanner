@@ -31,9 +31,10 @@ import javafx.scene.layout.BorderPane;
 public class Main {
     public static void main(String[] args) throws SQLException {
         //graafinen käyttöliittymä
-        //GraphicUI.main(args);
+        GraphicUI.main(args);
         
         
+        /*
         //tekstikäyttöliittymä
         Scanner scanner = new Scanner(System.in);
         
@@ -44,7 +45,7 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Problems with config file.");
         }
-        
+        */
         
        
     }

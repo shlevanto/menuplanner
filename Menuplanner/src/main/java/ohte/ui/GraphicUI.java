@@ -18,9 +18,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import ohte.domain.*;
 import ohte.setup.Setup;
 
@@ -77,16 +80,6 @@ public class GraphicUI extends Application {
         loginLayout.setHgap(10);
         loginLayout.setPadding(new Insets(20, 20, 20, 20));
         
-        // 2. main Scene
-        Label mainText = new Label("Tervetuloa, tästä se alkaa!");
-
-        StackPane mainLayout = new StackPane();
-        mainLayout.setPrefSize(600, 360);
-        mainLayout.getChildren().add(mainText);
-        mainLayout.setAlignment(Pos.CENTER);
-
-        Scene mainScene = new Scene(mainLayout);
-
         // 1.4 get user list to ComboBox
         ArrayList<User> userList = us.listUsers();
         
@@ -99,12 +92,16 @@ public class GraphicUI extends Application {
             String userToLogIn = (String) picker.getValue();
             us.login(new User(userToLogIn));
             
-            window.setScene(mainScene);
-            window.setTitle("Menuplanner - " + us.getLoggedIn().getUid());
             this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
             this.setup.initProteins();
             this.setup.initSides();
             this.setup.initRecipes();
+            
+            try {
+                mainWindow(window);
+            } catch (Exception e) {
+                
+            }
         
         });
         
@@ -116,23 +113,57 @@ public class GraphicUI extends Application {
             } catch (Exception e) {
                 loginError.setText("Käyttäjä " + userToCreate + " on jo olemassa.");
             }
-            
-            window.setScene(mainScene);
-            window.setTitle("Menuplanner - " + us.getLoggedIn().getUid());
+        
             this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
             this.setup.initProteins();
             this.setup.initSides();
             this.setup.initRecipes();
             
+            try {
+                mainWindow(window);
+            } catch (Exception e) {
+                
+            }
+            
+            
         });
-        // 1.x login scene
+        
+        // 1.6 login scene
         Scene loginScene = new Scene(loginLayout);
         window.setScene(loginScene);
         window.show();
 
+    }
+    
+    public void mainWindow(Stage window) throws Exception {
+        Label mainText = new Label("Toinen näyttö");
+        TextArea display = new TextArea();
+        HBox splitScreen = new HBox();
+        VBox buttons = new VBox();
+        Button list = new Button("Listaa reseptit");
+        Button add = new Button("Lisää resepti");
+        Button del = new Button("Poista resepti");
+        Button generate = new Button("Muodosta ruokalista");
+                
+        buttons.getChildren().add(list);
+        buttons.getChildren().add(add);
+        buttons.getChildren().add(del);
+        buttons.getChildren().add(generate);
+        
+        splitScreen.getChildren().add(buttons);
+        splitScreen.getChildren().add(display);
+        
+        
+        StackPane mainLayout = new StackPane();
+        mainLayout.setPrefSize(600, 360);
+        mainLayout.getChildren().add(splitScreen);
+        mainLayout.setAlignment(Pos.CENTER);
 
-   
-
+        Scene mainScene = new Scene(mainLayout);
+        
+        window.setScene(mainScene);
+        window.setTitle("Menuplanner - " + us.getLoggedIn().getUid());
+        window.show();
 
     }
     
