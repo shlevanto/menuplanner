@@ -7,7 +7,7 @@ package ohte.ui;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Optional;
 import java.util.TreeSet;
 import javafx.application.Application;
 
@@ -18,7 +18,10 @@ import javafx.stage.Stage;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -26,6 +29,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 import ohte.domain.*;
 import ohte.setup.Setup;
 
@@ -91,15 +95,18 @@ public class GraphicUI extends Application {
         
         // 1.5 button events
         loginButton.setOnAction((event) -> {
-            String userToLogIn = (String) picker.getValue();
-            us.login(new User(userToLogIn));
+            if (picker.getValue() != null) {
+                String userToLogIn = (String) picker.getValue();
             
-            this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
-            
-            try {
-                mainWindow(window);
-            } catch (Exception e) {
-                
+                us.login(new User(userToLogIn));
+
+                this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
+
+                try {
+                    mainWindow(window);
+                } catch (Exception e) {
+
+                }
             }
         
         });
@@ -219,6 +226,88 @@ public class GraphicUI extends Application {
         mainLayout.getChildren().add(splitScreen);
         mainLayout.setAlignment(Pos.CENTER);
         
+        // Add new recipe dialog
+        
+        Dialog<Recipe> addRecipeDialog = new Dialog<>();
+        addRecipeDialog.setTitle("Lisää resepti");
+        addRecipeDialog.setResizable(true);
+        Label nameLabel = new Label("Nimi: ");
+        Label proteinLabel = new Label("Pääraaka-aine: ");
+        Label sidesLabel = new Label("Lisuke: ");
+        TextField newRecipeName = new TextField();
+        ComboBox newRecipeProtein = new ComboBox();
+        ComboBox newRecipeSide = new ComboBox();
+        Button checkRecipeName = new Button("Tarkista");
+        Label addRecipeError = new Label();
+        ButtonType addNewRecipe = new ButtonType("Lisää resepti", ButtonData.OK_DONE);
+        
+        
+        for (String p : proteins) {
+            newRecipeProtein.getItems().add(p);
+        }
+        
+        for (String s : sides) {
+            newRecipeSide.getItems().add(s);
+        }
+        
+        GridPane newRecipeGrid = new GridPane();
+        newRecipeGrid.add(sidesLabel,1,1);
+        newRecipeGrid.add(newRecipeSide,2,1);
+ 
+        newRecipeGrid.add(proteinLabel,1,2);
+        newRecipeGrid.add(newRecipeProtein,2,2);
+        
+        newRecipeGrid.add(nameLabel,1,3);
+        newRecipeGrid.add(newRecipeName,2,3);
+        newRecipeGrid.add(checkRecipeName,3,3);
+        
+        
+        
+        newRecipeGrid.add(addRecipeError,2,4);
+        
+        addRecipeDialog.getDialogPane().setContent(newRecipeGrid);
+        addRecipeDialog.getDialogPane().setMinSize(2,2);
+
+        
+                   
+        
+        checkRecipeName.setOnAction((event) -> {
+            addRecipeError.setText("");
+            boolean cannotAdd = true;
+        
+            try {
+                Recipe check = rs.read(newRecipeName.getText());
+                if (check != null) {
+                    addRecipeError.setText("Resepti " + newRecipeName.getText() + " on jo tietokannassa.");
+                } else {
+                    addRecipeDialog.getDialogPane().setContent(newRecipeGrid);
+        
+                }
+            } catch (Exception e) {
+               if (newRecipeProtein.getValue() != null && newRecipeSide.getValue() != null && !newRecipeName.getText().equals("")) {
+                   addRecipeDialog.getDialogPane().getButtonTypes().add(addNewRecipe);
+               }
+                
+            }
+            
+        });
+        
+        addRecipeDialog.setResultConverter(new Callback<ButtonType, Recipe>() {
+        @Override
+        public Recipe call(ButtonType b) {   
+            
+            if (b == addNewRecipe) {
+
+                return new Recipe(newRecipeName.getText(), 
+                        (String) newRecipeProtein.getValue(),
+                        (String) newRecipeSide.getValue(),0);            
+                }
+
+                return null;
+            }
+        });
+        
+
         // button actions
         
         list.setOnAction((event) -> {
@@ -236,12 +325,27 @@ public class GraphicUI extends Application {
             }
         });
         
+        add.setOnAction((event) -> {
+           Optional<Recipe> r = addRecipeDialog.showAndWait();
+           
+           if (r.isPresent()) {
+               Recipe a = r.get();
+               try {
+                   rs.add(a.getName(), a.getProtein(), a.getSide(), 0);
+               } catch (Exception e) {
+                   
+               }
+           }
+           
+           
+        });
+        
         generate.setOnAction((event) -> {
             display.clear();
             
             
             Recipe[] weekly = new Recipe[5];
-            String[] days = {"MAANATAI", "TIISTAI", "KESKIVIIKKO", "TORSTAI", "PERJANTAI"};
+            String[] days = {"MAANANTAI", "TIISTAI", "KESKIVIIKKO", "TORSTAI", "PERJANTAI"};
             
             try {
                 Menu m = new Menu(rs, proteins, sides);
@@ -262,12 +366,21 @@ public class GraphicUI extends Application {
         });
         
         
+        
+        
+        
+        
+                
         Scene mainScene = new Scene(mainLayout);
         
         window.setScene(mainScene);
         window.setTitle("Menuplanner - " + us.getLoggedIn().getUid());
         window.show();
 
+    }
+    
+    public static void addRecipe() {
+        
     }
     
     public static void main(String[] args) {

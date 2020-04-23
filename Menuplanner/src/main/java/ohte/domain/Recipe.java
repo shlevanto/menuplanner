@@ -28,7 +28,8 @@ public class Recipe {
      * @param side The side / garnish
      * 
      * Date is created automatically to be old. This ensures new recipes 
-     * are used first when making a menu.
+     * are used first when making a menu. For new recipes added by the user,
+     * set k == 0 in to make it appear in the first menu generated.
      */    
     public Recipe(String name, String protein, String side, int k) {
         this.r = new Random();
