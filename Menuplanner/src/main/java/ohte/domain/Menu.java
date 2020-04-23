@@ -15,7 +15,10 @@ import java.util.Random;
 
 
 /**
- *
+ * Generates a weekly menu from recipes in database and
+ * updates the dates of the recipes used in order to ensure rotation of weekly
+ * menu options.
+ * 
  * @author levantsi
  */
 public class Menu {
@@ -27,7 +30,13 @@ public class Menu {
     private Recipe[] weeklyMenu;
     private String[] sidesArray;
     private Random r;
-    
+    /**
+     * 
+     * @param rs RecipeService object in use
+     * @param proteins List of proteins in use for the weekly items according to config file.
+     * @param sides List of sides / garnishes in use for the weekly items according to config file.
+     * @throws SQLException The method gets the current recipe list from the database.
+     */
     public Menu(RecipeService rs, TreeSet<String> proteins, TreeSet<String> sides) throws SQLException {
         this.rs = rs;
         this.recipePool = new HashMap<>();
@@ -41,6 +50,11 @@ public class Menu {
         }
     }
     
+    /**
+     * Initiates recipe pool for the weekly menu.
+     * Uses ArrayDeque for a heap structure based on the date for recipe in database
+     * ensuring that recipes are rotated.
+     */
     public void setupRecipePool() {
         
         for (Recipe r : recipes) {
@@ -52,6 +66,9 @@ public class Menu {
         }
     }
     
+    /**
+     * Sets up the arrays used by the generate method.
+     */
     public void setupArrays() {
         this.sidesArray = new String[recipePool.keySet().size()];
         
@@ -64,6 +81,12 @@ public class Menu {
         
     }
     
+    /**
+     * Generates the weekly menu by polling recipes from the recipePool and
+     * ensures that adjacent days have different sides/garnishes.
+     * 
+     * @return Array of 5 recipes, weekly menu for work days. 
+     */
     public Recipe[] generate() {
         setupRecipePool();
         setupArrays();
@@ -94,6 +117,11 @@ public class Menu {
         return weeklyMenu;
     }
     
+    /**
+     * Takes the recipes on the weekly menu array and updates their date to
+     * LocalTime in the database ie. pushes them to the back so menu rotation is
+     * achieved.
+     */
     public void updateUsedRecipes() {
         try {
             for (int i = 0; i < 5; i++) {
