@@ -240,6 +240,7 @@ public class GraphicUI extends Application {
         Button checkRecipeName = new Button("Tarkista");
         Label addRecipeError = new Label();
         ButtonType addNewRecipe = new ButtonType("Lisää resepti", ButtonData.OK_DONE);
+        ButtonType newRecipeBack = new ButtonType("Palaa", ButtonData.CANCEL_CLOSE);
         
         
         for (String p : proteins) {
@@ -267,7 +268,7 @@ public class GraphicUI extends Application {
         
         addRecipeDialog.getDialogPane().setContent(newRecipeGrid);
         addRecipeDialog.getDialogPane().setMinSize(2,2);
-
+        addRecipeDialog.getDialogPane().getButtonTypes().add(newRecipeBack);
         
                    
         
@@ -307,12 +308,17 @@ public class GraphicUI extends Application {
             }
         });
         
-
-        // button actions
+        // remove recipe
         
-        list.setOnAction((event) -> {
-            display.clear();
-            ArrayList<Recipe> recipes = new ArrayList<>();
+        Dialog<String> delRecipeDialog = new Dialog<>();
+        delRecipeDialog.setTitle("Poista resepti");
+        delRecipeDialog.setResizable(true);
+        Label delNameLabel = new Label("Valitse resepti: ");
+        ComboBox delRecipesList = new ComboBox();
+        ButtonType delRecipe = new ButtonType("Poista resepti", ButtonData.OK_DONE);
+        ButtonType delRecipeBack = new ButtonType("Palaa", ButtonData.CANCEL_CLOSE);
+        
+        ArrayList<Recipe> recipes = new ArrayList<>();
             
             try {
                 recipes = rs.list();
@@ -320,18 +326,79 @@ public class GraphicUI extends Application {
                 
             }
             
-            for (Recipe r : recipes) {
+        for (Recipe r : recipes) {
+            delRecipesList.getItems().add(r.getName());
+        }
+        
+        
+        GridPane delRecipeGrid = new GridPane();
+        delRecipeGrid.add(delNameLabel,1,1);
+        delRecipeGrid.add(delRecipesList,2,1);
+      
+        delRecipeDialog.getDialogPane().setContent(delRecipeGrid);
+        delRecipeDialog.getDialogPane().setMinSize(2,2);
+        delRecipeDialog.getDialogPane().getButtonTypes().add(delRecipeBack);
+        delRecipeDialog.getDialogPane().getButtonTypes().add(delRecipe);
+        
+        delRecipeDialog.setResultConverter(new Callback<ButtonType, String>() {
+        @Override
+        public String call(ButtonType b) {   
+            
+            if (b == delRecipe) {
+
+                return (String) delRecipesList.getValue();           
+                }
+
+                return null;
+            }
+        });
+        
+
+        // button actions
+        
+        list.setOnAction((event) -> {
+            display.clear();
+            ArrayList<Recipe> recipes2 = new ArrayList<>();
+            
+            try {
+                recipes2 = rs.list();
+            } catch (Exception e) {
+                
+            }
+            
+            for (Recipe r : recipes2) {
                 display.appendText(r.getName() + "\n");
             }
         });
         
         add.setOnAction((event) -> {
+           display.clear();
+            
            Optional<Recipe> r = addRecipeDialog.showAndWait();
-           
+
            if (r.isPresent()) {
                Recipe a = r.get();
                try {
                    rs.add(a.getName(), a.getProtein(), a.getSide(), 0);
+               } catch (Exception e) {
+                   
+               }
+           }
+           
+           
+           
+           
+        });
+        
+        del.setOnAction((event) -> {
+           display.clear();
+            
+           Optional<String> rDel = delRecipeDialog.showAndWait();
+           
+           if (rDel.isPresent()) {
+               try {
+                   String sDel = rDel.get();
+                   rs.remove(sDel);
                } catch (Exception e) {
                    
                }
@@ -360,15 +427,7 @@ public class GraphicUI extends Application {
                 display.appendText(weekly[i] + "\n");
             }
             
-            
-            
-            
         });
-        
-        
-        
-        
-        
         
                 
         Scene mainScene = new Scene(mainLayout);
@@ -379,9 +438,7 @@ public class GraphicUI extends Application {
 
     }
     
-    public static void addRecipe() {
-        
-    }
+
     
     public static void main(String[] args) {
         

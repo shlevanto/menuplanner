@@ -33,4 +33,5 @@ pv | aika | kuvaus
 23.4. | 0,5 | testikattavuutta korotetteu, Menu -luokan testejä kirjoitettu
 23.4. | 1,5 | käyttöliittymän rakentamista
 23.4. | 1 | lisää resepti toiminnallisuus käyttöliittymään
-**yht.** | **42**
+24.4. | 1,5 | poista resepti toiminnallisuus käyttöliittymään
+**yht.** | **43,5**
