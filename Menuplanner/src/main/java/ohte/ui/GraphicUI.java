@@ -235,6 +235,7 @@ public class GraphicUI extends Application {
         Label proteinLabel = new Label("Pääraaka-aine: ");
         Label sidesLabel = new Label("Lisuke: ");
         TextField newRecipeName = new TextField();
+        newRecipeName.setMaxWidth(100);
         ComboBox newRecipeProtein = new ComboBox();
         ComboBox newRecipeSide = new ComboBox();
         Button checkRecipeName = new Button("Tarkista");
@@ -266,8 +267,12 @@ public class GraphicUI extends Application {
         
         newRecipeGrid.add(addRecipeError,2,4);
         
+        addRecipeError.setWrapText(true);
+        
         addRecipeDialog.getDialogPane().setContent(newRecipeGrid);
-        addRecipeDialog.getDialogPane().setMinSize(2,2);
+        addRecipeDialog.getDialogPane().setMinWidth(360);
+        addRecipeDialog.getDialogPane().setMaxWidth(400);
+        
         addRecipeDialog.getDialogPane().getButtonTypes().add(newRecipeBack);
         
                    
