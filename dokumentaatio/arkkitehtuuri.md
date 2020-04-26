@@ -34,7 +34,7 @@ Sovellus tallettaa tietoja kahteen tietokantaan. Käyttäjätietokanta (oletusar
 
 <h3>Menun generoiminen</h3>
 
-<h2>Konfiguraatiotiedost</h2>
+<h2>Konfiguraatiotiedosto</h2>
 
 Sovellskansio sisältää konfiguraatiotiedoston [config.properties](../Menuplanner/config.properties).
 
@@ -50,7 +50,7 @@ ja reseptit pilkuilla mutta siten että jokaista reseptiä kohden on oltava nimi
 
 <h2>Kehityskohteet</h2>
 
-Käyttäjätietojen ja reseptien erottaminen omiin tietokantoihinsa ei todennäköisesti ole paras mahdollinen ratkaisu. Sovelluksen jatkokehityksessä tulisi yhdistää kaikki tiedot yhteen tietokantaaan jotta se ei generoisi suurta määrää erillisiä käyttäjäkohtaisia tietokantoja.
+Käyttäjätietojen ja reseptien erottaminen omiin tietokantoihinsa ei todennäköisesti ole paras mahdollinen ratkaisu. Tietojen yhdistäminen samaan tietokantaan niin, että jokaiselle käyttäjälle näkyisivät vain hänen omat reseptinsä, olisi kuitenkin vaatinut useampia tietokantatauluja ja siksi päädyin yksinkertaisuuden vuoksi tähän ratkaisuun. Sovelluksen jatkokehityksessä tulisi yhdistää kaikki tiedot yhteen tietokantaaan jotta se ei generoisi suurta määrää erillisiä käyttäjäkohtaisia tietokantoja.
 
 Konfiguraatiotiedostossa reseptit olisi kannattanut erottaa esim. puolipisteellä niin, ettei yksittäinen puuttuva pilkku johda virheellisesti luettuihin resepteihin, esim.
 
