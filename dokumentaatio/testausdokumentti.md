@@ -26,4 +26,5 @@ Kaikki määrittelydokumentin ja käyttöohjeen listaamat toiminnallisuudet on k
 
 <h3>Käyttöliittymä</h3>
 
-<h2>Sovellukseen jääneet kehityskohteet</h2>
+<h2>Sovellukseen jääneet ongelmat</h2>
+
