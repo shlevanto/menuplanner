@@ -12,7 +12,7 @@ Sovelluksessa on käyttäjähallinta, siihen on mahdollista kirjautua eri käytt
 
 <h2>Dokumentaatio</h2>
 
-[Käyttöohje](/dokumentaatio/kaytto-ohje.md)
+[Käyttöohje](/dokumentaatio/kayttoohje.md)
 
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 

@@ -6,13 +6,13 @@ Pakkausten väliset suhteet ilmenevät pakkauskaaviosta.
 
 <h2>Pakkauskaavio</h2>
 
-![alt text](Menuplannerpack.png)
+![alt text](images/Menuplannerpack.png)
 
 <h2>Luokkakaavio</h2>
 
-![alt text](MenuplannerUML.png)
+![alt text](images/MenuplannerUML.png)
 
-![alt text](Menuplannerpack.png)
+![alt text](images/Menuplannerpack.png)
 
 <h2>Käyttöliittymä</h2>
 
@@ -24,7 +24,7 @@ Sovellus tallettaa tietoja kahteen tietokantaan. Käyttäjätietokanta (oletusar
 
 -käyttäjän lisääminen-
 -käyttäjän kirjautuminen-
-![Uuden reseptin tallentaminen](Menuplanner_new_recipe_sequence.png)
+![Uuden reseptin tallentaminen](/imagesMenuplanner_new_recipe_sequence.png)
 -reseptin poistaminen-
 -menun luominen-
 
