@@ -287,7 +287,7 @@ public class GraphicUI extends Application {
             }
             
             for (Recipe r : recipes2) {
-                display.appendText(r.getName() + "\n");
+                display.appendText(r.getName() + " (" + r.getProtein() + ", " + r.getSide() + ")" + "\n");
             }
         });
         
@@ -389,7 +389,7 @@ public class GraphicUI extends Application {
         addRecipeError.setWrapText(true);
         
         // layout preferences
-        addRecipeLayout.setPrefSize(420, 180);
+        addRecipeLayout.setPrefSize(480, 180);
         addRecipeLayout.setAlignment(Pos.CENTER);
         addRecipeLayout.setVgap(10);
         addRecipeLayout.setHgap(10);
