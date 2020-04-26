@@ -1,6 +1,6 @@
 <h1>Käyttöohje</h1>
 
-Lataa Menuplanner jar -tiedosto ja config.properties konfiguraatiotedosto ![/releases](releases -kansiosta).
+Lataa Menuplanner jar -tiedosto ja config.properties konfiguraatiotedosto releases -kansiosta.
 
 <h2>Konfigurointi</h2>
 
@@ -33,7 +33,7 @@ Kirjautuminen tapahtuu valitsemalla pudotusvalikosta käyttäjä ja klikkaamalla
 
 Uusi käyttäjä luodaan valitsemalla kirjautumisnäkymässä 'Luo uusi käyttäjä'. Avautuvassa ikkunassa kirjoitetaan uuden käyttäjän nimi ja valitaan 'Luo uusi käyttäjä'. Kannassa ei voi olla samannimisiä käyttäjiä, sovellus antaa virheilmoituksen jos uuden käyttäjän lisääminen ei onnistu.
 
-<img src=imager/newUserGUI.png>
+<img src=images/newUserGUI.png>
 
 <h2>Tietokannassa olevien reseptien listaaminen</h2>
 
