@@ -28,3 +28,5 @@ Kaikki määrittelydokumentin ja käyttöohjeen listaamat toiminnallisuudet on k
 
 <h2>Sovellukseen jääneet ongelmat</h2>
 
+Jos tietokannassa on alle 5 reseptiä, sovellus generoi tyhjän ruokalistan.
+
