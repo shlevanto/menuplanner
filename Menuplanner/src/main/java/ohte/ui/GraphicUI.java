@@ -65,7 +65,7 @@ public class GraphicUI extends Application {
         Label instruction = new Label("Valitse käyttäjä:");
         ComboBox picker = new ComboBox();
         Button loginButton = new Button("Kirjaudu");
-        Button createButton = new Button("Luo uusi käytäjä");
+        Button createButton = new Button("Luo uusi käyttäjä");
         Label loginError = new Label("");
         
         
@@ -132,7 +132,7 @@ public class GraphicUI extends Application {
     public void newUser(Stage window) {
         //components
         TextField newUser = new TextField();
-        Button createButton = new Button("Lisää käyttäjä");
+        Button createButton = new Button("Luo uusi käyttäjä");
         Label newUserError = new Label();
         Button backButton = new Button("Palaa");
         
@@ -141,7 +141,7 @@ public class GraphicUI extends Application {
 
         newUserLayout.add(newUser, 0, 0);
         newUserLayout.add(createButton, 0 , 1);
-        newUserLayout.add(newUserError, 0 , 2);
+        newUserLayout.add(newUserError, 0 , 3);
         newUserLayout.add(backButton, 0 , 2);
         
         //layout settings
@@ -150,24 +150,31 @@ public class GraphicUI extends Application {
         newUserLayout.setVgap(10);
         newUserLayout.setHgap(10);
         newUserLayout.setPadding(new Insets(20, 20, 20, 20));
+        newUserError.setWrapText(true);
         
         // button actions
         createButton.setOnAction((event) -> {
             String userToCreate = newUser.getText();
+            boolean noCreate = false;
             
             try {
                 us.create(new User(userToCreate));
             } catch (Exception e) {
-                newUserError.setText("Käyttäjä " + userToCreate + " on jo olemassa.");
+                newUserError.setText("Käyttäjä " + userToCreate + " on jo tietokannassa.");
+                noCreate = true;
             }
-        
-            this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
             
-            try {
-                mainWindow(window);
-            } catch (Exception e) {
+            if (!noCreate) {
                 
-            }    
+
+                this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
+
+                try {
+                    mainWindow(window);
+                } catch (Exception e) {
+
+                }
+            }
             
         });
         
@@ -193,7 +200,6 @@ public class GraphicUI extends Application {
         this.sides = this.setup.initSides();
             
         // components
-        Label mainText = new Label("Toinen näyttö");
         TextArea display = new TextArea();
         HBox splitScreen = new HBox();
         VBox buttons = new VBox();
