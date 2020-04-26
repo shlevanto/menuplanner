@@ -18,7 +18,7 @@ Sovelluksessa on käyttäjähallinta, siihen on mahdollista kirjautua eri käytt
 
 [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 
-Testausdokumentti
+[Testausdokumentti](/dokumentaatio/testausdokumentti.md)
 
 [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
 
