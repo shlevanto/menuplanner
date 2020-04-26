@@ -25,6 +25,20 @@ Ohjelma käynnistetään komennolla
 
 Sovelluksen käynnistyessä vaihtoehtoina on valita listasta olemassa oleva käyttäjä tai luoda uusi käyttäjä.
 
-<img src="loginGUI.png">
+<img src="images/loginGUI.png">
 
-Kirjautuminen tapahtuu valitsemalla dropbx -valikosta käyttäjä ja klikkaamalla 'Kirjaudu' -painiketta.
+Kirjautuminen tapahtuu valitsemalla pudotusvalikosta käyttäjä ja klikkaamalla 'Kirjaudu' -painiketta.
+
+<h2>Uuden käyttäjän luominen</h2>
+
+Uusi käyttäjä luodaan valitsemalla kirjautumisnäkymässä 'Luo uusi käyttäjä'. Avautuvassa ikkunassa kirjoitetaan uuden käyttäjän nimi ja valitaan 'Luo uusi käyttäjä'. Kannassa ei voi olla samannimisiä käyttäjiä, sovellus antaa virheilmoituksen jos uuden käyttäjän lisääminen ei onnistu.
+
+<img src=imager/newUserGUI.png>
+
+<h2>Tietokannassa olevien reseptien listaaminen</h2>
+
+<h2>Uuden reseptin lisääminen</h2>
+
+<h2>Reseptin poistaminen</h2>
+
+<h2>Ruokalistan generoiminen</h2>
