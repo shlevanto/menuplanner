@@ -10,14 +10,16 @@ Ohjelma tarvitsee toimiakseen config.properties nimisen tiedoston, josta se luke
 usersDataBase = users
 proteins = liha,kala,kasvis jne.
 sides = pasta,riisi,peruna jne.
-recipes = makaronilaatikko,liha,pasta,kalakeitt,kala,keitto</code>
+recipes = makaronilaatikko,liha,pasta,kalakeitt,kala,keitto
 ```
 
 <h2>Käynnistäminen</h2>
 
 Ohjelma käynnistetään komennolla
 
-<code>java -jar Menuplanner***.jat</code>
+<code>java -jar Menuplanner***.jar</code>
+
+*** riippuu siitä minkä releasen haluat käynnistää.
 
 <h2>Kirjautuminen</h2>
 
