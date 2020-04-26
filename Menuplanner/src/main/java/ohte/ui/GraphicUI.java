@@ -60,9 +60,7 @@ public class GraphicUI extends Application {
     @Override
     public void start(Stage window) throws Exception {
         
-        // 1. login window
-        
-        // 1.1 login components
+        //components
         window.setTitle("Menuplanner");
         Label instruction = new Label("Valitse käyttäjä:");
         ComboBox picker = new ComboBox();
@@ -71,7 +69,7 @@ public class GraphicUI extends Application {
         Label loginError = new Label("");
         
         
-        // 1.2 login layout 
+        //layout 
         GridPane loginLayout = new GridPane();
 
         loginLayout.add(instruction, 0, 0);
@@ -79,21 +77,21 @@ public class GraphicUI extends Application {
         loginLayout.add(loginButton, 0, 2);
         loginLayout.add(createButton, 0, 4);
         
-        // 1.3 login layout settings
+        //layout settings
         loginLayout.setPrefSize(300, 180);
         loginLayout.setAlignment(Pos.CENTER);
         loginLayout.setVgap(10);
         loginLayout.setHgap(10);
         loginLayout.setPadding(new Insets(20, 20, 20, 20));
         
-        // 1.4 get user list to ComboBox
+        //get user list to ComboBox
         ArrayList<User> userList = us.listUsers();
         
         for (User u : userList) {
             picker.getItems().add(u.getUid());
         }
         
-        // 1.5 button events
+        //button events
         loginButton.setOnAction((event) -> {
             if (picker.getValue() != null) {
                 String userToLogIn = (String) picker.getValue();
@@ -124,7 +122,7 @@ public class GraphicUI extends Application {
         
         
         
-        // 1.6 login scene
+        //login scene
         Scene loginScene = new Scene(loginLayout);
         window.setScene(loginScene);
         window.show();
@@ -132,12 +130,13 @@ public class GraphicUI extends Application {
     }
     
     public void newUser(Stage window) {
+        //components
         TextField newUser = new TextField();
         Button createButton = new Button("Lisää käyttäjä");
         Label newUserError = new Label();
         Button backButton = new Button("Palaa");
         
-        // 1.2 login layout 
+        //layout 
         GridPane newUserLayout = new GridPane();
 
         newUserLayout.add(newUser, 0, 0);
@@ -145,13 +144,14 @@ public class GraphicUI extends Application {
         newUserLayout.add(newUserError, 0 , 2);
         newUserLayout.add(backButton, 0 , 2);
         
-        // 1.3 login layout settings
+        //layout settings
         newUserLayout.setPrefSize(300, 180);
         newUserLayout.setAlignment(Pos.CENTER);
         newUserLayout.setVgap(10);
         newUserLayout.setHgap(10);
         newUserLayout.setPadding(new Insets(20, 20, 20, 20));
         
+        // button actions
         createButton.setOnAction((event) -> {
             String userToCreate = newUser.getText();
             
@@ -180,7 +180,7 @@ public class GraphicUI extends Application {
             }
         });
         
-        // 1.6 login scene
+        // scene
         Scene newUserScene = new Scene(newUserLayout);
         window.setScene(newUserScene);
         window.show();
@@ -188,10 +188,11 @@ public class GraphicUI extends Application {
     }
     
     public void mainWindow(Stage window) throws Exception {
+        // init proteins and sides
         this.proteins = this.setup.initProteins();
         this.sides = this.setup.initSides();
             
-        
+        // components
         Label mainText = new Label("Toinen näyttö");
         TextArea display = new TextArea();
         HBox splitScreen = new HBox();
@@ -209,6 +210,7 @@ public class GraphicUI extends Application {
         generate.setWrapText(true);
         generate.setMinWidth(150);
         
+        // button pane settings and layout
         buttons.setPrefSize(300,360);
         buttons.setPadding(new Insets(20, 20, 20, 20));
         
@@ -221,6 +223,7 @@ public class GraphicUI extends Application {
         splitScreen.getChildren().add(buttons);
         splitScreen.getChildren().add(display);
         
+        // layout settings
         StackPane mainLayout = new StackPane();
         mainLayout.setPrefSize(600, 360);
         mainLayout.getChildren().add(splitScreen);
@@ -289,9 +292,11 @@ public class GraphicUI extends Application {
         });
         
         add.setOnAction((event) -> {
+           
+           // opens in a new window 
            display.clear();
-           Stage newRecipeWindow = new Stage();
-           addRecipe(newRecipeWindow);
+           Stage addRecipeWindow = new Stage();
+           addRecipe(addRecipeWindow);
            
         });
         
@@ -334,7 +339,7 @@ public class GraphicUI extends Application {
             
         });
         
-                
+        // scene
         Scene mainScene = new Scene(mainLayout);
         
         window.setScene(mainScene);
@@ -344,6 +349,7 @@ public class GraphicUI extends Application {
     }
     
     public void addRecipe(Stage window) {
+        // components
         Label nameLabel = new Label("Nimi: ");
         Label proteinLabel = new Label("Pääraaka-aine: ");
         Label sidesLabel = new Label("Lisuke: ");
@@ -355,8 +361,7 @@ public class GraphicUI extends Application {
         Button addRecipeBack = new Button("Palaa");
         Button addRecipeSave = new Button("Lisää resepti");
         
-        
-        
+        // load combobox contents        
         for (String p : proteins) {
             addRecipeProtein.getItems().add(p);
         }
@@ -365,6 +370,7 @@ public class GraphicUI extends Application {
             addRecipeSide.getItems().add(s);
         }
         
+        // layout
         GridPane addRecipeLayout = new GridPane();
         addRecipeLayout.add(proteinLabel,1,1);
         addRecipeLayout.add(addRecipeProtein,2,1);
@@ -382,13 +388,14 @@ public class GraphicUI extends Application {
         
         addRecipeError.setWrapText(true);
         
+        // layout preferences
         addRecipeLayout.setPrefSize(420, 180);
         addRecipeLayout.setAlignment(Pos.CENTER);
         addRecipeLayout.setVgap(10);
         addRecipeLayout.setHgap(10);
         addRecipeLayout.setPadding(new Insets(20, 20, 20, 20));
         
-        
+        // button actions
         addRecipeBack.setOnAction((event) -> {
             window.close();
         });
