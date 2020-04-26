@@ -22,15 +22,21 @@ Sovellus tallettaa tietoja kahteen tietokantaan. Käyttäjätietokanta (oletusar
 
 <h2>Päätoiminnallisuudet</h2>
 
--käyttäjän lisääminen-
--käyttäjän kirjautuminen-
-![Uuden reseptin tallentaminen](/imagesMenuplanner_new_recipe_sequence.png)
--reseptin poistaminen-
--menun luominen-
+<h3>Käyttäjän lisääminen</h3>
+
+<h3>Käyttäjän kirjautuminen</h3>
+
+<h3>Uuden reseptin tallentaminen</h3>
+
+![alt text](images/Menuplanner_new_recipe_sequence.png)
+
+<h3>Reseptin poistaminen</h3>
+
+<h3>Menun generoiminen</h3>
 
 <h2>Konfiguraatiotiedost</h2>
 
-Sovellskansio sisältää konfiguraatiotiedoston ![config.properties](../Menuplanner/config.properties).
+Sovellskansio sisältää konfiguraatiotiedoston [config.properties](../Menuplanner/config.properties).
 
 Tiedostossa määritellään käyttäjätietokannan nimi, oletusarvoisesti uuden käyttäjän käyttöön tulevat pääraaka-aineet ja lisukkeet sekä uuden käyttäjän tietokantaan generoitavat oletusreseptit.
 
