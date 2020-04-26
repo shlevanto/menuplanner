@@ -226,95 +226,7 @@ public class GraphicUI extends Application {
         mainLayout.getChildren().add(splitScreen);
         mainLayout.setAlignment(Pos.CENTER);
         
-        // Add new recipe dialog
-        
-        Dialog<Recipe> addRecipeDialog = new Dialog<>();
-        addRecipeDialog.setTitle("Lisää resepti");
-        addRecipeDialog.setResizable(true);
-        Label nameLabel = new Label("Nimi: ");
-        Label proteinLabel = new Label("Pääraaka-aine: ");
-        Label sidesLabel = new Label("Lisuke: ");
-        TextField newRecipeName = new TextField();
-        newRecipeName.setMaxWidth(100);
-        ComboBox newRecipeProtein = new ComboBox();
-        ComboBox newRecipeSide = new ComboBox();
-        Button checkRecipeName = new Button("Tarkista");
-        Label addRecipeError = new Label();
-        ButtonType addNewRecipe = new ButtonType("Lisää resepti", ButtonData.OK_DONE);
-        ButtonType newRecipeBack = new ButtonType("Palaa", ButtonData.CANCEL_CLOSE);
-        
-        
-        for (String p : proteins) {
-            newRecipeProtein.getItems().add(p);
-        }
-        
-        for (String s : sides) {
-            newRecipeSide.getItems().add(s);
-        }
-        
-        GridPane newRecipeGrid = new GridPane();
-        newRecipeGrid.add(sidesLabel,1,1);
-        newRecipeGrid.add(newRecipeSide,2,1);
- 
-        newRecipeGrid.add(proteinLabel,1,2);
-        newRecipeGrid.add(newRecipeProtein,2,2);
-        
-        newRecipeGrid.add(nameLabel,1,3);
-        newRecipeGrid.add(newRecipeName,2,3);
-        newRecipeGrid.add(checkRecipeName,3,3);
-        
-        
-        
-        newRecipeGrid.add(addRecipeError,2,4);
-        
-        addRecipeError.setWrapText(true);
-        
-        addRecipeDialog.getDialogPane().setContent(newRecipeGrid);
-        addRecipeDialog.getDialogPane().setMinWidth(360);
-        addRecipeDialog.getDialogPane().setMaxWidth(400);
-        
-        addRecipeDialog.getDialogPane().getButtonTypes().add(newRecipeBack);
-        
-                   
-        
-        checkRecipeName.setOnAction((event) -> {
-            addRecipeError.setText("");
-            boolean cannotAdd = true;
-        
-            try {
-                Recipe check = rs.read(newRecipeName.getText());
-                if (check != null) {
-                    addRecipeError.setText("Resepti " + newRecipeName.getText() + " on jo tietokannassa.");
-                } else {
-                    addRecipeDialog.getDialogPane().setContent(newRecipeGrid);
-        
-                }
-            } catch (Exception e) {
-               if (newRecipeProtein.getValue() != null && newRecipeSide.getValue() != null && !newRecipeName.getText().equals("")) {
-                   addRecipeDialog.getDialogPane().getButtonTypes().add(addNewRecipe);
-               }
-                
-            }
-            
-        });
-        
-        addRecipeDialog.setResultConverter(new Callback<ButtonType, Recipe>() {
-        @Override
-        public Recipe call(ButtonType b) {   
-            
-            if (b == addNewRecipe) {
-
-                return new Recipe(newRecipeName.getText(), 
-                        (String) newRecipeProtein.getValue(),
-                        (String) newRecipeSide.getValue(),0);            
-                }
-
-                return null;
-            }
-        });
-        
-        // remove recipe
-        
+        // remove recipe dialog
         Dialog<String> delRecipeDialog = new Dialog<>();
         delRecipeDialog.setTitle("Poista resepti");
         delRecipeDialog.setResizable(true);
@@ -378,20 +290,8 @@ public class GraphicUI extends Application {
         
         add.setOnAction((event) -> {
            display.clear();
-            
-           Optional<Recipe> r = addRecipeDialog.showAndWait();
-
-           if (r.isPresent()) {
-               Recipe a = r.get();
-               try {
-                   rs.add(a.getName(), a.getProtein(), a.getSide(), 0);
-               } catch (Exception e) {
-                   
-               }
-           }
-           
-           
-           
+           Stage newRecipeWindow = new Stage();
+           addRecipe(newRecipeWindow);
            
         });
         
@@ -443,7 +343,100 @@ public class GraphicUI extends Application {
 
     }
     
-
+    public void addRecipe(Stage window) {
+        Label nameLabel = new Label("Nimi: ");
+        Label proteinLabel = new Label("Pääraaka-aine: ");
+        Label sidesLabel = new Label("Lisuke: ");
+        TextField addRecipeName = new TextField();
+        ComboBox addRecipeProtein = new ComboBox();
+        ComboBox addRecipeSide = new ComboBox();
+        Button checkRecipeName = new Button("Tarkista");
+        Label addRecipeError = new Label();
+        Button addRecipeBack = new Button("Palaa");
+        Button addRecipeSave = new Button("Lisää resepti");
+        
+        
+        
+        for (String p : proteins) {
+            addRecipeProtein.getItems().add(p);
+        }
+        
+        for (String s : sides) {
+            addRecipeSide.getItems().add(s);
+        }
+        
+        GridPane addRecipeLayout = new GridPane();
+        addRecipeLayout.add(proteinLabel,1,1);
+        addRecipeLayout.add(addRecipeProtein,2,1);
+ 
+        addRecipeLayout.add(sidesLabel,1,2);
+        addRecipeLayout.add(addRecipeSide,2,2);
+        
+        addRecipeLayout.add(nameLabel,1,3);
+        addRecipeLayout.add(addRecipeName,2,3);
+        
+        addRecipeLayout.add(addRecipeBack,1,5);
+        addRecipeLayout.add(checkRecipeName,2,5);
+        
+        addRecipeLayout.add(addRecipeError,2,4);
+        
+        addRecipeError.setWrapText(true);
+        
+        addRecipeLayout.setPrefSize(420, 180);
+        addRecipeLayout.setAlignment(Pos.CENTER);
+        addRecipeLayout.setVgap(10);
+        addRecipeLayout.setHgap(10);
+        addRecipeLayout.setPadding(new Insets(20, 20, 20, 20));
+        
+        
+        addRecipeBack.setOnAction((event) -> {
+            window.close();
+        });
+        
+        checkRecipeName.setOnAction((event) -> {
+            addRecipeError.setText("");
+            boolean cannotAdd = true;
+        
+            try {
+                Recipe check = rs.read(addRecipeName.getText());
+                if (check != null) {
+                    addRecipeError.setText("Resepti " + addRecipeName.getText() + " on jo tietokannassa.");
+                } else {
+                    addRecipeLayout.add(addRecipeSave,3,5);
+        
+                }
+            } catch (Exception e) {
+               if (addRecipeProtein.getValue() != null && addRecipeSide.getValue() != null && !addRecipeName.getText().equals("")) {
+                   addRecipeLayout.add(addRecipeSave,3,5);
+               }
+                
+            }
+            
+        });
+        
+        addRecipeSave.setOnAction((event) -> {
+            try {
+                rs.add(addRecipeName.getText(), 
+                        (String) addRecipeProtein.getValue(),
+                        (String) addRecipeSide.getValue(), 0);
+            } catch (Exception e) {
+                
+            }
+            
+            try {
+                window.close();
+            } catch (Exception e) {
+                
+            }
+        });
+        
+        
+        Scene addRecipeScene = new Scene(addRecipeLayout);
+        window.setScene(addRecipeScene);
+        window.setTitle("Lisää resepti - " + us.getLoggedIn().getUid());
+        window.show();
+        
+    }
     
     public static void main(String[] args) {
         

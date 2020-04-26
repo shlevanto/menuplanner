@@ -34,4 +34,5 @@ pv | aika | kuvaus
 23.4. | 1,5 | käyttöliittymän rakentamista
 23.4. | 1 | lisää resepti toiminnallisuus käyttöliittymään
 24.4. | 1,5 | poista resepti toiminnallisuus käyttöliittymään
-**yht.** | **43,5**
+25.4. | 1 | lisää resepti vaihdettu dialogista normi-ikkunanäkymään
+**yht.** | **44,5**
