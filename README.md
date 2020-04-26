@@ -32,7 +32,7 @@ Testit suoritetaan komennolla
 
 Testikattavuusraportti luodaan komennolla
 
-<code>mvn jacoco:report</code>
+<code>mvn test jacoco:report</code>
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 
