@@ -235,6 +235,7 @@ public class GraphicUI extends Application {
         mainLayout.getChildren().add(splitScreen);
         mainLayout.setAlignment(Pos.CENTER);
         
+        /*
         // remove recipe dialog
         Dialog<String> delRecipeDialog = new Dialog<>();
         delRecipeDialog.setTitle("Poista resepti");
@@ -262,7 +263,6 @@ public class GraphicUI extends Application {
         delRecipeGrid.add(delRecipesList,2,1);
       
         delRecipeDialog.getDialogPane().setContent(delRecipeGrid);
-        delRecipeDialog.getDialogPane().setMinSize(2,2);
         delRecipeDialog.getDialogPane().getButtonTypes().add(delRecipeBack);
         delRecipeDialog.getDialogPane().getButtonTypes().add(delRecipe);
         
@@ -279,7 +279,7 @@ public class GraphicUI extends Application {
             }
         });
         
-
+        */
         // button actions
         
         list.setOnAction((event) -> {
@@ -307,18 +307,12 @@ public class GraphicUI extends Application {
         });
         
         del.setOnAction((event) -> {
-           display.clear();
-            
-           Optional<String> rDel = delRecipeDialog.showAndWait();
+           // opens in a new window 
            
-           if (rDel.isPresent()) {
-               try {
-                   String sDel = rDel.get();
-                   rs.remove(sDel);
-               } catch (Exception e) {
-                   
-               }
-           }
+           display.clear();
+           Stage delRecipeWindow = new Stage();
+           delRecipe(delRecipeWindow);
+
            
            
         });
@@ -338,11 +332,16 @@ public class GraphicUI extends Application {
                 System.out.println(e);
             }
             
-            for (int i = 0; i < weekly.length; i++) {
-                display.appendText(days[i] + "\n");
-                display.appendText(weekly[i] + "\n");
+            if (weekly[0] == null) {
+                display.appendText("Tietokannassa on alle 5 reseptiä. \n");
+                display.appendText("Ei voida generoida ruokalistaa.");
             }
-            
+            else {
+                for (int i = 0; i < weekly.length; i++) {
+                    display.appendText(days[i] + "\n");
+                    display.appendText(weekly[i] + "\n");
+                }
+            }
         });
         
         // scene
@@ -432,21 +431,88 @@ public class GraphicUI extends Application {
                 rs.add(addRecipeName.getText(), 
                         (String) addRecipeProtein.getValue(),
                         (String) addRecipeSide.getValue(), 0);
+                addRecipeError.setText("Resepti " + addRecipeName.getText() + " lisätty.");
+                addRecipeProtein.setValue("");
+                addRecipeSide.setValue("");
+                addRecipeName.setText("");
+                addRecipeLayout.getChildren().remove(addRecipeSave);
+                
             } catch (Exception e) {
                 
             }
             
-            try {
-                window.close();
-            } catch (Exception e) {
-                
-            }
+            //window.close();
+            
         });
         
         
         Scene addRecipeScene = new Scene(addRecipeLayout);
         window.setScene(addRecipeScene);
         window.setTitle("Lisää resepti - " + us.getLoggedIn().getUid());
+        window.show();
+        
+    }
+    
+    public void delRecipe(Stage window) {
+        // components
+        Label delNameLabel = new Label("Valitse resepti: ");
+        ComboBox delRecipesList = new ComboBox();
+        Button delRecipe = new Button("Poista resepti");
+        Button delRecipeBack = new Button("Palaa");
+        
+        // load ComboBox
+        ArrayList<Recipe> recipes = new ArrayList<>();
+            
+        try {
+            recipes = rs.list();
+        } catch (Exception e) {
+            
+        }
+            
+        for (Recipe r : recipes) {
+            delRecipesList.getItems().add(r.getName());
+        }
+        
+        //layout
+        GridPane delRecipeLayout = new GridPane();
+        delRecipeLayout.add(delNameLabel,1,1);
+        delRecipeLayout.add(delRecipesList,2,1);
+        delRecipeLayout.add(delRecipeBack,1,2);
+        delRecipeLayout.add(delRecipe,2,2);
+       
+        // layout preferences
+        delRecipeLayout.setPrefSize(480, 180);
+        delRecipeLayout.setAlignment(Pos.CENTER);
+        delRecipeLayout.setVgap(10);
+        delRecipeLayout.setHgap(10);
+        delRecipeLayout.setPadding(new Insets(20, 20, 20, 20));
+         
+        
+        // button actions
+        delRecipe.setOnAction((event) -> {
+            
+            try {
+                rs.remove((String) delRecipesList.getValue());
+                delRecipesList.getItems().clear();
+                
+                ArrayList<Recipe> tempRecipes = rs.list();
+              
+                for (Recipe r : tempRecipes) {
+                    delRecipesList.getItems().add(r.getName());
+        
+                }
+            } catch (Exception e) {
+                
+            }
+        });
+        
+        delRecipeBack.setOnAction((event) -> {
+           window.close(); 
+        });
+        
+        Scene delRecipeScene = new Scene(delRecipeLayout);
+        window.setScene(delRecipeScene);
+        window.setTitle("Poista resepti - " + us.getLoggedIn().getUid());
         window.show();
         
     }

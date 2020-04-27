@@ -35,5 +35,6 @@ pv | aika | kuvaus
 23.4. | 1 | lisää resepti toiminnallisuus käyttöliittymään
 24.4. | 1,5 | poista resepti toiminnallisuus käyttöliittymään
 25.4. | 1 | lisää resepti vaihdettu dialogista normi-ikkunanäkymään
-25.4. | 2 | käyttöohjetta ja GUI viilausta
-**yht.** | **46,5**
+25.4. | 2,5 | käyttöohjetta ja GUI viilausta
+26.4. | 0,5 | muokattu käytöliittymää
+**yht.** | **47,5**
