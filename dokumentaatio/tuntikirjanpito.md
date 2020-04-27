@@ -36,5 +36,5 @@ pv | aika | kuvaus
 24.4. | 1,5 | poista resepti toiminnallisuus käyttöliittymään
 25.4. | 1 | lisää resepti vaihdettu dialogista normi-ikkunanäkymään
 25.4. | 2,5 | käyttöohjetta ja GUI viilausta
-26.4. | 0,5 | muokattu käytöliittymää
-**yht.** | **47,5**
+26.4. | 1 | muokattu käytöliittymää, pom.xm  muokkauksella javadoc kuntoon
+**yht.** | **48**
