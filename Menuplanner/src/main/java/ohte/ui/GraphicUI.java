@@ -235,51 +235,6 @@ public class GraphicUI extends Application {
         mainLayout.getChildren().add(splitScreen);
         mainLayout.setAlignment(Pos.CENTER);
         
-        /*
-        // remove recipe dialog
-        Dialog<String> delRecipeDialog = new Dialog<>();
-        delRecipeDialog.setTitle("Poista resepti");
-        delRecipeDialog.setResizable(true);
-        Label delNameLabel = new Label("Valitse resepti: ");
-        ComboBox delRecipesList = new ComboBox();
-        ButtonType delRecipe = new ButtonType("Poista resepti", ButtonData.OK_DONE);
-        ButtonType delRecipeBack = new ButtonType("Palaa", ButtonData.CANCEL_CLOSE);
-        
-        ArrayList<Recipe> recipes = new ArrayList<>();
-            
-            try {
-                recipes = rs.list();
-            } catch (Exception e) {
-                
-            }
-            
-        for (Recipe r : recipes) {
-            delRecipesList.getItems().add(r.getName());
-        }
-        
-        
-        GridPane delRecipeGrid = new GridPane();
-        delRecipeGrid.add(delNameLabel,1,1);
-        delRecipeGrid.add(delRecipesList,2,1);
-      
-        delRecipeDialog.getDialogPane().setContent(delRecipeGrid);
-        delRecipeDialog.getDialogPane().getButtonTypes().add(delRecipeBack);
-        delRecipeDialog.getDialogPane().getButtonTypes().add(delRecipe);
-        
-        delRecipeDialog.setResultConverter(new Callback<ButtonType, String>() {
-        @Override
-        public String call(ButtonType b) {   
-            
-            if (b == delRecipe) {
-
-                return (String) delRecipesList.getValue();           
-                }
-
-                return null;
-            }
-        });
-        
-        */
         // button actions
         
         list.setOnAction((event) -> {
