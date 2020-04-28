@@ -12,8 +12,6 @@ Pakkausten väliset suhteet ilmenevät pakkauskaaviosta.
 
 ![alt text](images/MenuplannerUML.png)
 
-![alt text](images/Menuplannerpack.png)
-
 <h2>Käyttöliittymä</h2>
 
 <h2>Tietokanta</h2>
