@@ -26,6 +26,12 @@ public class RecipeDao implements Dao<Recipe, String> {
     private ResultSet r;
     private String databaseId;
     
+    /**
+     * Creating a new user
+     * @param user String user is used as database name for the databaseId variable
+     * @param recipes List of default recipes from the config.properties file
+     * @throws SQLException 
+     */
     public RecipeDao(String user, ArrayList<Recipe> recipes) throws SQLException {
         this.databaseId = user;
         
@@ -52,6 +58,10 @@ public class RecipeDao implements Dao<Recipe, String> {
         db.close();
     }
     
+    /**
+     * Logging in an excisting user.
+     * @param user String for uid, opens the excisting users database.
+     */
     public RecipeDao(String user) {
         this.databaseId = user;
     }

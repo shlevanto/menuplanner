@@ -18,7 +18,7 @@ public class RecipeService {
     private RecipeDao rd;
     
     /**
-     * 
+     * For creating a new user with default recipes in the database.
      * @param u A recipe database is created for each user.
      * @param recipes The Recipes defined in the config file.
      */
@@ -29,7 +29,10 @@ public class RecipeService {
             
         }
     }
-    
+    /**
+     * When logging in an excisting user.
+     * @param u User uid is used as database name.
+     */
     public RecipeService(User u) {
         try {
             this.rd = new RecipeDao(u.getUid());
