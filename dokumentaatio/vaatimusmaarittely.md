@@ -13,12 +13,12 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
   * uuden käyttäjän luominen **tehty**
   * käyttäjän sisäänkirjautuminen **tehty**
 * käyttäjä voi listata järjestelmässä olevat reseptit ja niiden tiedot **tehty**
-* käyttäjä voi muokata ruokalajin nimeä, pääraaka-ainetta tai lisuketta
 * käyttäjä voi lisätä uusia reseptejä **tehty**
 * käyttäjä voi lisätä uusia pääraaka-aineita ja lisukkeita **config.properties**
 * käyttäjä voi generoida arkiviikon ruokalistan **tehty**
+* graafinen käyttöliittymä, tehdään 1. releasen jälkeen **tehty**
 * ruokalista voidaan tallettaa erilliseen tiedostoon
-* graafinen käyttöliittymä, tehdään 1. releasen jälkeen
+* käyttäjä voi muokata ruokalajin nimeä, pääraaka-ainetta tai lisuketta
 
 <h2>Jatkokehitysideoita</h2>
 

@@ -37,4 +37,5 @@ pv | aika | kuvaus
 25.4. | 1 | lisää resepti vaihdettu dialogista normi-ikkunanäkymään
 25.4. | 2,5 | käyttöohjetta ja GUI viilausta
 26.4. | 1 | muokattu käytöliittymää, pom.xm  muokkauksella javadoc kuntoon
-**yht.** | **48**
+27.4. | 1 | viimeiset viilaukset ennen deadlinea
+**yht.** | **42**
