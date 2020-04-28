@@ -38,4 +38,5 @@ pv | aika | kuvaus
 25.4. | 2,5 | käyttöohjetta ja GUI viilausta
 26.4. | 1 | muokattu käytöliittymää, pom.xm  muokkauksella javadoc kuntoon
 27.4. | 1 | viimeiset viilaukset ennen deadlinea
-**yht.** | **42**
+27.4. | 1,5 | kaavioiden piirtämistä
+**yht.** | **43,5**
