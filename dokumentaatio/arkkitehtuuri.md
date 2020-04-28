@@ -34,9 +34,9 @@ Sovellus tallettaa tietoja kahteen tietokantaan. Käyttäjätietokanta (oletusar
 
 <h2>Konfiguraatiotiedosto</h2>
 
-Sovellskansio sisältää konfiguraatiotiedoston [config.properties](../Menuplanner/config.properties).
+Sovelluskansion tulee sisältää konfiguraatiotiedoston [config.properties](../Menuplanner/config.properties). Tiedosto on ladattavissa releasen yhteydessä.
 
-Tiedostossa määritellään käyttäjätietokannan nimi, oletusarvoisesti uuden käyttäjän käyttöön tulevat pääraaka-aineet ja lisukkeet sekä uuden käyttäjän tietokantaan generoitavat oletusreseptit.
+Tiedostossa määritellään käyttäjätietokannan nimi, oletusarvoisesti uuden käyttäjän käyttöön tulevat pääraaka-aineet ja lisukkeet sekä uuden käyttäjän tietokantaan generoitavat oletusreseptit. Tiedosto tukee UTF-8 merkistöä, joten teksteissä voi esiintyä ääkkösiä.
 
 Pääraaka-aineet ja lisukkeet on erotettu pilkuilla
 
