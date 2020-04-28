@@ -360,6 +360,7 @@ public class GraphicUI extends Application {
             window.close();
         });
         
+        
         checkRecipeName.setOnAction((event) -> {
             addRecipeError.setText("");
             boolean cannotAdd = true;
@@ -382,6 +383,11 @@ public class GraphicUI extends Application {
         });
         
         addRecipeSave.setOnAction((event) -> {
+            if (addRecipeName.getText().equals("")) {
+                addRecipeError.setText("Reseptin nimikenttä ei voi olla tyhjä.");
+                return;
+            }
+            
             try {
                 rs.add(addRecipeName.getText(), 
                         (String) addRecipeProtein.getValue(),
@@ -393,10 +399,10 @@ public class GraphicUI extends Application {
                 addRecipeLayout.getChildren().remove(addRecipeSave);
                 
             } catch (Exception e) {
+                 addRecipeError.setText("Resepti " + addRecipeName.getText() + " on jo tietokannassa.");
                 
             }
             
-            //window.close();
             
         });
         
