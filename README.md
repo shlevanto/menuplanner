@@ -8,7 +8,9 @@ Sovelluksessa on käyttäjähallinta, siihen on mahdollista kirjautua eri käytt
 
 <h2>Release</h2>
 
-[Ensimmäinen versio, tekstikäyttöliittymällä](https://github.com/shlevanto/menuplanner/releases)
+[viikko 6, graafisella käyttöliittymällä](https://github.com/shlevanto/menuplanner/releases/tag/OhTe)
+
+[viikko 5, tekstikäyttöliittymällä](https://github.com/shlevanto/menuplanner/releases/tag/vko5)
 
 <h2>Dokumentaatio</h2>
 
