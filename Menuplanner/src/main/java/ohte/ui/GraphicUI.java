@@ -98,7 +98,7 @@ public class GraphicUI extends Application {
             
                 us.login(new User(userToLogIn));
 
-                this.rs = new RecipeService(us.getLoggedIn(), setup.initRecipes());
+                this.rs = new RecipeService(us.getLoggedIn());
 
                 try {
                     mainWindow(window);

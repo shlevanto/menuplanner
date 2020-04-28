@@ -51,6 +51,10 @@ public class RecipeDao implements Dao<Recipe, String> {
         
         db.close();
     }
+    
+    public RecipeDao(String user) {
+        this.databaseId = user;
+    }
   
     @Override
     public void create(Recipe recipe) throws SQLException {

@@ -29,6 +29,14 @@ public class RecipeService {
             
         }
     }
+    
+    public RecipeService(User u) {
+        try {
+            this.rd = new RecipeDao(u.getUid());
+        } catch (Exception e) {
+            
+        }
+    }
     /**
      * Adds a new recipe to the users recipe database.
      * @param name Input given by user.

@@ -51,7 +51,7 @@ public class Menu {
     }
     
     /**
-     * Initiates recipe pool for the weekly menu.
+     * Sets up recipe pool for the weekly menu.
      * Uses ArrayDeque for a heap structure based on the date for recipe in database
      * ensuring that recipes are rotated.
      */
