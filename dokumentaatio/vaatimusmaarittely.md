@@ -22,6 +22,7 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 
 <h2>Jatkokehitysideoita</h2>
 
+* resepteihin voi merkata kuinka moneksi päiväksi ruoka riittää
 * reseptitietojen liittäminen ruokiin
 * ostoslistan generoiminen viikon ruokalistan perusteella
 * lisätunnuksen lisääminen ruokiin, esim. ruoan tyyli (aasialainen, italialainen, kevyt), valmistumisen nopeus
