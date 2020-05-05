@@ -155,6 +155,10 @@ public class GraphicUI extends Application {
         // button actions
         createButton.setOnAction((event) -> {
             String userToCreate = newUser.getText();
+            if (userToCreate.equals("")) {
+                newUserError.setText("Käyttäjänimi ei voi olla tyhjä.");
+                return;
+            }
             boolean noCreate = false;
             
             try {

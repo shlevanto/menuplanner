@@ -10,44 +10,17 @@ package ohte.main;
  * @author levantsi
  */
 import ohte.ui.*;
-import ohte.setup.Setup;
-import ohte.dao.*;
-
-import java.sql.*;
-import java.util.Scanner;
-
-import javafx.application.Application;
-
-import javafx.stage.Stage;
-
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 
 /**
  *
  * @author levantsi
  */
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    
+    public static void main(String[] args) {
+    
         //graafinen käyttöliittymä
         GraphicUI.main(args);
-        
-        
-        
-        //tekstikäyttöliittymä
-        /*Scanner scanner = new Scanner(System.in);
-        
-        try {
-            Setup setup = new Setup("config");
-            UI ui = new UI(scanner, setup);
-            ui.login();
-        } catch (Exception e) {
-            System.out.println("Problems with config file.");
-        }
-        */
-        
-        
        
     }
     
