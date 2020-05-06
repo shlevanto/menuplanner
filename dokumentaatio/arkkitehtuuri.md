@@ -6,7 +6,7 @@ Pakkausten väliset suhteet ilmenevät pakkauskaaviosta.
 
 <h2>Pakkauskaavio</h2>
 
-![alt text](images/Menuplannerpac.png)
+![alt text](images/Menuplannerpack.png)
 
 <h2>Luokkakaavio</h2>
 
