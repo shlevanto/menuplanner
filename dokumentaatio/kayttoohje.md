@@ -15,11 +15,13 @@ recipes = makaronilaatikko,liha,pasta,kalakeitt,kala,keitto
 
 <h2>Käynnistäminen</h2>
 
-Ohjelma käynnistetään komennolla
+Mikäli olet ladannut koneellesi valmiiksi paketoidun .jar -tiedoston, käynnistetään ohjelma komennolla
 
-<code>java -jar Menuplanner***.jar</code>
+<code>java -jar Menuplanner.jar</code>
 
-*** riippuu siitä minkä releasen haluat käynnistää.
+Jos haluat käynnistää ohjelman lähdekoodista rakentamalla, voit ajaa Menuplanner -kansiossa käynnistysskriptin
+
+<code>./kaynnista</code>
 
 <h2>Kirjautuminen</h2>
 
@@ -35,10 +37,48 @@ Uusi käyttäjä luodaan valitsemalla kirjautumisnäkymässä 'Luo uusi käyttä
 
 <img src=images/newUserGUI.png>
 
+<h2>Päänäkymä</h2>
+
+<img src="images/mainview.png">
+
+Päänäkymässä valitaan haluttu toiminnallisuus painamalla vasemmassa laidassa olevaa painiketta.
+
 <h2>Tietokannassa olevien reseptien listaaminen</h2>
+
+<img src="listRecipesGUI.png">
+
+Listaa reseptit -painike näyttää tietokannassa olevat reseptit. Listassa ylimpänä ovat uusimmat reseptit.
 
 <h2>Uuden reseptin lisääminen</h2>
 
+Lisää reseptejä -painikkeella pääsee reseptien lisäämisnäkymään.
+
+<img src="images/addRecipe.png">
+
+Pudotusvalikoista valitaan lisättävän reseptin pääraaka-aine ja lisuke, tekstikenttään kirjoitetaan uuden reseptin nimi. Tämän jälkeen painetaan Tarkista -painiketta. Sovellus tarkistaa onko samanniminen resepti jo tietokannassa. Jos reseptiä ei löydy tietokannasta, tulee näkyviin Lisää resepti -painike, jolla resepti tallennetaan tietokantaan.
+
+<img src="addRecipeSave.png">
+
+Päänäkymään palataan klikkaamalla Palaa -painiketta.
+
 <h2>Reseptin poistaminen</h2>
 
+Poista reseptejä -painikkeella pääsee reseptien poistamisnäkymään.
+
+<img src = "delRecipe">
+
+Poistettava resepti valitaan pudotusvalikosta ja se poistetaan klikkaamalla Poista resepti -painiketta.
+
+Päänäkymään palataan klikkaamalla Palaa -painiketta.
+
 <h2>Ruokalistan generoiminen</h2>
+
+Tee ruokalista -painike generoi arkiviikon ruokalistan.
+
+<img src="generateMenu.png">
+
+Mikäli tietokannassa on vähemmän kuin viisi reseptiä, ei ruokalistaa voida generoida. Sovellus ilmoittaa tästä viestillä.
+
+<h2>Sovelluksesta poistuminen</h2>
+
+Sovelluksesta poistutaan klikkaamalla sovellusikkunan yläreunassa oikealla olevaa ruksia.
