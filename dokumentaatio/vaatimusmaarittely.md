@@ -1,9 +1,7 @@
 <h1>Vaatimusmärittely</h1>
 
 <h2>Sovelluksen tarkoitus</h2>
-Menuplanner auttaa arkiviikon ruokalistojen suunnittelussa. Sovellukseen on mahdollista tallettaa ruokien nimiä ja se generoi viikottaisen ruokalistan ruokien ominaisuuksien perusteella.
-
-Jokaiselle ruoalle voidaan määritellä ominaisuuksiksi pääaraaka-aine (esim. liha, kala, kasvis) ja lisuke (esim. peruna, riisi, pasta, keitto). Sovellus generoi ruokalistat siten, että kaksi samaa lisuketta ei tule peräkkäisille päiville. Lisäksi sovellus pitää kirjaa siitä, että samat ruoat eivät toistu liian usein.
+Menuplanner auttaa arkiviikon ruokalistojen suunnittelussa. Sovellukseen on mahdollista tallettaa ruokien nimiä ja se generoi viikottaisen ruokalistan ruokien ominaisuuksien perusteella. Jokaiselle ruoalle voidaan määritellä ominaisuuksiksi pääaraaka-aine (esim. liha, kala, kasvis) ja lisuke (esim. peruna, riisi, pasta, keitto). Sovellus generoi ruokalistat siten, että kaksi samaa lisuketta ei tule peräkkäisille päiville. Lisäksi sovellus pitää kirjaa siitä, että samat ruoat eivät toistu liian usein.
 
 <h2>Käyttäjät</h2>
 Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä ja poistaa ruokia sekä generoida ruokalistoja.
@@ -17,7 +15,7 @@ Käyttäjärooleja on vain yksi: normaali käyttäjä. Käyttäjä voi lisätä 
 * käyttäjä voi lisätä uusia reseptejä
 * käyttäjä voi määritellä käytössä olevan pääraaka-aineet ja lisukkeet konfiguroinnissa
 * käyttäjä voi generoida arkiviikon ruokalistan
-* graafinen käyttöliittymä, tehdään 1. releasen jälkeen
+* graafinen käyttöliittymä
 
 <h2>Jatkokehitysideoita</h2>
 
