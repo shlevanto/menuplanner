@@ -45,7 +45,7 @@ Päänäkymässä valitaan haluttu toiminnallisuus painamalla vasemmassa laidass
 
 <h2>Tietokannassa olevien reseptien listaaminen</h2>
 
-<img src="listRecipesGUI.png">
+<img src="images/listRecipesGUI.png">
 
 Listaa reseptit -painike näyttää tietokannassa olevat reseptit. Listassa ylimpänä ovat uusimmat reseptit.
 
