@@ -18,8 +18,6 @@ Testiluokka [MenuTest](../Menuplanner/src/test/java/MenuTest.java) testaa menun 
 
 Testiluokka generoi dao -luokkia [UserDao](../Menuplanner/src/main/java/ohte/dao/UserDao.java) ja [RecipeDao](../Menuplanner/src/main/java/ohte/dao/RecipeDao.java) käyttävien metodien testaamista varten testitietokannat, jotka poistetaan automaattisesti testiajon päätyttyä.
 
-Testiluokka generoi dao -luokkien [UserDao](../Menuplanner/src/main/java/ohte/dao/UserDao.java) testaamista varten testitietokannat, jotka poistetaan automaattisesti testiajon päätyttyä.
-
 <h3>Konfiguraatiotiedoston käsitteleminen (setup)</h3>
 
 Testiluokka [SetupTest](../Menuplanner/src/test/java/SetupTest.java) testaa konfiguraatiotiedoston käsittelelmistä. Se generoi testikäyttöön test.properties -nimisen tiedoston joka poistetaan automaattisesti testiajon päätteeksi.
