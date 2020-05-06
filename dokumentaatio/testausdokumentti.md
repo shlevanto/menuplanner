@@ -42,7 +42,7 @@ Sovellusta testatessa on käyty läpi sekä tilanne, jossa suorituskansiossa ei 
 
 <h3>Toiminnallisuudet</h3>
 
-Kaikki [määrittelydokumentin](vaatimusmärittely.md) ja [käyttöohjeen](kayttoohje.md) listaamat toiminnallisuudet on käyty läpi manuaalisesti ja automaattisin testein.
+Kaikki [määrittelydokumentin](vaatimusmaarittely.md) ja [käyttöohjeen](kayttoohje.md) listaamat toiminnallisuudet on käyty läpi manuaalisesti ja automaattisin testein.
 
 <h3>Käyttöliittymä</h3>
 
