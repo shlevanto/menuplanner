@@ -48,7 +48,7 @@ Ohjelman päätoiminnallisuudet on kuvattu sekvenssikaavioilla.
 
 <h3>Uuden reseptin tallentaminen</h3>
 
-![alt text](images/addRecipeSequence**.png)
+![alt text](images/addNewRecipeSequence.png)
 
 <h3>Reseptin poistaminen</h3>
 
