@@ -8,7 +8,7 @@ Ohjelmaa on testattu JUnitilla automatisoiduin testein sekä manuaalisesti. Käy
 
 Testiluokat on jaoteltu pakkauksen [ohte.domain](../Menuplanner/src/main/java/ohte/domain) sisällön mukaisesti.
 
-[UserTest](../Menuplanner/src/test/java/UserTest.java) ja [RecipeTest]((../Menuplanner/src/test/java/RecipeTest.java) testaavat että niille generoiduille olioille muodostuvat oikeat parametrien mukaiset muuttujat.
+[UserTest](../Menuplanner/src/test/java/UserTest.java) ja [RecipeTest](../Menuplanner/src/test/java/RecipeTest.java) testaavat että niille generoiduille olioille muodostuvat oikeat parametrien mukaiset muuttujat.
 
 Vastaavasti [UserServiceTest](../Menuplanner/src/test/java/UserServiceTest.java) ja [RecipeServiceTest](../Menuplanner/src/test/java/RecipeServiceTest.java) testaavat näiden luokkien keskeiset ominaisuudet eli tiedon välittämisen käyttöjärjestelmän ja DAO-luokkien välillä. DAO -luokkien testaaminen sisältyy näihin testeihin, niille ei ole rakennettu omia testiluokkia.
 
