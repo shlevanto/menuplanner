@@ -16,11 +16,9 @@ Testiluokka [MenuTest](../Menuplanner/src/test/java/MenuTest.java) testaa menun 
 
 <h3>DAO</h3>
 
-<<<<<<< HEAD
 Testiluokka generoi dao -luokkia [UserDao](../Menuplanner/src/main/java/ohte/dao/UserDao.java) ja [RecipeDao](../Menuplanner/src/main/java/ohte/dao/RecipeDao.java) käyttävien metodien testaamista varten testitietokannat, jotka poistetaan automaattisesti testiajon päätyttyä.
-=======
+
 Testiluokka generoi dao -luokkien [UserDao](../Menuplanner/src/main/java/ohte/dao/UserDao.java) testaamista varten testitietokannat, jotka poistetaan automaattisesti testiajon päätyttyä.
->>>>>>> f2eee0ea803f58f58f590de727b8fb5063b31e29
 
 <h3>Konfiguraatiotiedoston käsitteleminen (setup)</h3>
 
