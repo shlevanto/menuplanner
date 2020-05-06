@@ -47,33 +47,33 @@ Päänäkymässä valitaan haluttu toiminnallisuus painamalla vasemmassa laidass
 
 <img src="images/listRecipesGUI.png">
 
-Listaa reseptit -painike näyttää tietokannassa olevat reseptit. Listassa ylimpänä ovat uusimmat reseptit.
+'Listaa reseptit' -painike näyttää tietokannassa olevat reseptit. Listassa ylimpänä ovat uusimmat reseptit.
 
 <h2>Uuden reseptin lisääminen</h2>
 
-Lisää reseptejä -painikkeella pääsee reseptien lisäämisnäkymään.
+'Lisää reseptejä' -painikkeella pääsee reseptien lisäämisnäkymään.
 
 <img src="images/addRecipe.png">
 
-Pudotusvalikoista valitaan lisättävän reseptin pääraaka-aine ja lisuke, tekstikenttään kirjoitetaan uuden reseptin nimi. Tämän jälkeen painetaan Tarkista -painiketta. Sovellus tarkistaa onko samanniminen resepti jo tietokannassa. Jos reseptiä ei löydy tietokannasta, tulee näkyviin Lisää resepti -painike, jolla resepti tallennetaan tietokantaan.
+Pudotusvalikoista valitaan lisättävän reseptin pääraaka-aine ja lisuke, tekstikenttään kirjoitetaan uuden reseptin nimi. Tämän jälkeen painetaan 'Tarkista' -painiketta. Sovellus tarkistaa onko samanniminen resepti jo tietokannassa. Jos reseptiä ei löydy tietokannasta, tulee näkyviin 'Lisää resepti' -painike, jolla resepti tallennetaan tietokantaan.
 
 <img src="images/addRecipeSave.png">
 
-Päänäkymään palataan klikkaamalla Palaa -painiketta.
+Päänäkymään palataan klikkaamalla 'Palaa' -painiketta.
 
 <h2>Reseptin poistaminen</h2>
 
-Poista reseptejä -painikkeella pääsee reseptien poistamisnäkymään.
+'Poista reseptejä'' -painikkeella pääsee reseptien poistamisnäkymään.
 
-<img src = "images/delRecipe">
+<img src = "images/delRecipe.png">
 
-Poistettava resepti valitaan pudotusvalikosta ja se poistetaan klikkaamalla Poista resepti -painiketta.
+Poistettava resepti valitaan pudotusvalikosta ja se poistetaan klikkaamalla 'Poista resepti' -painiketta.
 
-Päänäkymään palataan klikkaamalla Palaa -painiketta.
+Päänäkymään palataan klikkaamalla 'Palaa' -painiketta.
 
 <h2>Ruokalistan generoiminen</h2>
 
-Tee ruokalista -painike generoi arkiviikon ruokalistan.
+'Tee ruokalista' -painike generoi arkiviikon ruokalistan.
 
 <img src="images/generateMenu.png">
 
