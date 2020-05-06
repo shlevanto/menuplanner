@@ -57,7 +57,7 @@ Lisää reseptejä -painikkeella pääsee reseptien lisäämisnäkymään.
 
 Pudotusvalikoista valitaan lisättävän reseptin pääraaka-aine ja lisuke, tekstikenttään kirjoitetaan uuden reseptin nimi. Tämän jälkeen painetaan Tarkista -painiketta. Sovellus tarkistaa onko samanniminen resepti jo tietokannassa. Jos reseptiä ei löydy tietokannasta, tulee näkyviin Lisää resepti -painike, jolla resepti tallennetaan tietokantaan.
 
-<img src="addRecipeSave.png">
+<img src="images/addRecipeSave.png">
 
 Päänäkymään palataan klikkaamalla Palaa -painiketta.
 
@@ -65,7 +65,7 @@ Päänäkymään palataan klikkaamalla Palaa -painiketta.
 
 Poista reseptejä -painikkeella pääsee reseptien poistamisnäkymään.
 
-<img src = "delRecipe">
+<img src = "images/delRecipe">
 
 Poistettava resepti valitaan pudotusvalikosta ja se poistetaan klikkaamalla Poista resepti -painiketta.
 
@@ -75,7 +75,7 @@ Päänäkymään palataan klikkaamalla Palaa -painiketta.
 
 Tee ruokalista -painike generoi arkiviikon ruokalistan.
 
-<img src="generateMenu.png">
+<img src="images/generateMenu.png">
 
 Mikäli tietokannassa on vähemmän kuin viisi reseptiä, ei ruokalistaa voida generoida. Sovellus ilmoittaa tästä viestillä.
 
