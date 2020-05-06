@@ -8,7 +8,7 @@ Ohjelmaa on testattu JUnitilla automatisoiduin testein sekä manuaalisesti. Käy
 
 <h3>DAO</h3>
 
-Testiluokka generoi dao -luokkien testaamista varten testitietokannat, jotka poistetaan automaattisesti testiajon päätyttyä.
+Testiluokka generoi dao -luokkien [UserDao](../Menplanner/src/main/java/ohte/dao/UserDao.java) testaamista varten testitietokannat, jotka poistetaan automaattisesti testiajon päätyttyä.
 
 <h3>Konfiguraatiotiedoston käsitteleminen (setup)</h3>
 
