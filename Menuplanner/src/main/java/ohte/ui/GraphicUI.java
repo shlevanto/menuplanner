@@ -210,10 +210,10 @@ public class GraphicUI extends Application {
         Button list = new Button("Listaa reseptit");
         list.setWrapText(true);
         list.setMinWidth(150);
-        Button add = new Button("Lisää resepti");
+        Button add = new Button("Lisää reseptejä");
         add.setWrapText(true);
         add.setMinWidth(150);
-        Button del = new Button("Poista resepti");
+        Button del = new Button("Poista reseptejä");
         del.setWrapText(true);
         del.setMinWidth(150);
         Button generate = new Button("Tee ruokalista");
@@ -413,7 +413,7 @@ public class GraphicUI extends Application {
         
         Scene addRecipeScene = new Scene(addRecipeLayout);
         window.setScene(addRecipeScene);
-        window.setTitle("Lisää resepti - " + us.getLoggedIn().getUid());
+        window.setTitle("Lisää reseptejä - " + us.getLoggedIn().getUid());
         window.show();
         
     }
@@ -477,7 +477,7 @@ public class GraphicUI extends Application {
         
         Scene delRecipeScene = new Scene(delRecipeLayout);
         window.setScene(delRecipeScene);
-        window.setTitle("Poista resepti - " + us.getLoggedIn().getUid());
+        window.setTitle("Poista reseptejä - " + us.getLoggedIn().getUid());
         window.show();
         
     }
