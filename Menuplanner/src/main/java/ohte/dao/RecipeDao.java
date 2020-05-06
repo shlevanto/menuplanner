@@ -30,7 +30,7 @@ public class RecipeDao implements Dao<Recipe, String> {
      * Creating a new user
      * @param user String user is used as database name for the databaseId variable
      * @param recipes List of default recipes from the config.properties file
-     * @throws SQLException 
+     * @throws SQLException if database or table can not be created.
      */
     public RecipeDao(String user, ArrayList<Recipe> recipes) throws SQLException {
         this.databaseId = user;
@@ -59,13 +59,18 @@ public class RecipeDao implements Dao<Recipe, String> {
     }
     
     /**
-     * Logging in an excisting user.
-     * @param user String for uid, opens the excisting users database.
+     * Logging in an existing user.
+     * @param user String for uid, opens the existing users database.
      */
     public RecipeDao(String user) {
         this.databaseId = user;
     }
   
+    /**
+     * 
+     * @param recipe User inputted recipe to be added to database
+     * @throws SQLException if recipe is in database already
+     */
     @Override
     public void create(Recipe recipe) throws SQLException {
         connect();
@@ -86,6 +91,12 @@ public class RecipeDao implements Dao<Recipe, String> {
         db.close();        
     }
     
+    /**
+     * 
+     * @param key Recipe name to be searched
+     * @return Returns recipe with name defined by key
+     * @throws SQLException if recipe is not found in database and can not be generated
+     */
     @Override
     public Recipe read(String key) throws SQLException {
         connect();
@@ -114,6 +125,12 @@ public class RecipeDao implements Dao<Recipe, String> {
         return recipe;
     }
     
+    /**
+     * 
+     * @param r Recipe to be updated
+     * @return Updated recipes name
+     * @throws SQLException if update can not be done in database
+     */
     @Override
     public Recipe update(Recipe r) throws SQLException {
         connect();
@@ -137,6 +154,11 @@ public class RecipeDao implements Dao<Recipe, String> {
         return read(r.getName());
     }
     
+    /**
+     * 
+     * @return ArrayList of recipes in database sorted by date in ascending order
+     * @throws SQLException if database can not be read
+     */
     @Override
     public List<Recipe> list() throws SQLException {
         connect();
@@ -160,6 +182,11 @@ public class RecipeDao implements Dao<Recipe, String> {
         return recipeList;
     }
     
+    /**
+     * Deletes recipe from database
+     * @param key name of recipe to be deleted
+     * @throws SQLException if recipe can not be deleted eg. is not in database
+     */
     @Override
     public void delete(String key) throws SQLException {
         connect();
@@ -176,6 +203,11 @@ public class RecipeDao implements Dao<Recipe, String> {
         p.close();
         db.close();
     }
+    
+    /**
+     * Database connections
+     * @throws SQLException if connection fails
+     */
     
     @Override
     public void connect() throws SQLException {

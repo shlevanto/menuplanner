@@ -40,4 +40,5 @@ pv | aika | kuvaus
 27.4. | 1 | viimeiset viilaukset ennen deadlinea
 27.4. | 1,5 | kaavioiden piirtämistä
 5.5. | 1 | viimeisiä viilauksia ja dokumentointia
-**yht.** | **44,5**
+6.5. | 2,5 | dokumentointia
+**yht.** | **47**
