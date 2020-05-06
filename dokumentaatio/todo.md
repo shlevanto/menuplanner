@@ -3,6 +3,6 @@
 - ~~käyttöohje~~
 - ~~vaatimusmärittely~~
 - arkkitehtuurikuvaus
-- testausdokumentti
+- ~~testausdokumentti~~
 - javadoc päivitys
 - release
