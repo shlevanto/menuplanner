@@ -1,6 +1,6 @@
 <h1>Testausdokumentti</h1>
 
-Ohjelmaa on testattu JUnitilla automatisoiduin testein sekä manuaalisesti. Käyttöliittymän toiminta on testattu ainoastaan manuaalisesti ja niitä ei ole laskettu testikattavuusraportteihin mukaan.
+Ohjelmaa on testattu JUnitilla automatisoiduin testein sekä manuaalisesti. Käyttöliittymän toiminta on testattu ainoastaan manuaalisesti. Käyttöliittymä ja Main -luokka on jätetty testikattavuusraporttien ulkopuolelle.
 
 <h2>JUnit -testit</h2>
 
