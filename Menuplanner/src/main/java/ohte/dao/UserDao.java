@@ -22,7 +22,11 @@ public class UserDao implements Dao<User, String> {
     private ResultSet r;
     private String databaseId;
     
-    
+    /**
+     * Constructor for UserDao
+     * @param dbId read from config file, defines the userdatabase's name
+     * @throws SQLException if new table can not be created
+     */
     public UserDao(String dbId) throws SQLException {
             
         this.databaseId = dbId;
@@ -38,7 +42,12 @@ public class UserDao implements Dao<User, String> {
         s.close();
         db.close();
     }
-  
+    /**
+     * Creates a new user
+     * @param user defined by the user in GUI
+     * @throws SQLException if username is in the database
+     */
+    
     @Override
     public void create(User user) throws SQLException {
         connect();
@@ -56,11 +65,19 @@ public class UserDao implements Dao<User, String> {
         
     }
     
+    /**
+     * Reads and returns a user from the database
+     * @param uid User id String inputted by user / GUI
+     * @return User object
+     * @throws SQLException 
+     */
+    
+    
     @Override
-    public User read(String key) throws SQLException {
+    public User read(String uid) throws SQLException {
         connect();
         p = db.prepareStatement("SELECT uid FROM Users WHERE uid = (?)");
-        p.setString(1, key);
+        p.setString(1, uid);
         
         User user = null;
         
@@ -72,7 +89,7 @@ public class UserDao implements Dao<User, String> {
         
         if (r.next()) {
            
-            user =  new User(key);
+            user =  new User(uid);
         }
         
         p.close();
@@ -81,13 +98,22 @@ public class UserDao implements Dao<User, String> {
         return user;
         
     }
-    
+    /**
+     * Not used
+     * @param user
+     * @return updated user
+     * @throws SQLException 
+     */
     @Override
     public User update(User user) throws SQLException {
         
         return user;
     }
-    
+    /**
+     * Lists users in database
+     * @return ArrayList of Users
+     * @throws SQLException if database query fails
+     */
     @Override
     public ArrayList<User> list() throws SQLException {
         ArrayList<User> userList = new ArrayList<>();
@@ -110,21 +136,19 @@ public class UserDao implements Dao<User, String> {
         return userList;
     }
     
+    /**
+     * Not in use
+     * @param key user name
+     * @throws SQLException if user can not be removed 
+     */
     @Override
     public void delete(String key) throws SQLException {
-        connect();
-        p = db.prepareStatement("DELETE FROM Users WHERE Uid = (?)");
-        p.setString(1, key);
-        
-        try {
-            p.executeUpdate();
-        } catch (Exception e) {
-        }
-
-        p.close();
-        db.close();
+       
     }
-    
+    /**
+     * Database connections
+     * @throws SQLException if connection fails
+     */
     @Override
     public void connect() throws SQLException {
         try {

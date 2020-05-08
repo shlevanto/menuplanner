@@ -58,8 +58,7 @@ public class Recipe {
         this.side = side;
         this.date = date; 
     }
-    
-    
+     
     public void setName(String name) {
         this.name = name;
     }

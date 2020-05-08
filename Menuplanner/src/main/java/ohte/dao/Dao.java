@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.*;
 
 /**
- *
+ * Defines the interface for DAO -classes
  * @author levantsi
  */
 public interface Dao<T, K> {
