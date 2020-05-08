@@ -41,4 +41,4 @@ pv | aika | kuvaus
 27.4. | 1,5 | kaavioiden piirtämistä
 5.5. | 1 | viimeisiä viilauksia ja dokumentointia
 6.5. | 3 | dokumentointia
-**yht.** | **47,5**
+**yht.** | **54,5**

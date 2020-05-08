@@ -38,23 +38,39 @@ Sovellus tallettaa tietoja kahteen tietokantaan. Käyttäjätietokanta (oletusar
 
 Ohjelman päätoiminnallisuudet on kuvattu sekvenssikaavioilla.
 
+<h3>Kirjautuminen</h3>
+
+Ohjelmaan voidaan kirjautua joko olemassaolevalla käyttäjätunnuksella tai luoda uusi käyttäjä. Sisäänkirjautumisikkunan avautuessa käyttöliittymä luo UserService -olion, joka kommunikoi UserDao -luokan kautta käyttäjätietokannan kanssa. UserService -puolestaan luo uuden käyttäjätietokannan jos konfiguraatiossa määritellyn nimistä tietokantaa ei vielä ole sovelluksen juurikansiossa.
+
 <h3>Käyttäjän lisääminen</h3>
+
+Käyttäjää lisätessä ohjelma ensin tarkistaa ettei samannimistä käyttäjää jo ole tietokannassa ja ettei sinne yritetä tallentaa käyttäjänimeksi tyhjää tekstikenttää. Mikäli samannimistä käyttäjää ei ole, luodaan uusi käyttäjä ja kirjataan se sisään ohjelmaan.
 
 ![alt text](images/createUserSequence.png)
 
 <h3>Käyttäjän kirjautuminen</h3>
 
+Käyttäjän kirjautuessa ohjelma luo RecipeService -olion, joka puolestaan joko luo käyttäjän nimellä olevan tietokannan jos sellaista ei jo ole.
+
 ![alt text](images/userLoginSequence.png)
 
 <h3>Uuden reseptin tallentaminen</h3>
+
+Ennen uuden reseptin tallentamista ohjelma pyytää käyttäjää tarkistamaan että resepti voidaan lisätä. Tämä estää usean samannimisen reseptin lisäämisen tietokantaan. Mikäli tietokantahaku reseptin toivotulla nimellä palauttaa jonkin muun arvon kuin 'null', voidaan resepti tallettaa tietokantaan 'Lisää resepti' -painikkeella. Uuden reseptin päivämääräksi asetetaan '01-01-1900 00:00:xx', missä xx on satunnaisluku. Tällä varmistetaan että viimeisimmäksi lisätyt reseptit päätyvät todennäköisemmin mukaan seuraavaan generoituun ruokalistaan.
 
 ![alt text](images/addNewRecipeSequence.png)
 
 <h3>Reseptin poistaminen</h3>
 
+Reseptin poistaminen tapahtuu valitsemalla listasta poistettava resepti. Lista päivittyy poistamisen yhteydessä.
+
 ![alt text](images/delRecipeSequence.png)
 
 <h3>Menun generoiminen</h3>
+
+Ruokalista generoidaan Menu -olion generate -metodilla. Metodi hakee tietokannasta listan resepteistä lajiteltuna päivämäärän mukaan ja asettaa sen hajautustauluun jossa avaimena käytetään lisukkeita ja arvoina ArrayDeque -tietorakenteella olevaa pinoa. Metodi käy läpi hajautustaulua ja valikoi reseptejä niin ettei kahta samaa lisuketta tule vierekkäisille päiville.
+
+Generoinnin yhteydessä kutsutaan myös updateUsedRecipes -metodia, joka päivittää tietokantaan ruokalistalle päätyneiden reseptien päivämääräksi sen hetkisen päivämäärän käyttäen Javan LocalDateTime.now() -metodia.
 
 ![alt text](images/generateMenuSequence.png)
 
@@ -74,10 +90,10 @@ ja reseptit pilkuilla mutta siten että jokaista reseptiä kohden on oltava nimi
 
 <h2>Kehityskohteet</h2>
 
-Käyttäjätietojen ja reseptien erottaminen omiin tietokantoihinsa ei todennäköisesti ole paras mahdollinen ratkaisu. Tietojen yhdistäminen samaan tietokantaan niin, että jokaiselle käyttäjälle näkyisivät vain hänen omat reseptinsä, olisi kuitenkin vaatinut useampia tietokantatauluja ja siksi päädyin yksinkertaisuuden vuoksi tähän ratkaisuun. Sovelluksen jatkokehityksessä tulisi yhdistää kaikki tiedot yhteen tietokantaaan jotta se ei generoisi suurta määrää erillisiä käyttäjäkohtaisia tietokantoja.
+Käyttäjätietojen ja reseptien erottaminen omiin tietokantoihinsa ei todennäköisesti ole paras mahdollinen ratkaisu. Tietojen yhdistäminen samaan tietokantaan niin, että jokaiselle käyttäjälle näkyisivät vain hänen omat reseptinsä ja että resepteille olisi ylläpidetty käyttäjäkohtaisia tietoja siitä milloin niitä on viimeksi käytetty osana ruokalistaa, olisi kuitenkin vaatinut useampia tietokantatauluja ja monimutkaisempaa tietokannan rakennetta.Päädyi yksinkertaisuuden vuoksi kahden tietokannan ratkaisuun. Sovelluksen jatkokehityksessä tulisi yhdistää kaikki tiedot yhteen tietokantaaan jotta se ei generoisi suurta määrää erillisiä käyttäjäkohtaisia tietokantoja.
 
 Konfiguraatiotiedostossa reseptit olisi kannattanut erottaa esim. puolipisteellä niin, ettei yksittäinen puuttuva pilkku johda virheellisesti luettuihin resepteihin, esim.
 
 <code>makaronilaatikko,liha,pasta;kalakeitto,kala,keitto</code>
 
-DAO -luokkiin on jäänyt resetitietojen päivittämisen osalta turhaa koodia, koska tässä toteutuksessa respeteistä päivittyvä vain date -kentät. Alkuperäisenä ajatuksena oli, että käyttäjä voisi muokata tarvittaessa reseptien kaikkia tietoja mutta tämä toiminnallisuus jätettiin toteuttamatta ja siirrettiin jatkokehitysideoihin.
+DAO -luokkiin on jäänyt reseptitietojen päivittämisen osalta turhaa koodia, koska tässä toteutuksessa respeteistä päivittyvä vain date -kentät. Alkuperäisenä ajatuksena oli, että käyttäjä voisi muokata tarvittaessa reseptien kaikkia tietoja mutta tämä toiminnallisuus jätettiin toteuttamatta ja siirrettiin jatkokehitysideoihin.
