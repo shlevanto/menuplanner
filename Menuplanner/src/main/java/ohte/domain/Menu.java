@@ -10,6 +10,7 @@ import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.TreeSet;
 import java.sql.*;
+import java.util.Collections;
 import java.util.Random;
 
 
@@ -69,12 +70,20 @@ public class Menu {
      * Sets up the arrays used by the generate method.
      */
     public void setupArrays() {
+        ArrayList<String> sidesShuffler = new ArrayList<>();
+        
+        for (String side : recipePool.keySet()) {
+            sidesShuffler.add(side);
+        }
+        
+        Collections.shuffle(sidesShuffler);
+        
         this.sidesArray = new String[recipePool.keySet().size()];
         
         int i = 0;
         
-        for (String side : recipePool.keySet()) {
-            sidesArray[i] = side;
+        for (String side: sidesShuffler) {
+            this.sidesArray[i] = sidesShuffler.get(i);
             i++;
         }
         
