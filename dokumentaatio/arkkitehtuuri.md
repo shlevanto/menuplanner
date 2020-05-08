@@ -97,5 +97,3 @@ Konfiguraatiotiedostossa reseptit olisi kannattanut erottaa esim. puolipisteell�
 <code>makaronilaatikko,liha,pasta;kalakeitto,kala,keitto</code>
 
 DAO -luokkiin on jäänyt reseptitietojen päivittämisen osalta turhaa koodia, koska tässä toteutuksessa respeteistä päivittyvä vain date -kentät. Alkuperäisenä ajatuksena oli, että käyttäjä voisi muokata tarvittaessa reseptien kaikkia tietoja mutta tämä toiminnallisuus jätettiin toteuttamatta ja siirrettiin jatkokehitysideoihin.
-
-Menu -luokka ei kovin hyvin satunnaista reseptejä, sitä pitäisi muokata edelleen.
